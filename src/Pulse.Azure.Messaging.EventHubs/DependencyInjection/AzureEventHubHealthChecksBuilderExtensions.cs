@@ -1,6 +1,6 @@
 using Azure.Messaging.EventHubs.Producer;
-using Pulse.Azure.Messaging.EventHubs;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.Azure.Messaging.EventHubs;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

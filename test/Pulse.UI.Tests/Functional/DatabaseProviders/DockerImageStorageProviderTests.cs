@@ -1,7 +1,7 @@
+using Microsoft.Extensions.Configuration;
 using Pulse.UI.Data;
 using Pulse.UI.Image;
 using Pulse.UI.Image.Configuration;
-using Microsoft.Extensions.Configuration;
 
 namespace Pulse.UI.Tests;
 

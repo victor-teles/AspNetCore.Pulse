@@ -1,6 +1,6 @@
-using Pulse.MongoDb;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using MongoDB.Driver;
+using Pulse.MongoDb;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

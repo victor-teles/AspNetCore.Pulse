@@ -1,5 +1,5 @@
-using Pulse.Aws.SecretsManager;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.Aws.SecretsManager;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

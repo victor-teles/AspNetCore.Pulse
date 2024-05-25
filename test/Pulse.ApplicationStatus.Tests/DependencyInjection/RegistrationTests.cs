@@ -1,5 +1,5 @@
-using Pulse.ApplicationStatus.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Pulse.ApplicationStatus.DependencyInjection;
 
 namespace Pulse.ApplicationStatus.Tests.DependencyInjection;
 

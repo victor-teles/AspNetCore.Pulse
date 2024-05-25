@@ -1,11 +1,11 @@
-using Pulse.UI.K8s.Operator.Controller;
-using Pulse.UI.K8s.Operator.Diagnostics;
-using Pulse.UI.K8s.Operator.Handlers;
-using Pulse.UI.K8s.Operator.Operator;
 using k8s;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Pulse.UI.K8s.Operator.Controller;
+using Pulse.UI.K8s.Operator.Diagnostics;
+using Pulse.UI.K8s.Operator.Handlers;
+using Pulse.UI.K8s.Operator.Operator;
 using Serilog;
 using Serilog.Events;
 

@@ -1,7 +1,7 @@
-using Pulse.UI.Client;
-using Pulse.UI.Core;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.UI.Client;
+using Pulse.UI.Core;
 
 namespace Pulse.UI.Branding;
 

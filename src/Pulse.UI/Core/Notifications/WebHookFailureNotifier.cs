@@ -1,11 +1,11 @@
 using System.Text;
 using System.Web;
-using Pulse.UI.Configuration;
-using Pulse.UI.Core.Extensions;
-using Pulse.UI.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Pulse.UI.Configuration;
+using Pulse.UI.Core.Extensions;
+using Pulse.UI.Data;
 
 namespace Pulse.UI.Core.Notifications;
 

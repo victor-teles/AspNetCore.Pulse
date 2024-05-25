@@ -1,6 +1,6 @@
-using Pulse.CosmosDb;
 using Microsoft.Azure.Cosmos;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.CosmosDb;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

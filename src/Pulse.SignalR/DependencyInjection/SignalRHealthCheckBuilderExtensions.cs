@@ -1,6 +1,6 @@
-using Pulse.SignalR;
 using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.SignalR;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

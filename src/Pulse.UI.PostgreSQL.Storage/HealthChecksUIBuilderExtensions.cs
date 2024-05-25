@@ -1,6 +1,6 @@
-using Pulse.UI.Data;
 using Microsoft.EntityFrameworkCore;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Infrastructure;
+using Pulse.UI.Data;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

@@ -1,12 +1,12 @@
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Options;
 using Pulse.UI;
 using Pulse.UI.Configuration;
 using Pulse.UI.Core;
 using Pulse.UI.Core.Discovery.K8S;
 using Pulse.UI.Core.HostedService;
 using Pulse.UI.Core.Notifications;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection.Extensions;
-using Microsoft.Extensions.Options;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

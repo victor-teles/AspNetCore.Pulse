@@ -1,6 +1,6 @@
 using System.Net;
-using Pulse.Network.Extensions;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.Network.Extensions;
 
 namespace Pulse.Network;
 

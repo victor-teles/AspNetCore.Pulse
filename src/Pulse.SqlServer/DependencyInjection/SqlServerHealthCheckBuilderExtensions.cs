@@ -1,6 +1,6 @@
-using Pulse.SqlServer;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.SqlServer;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

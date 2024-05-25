@@ -1,5 +1,5 @@
-using Pulse.Publisher.CloudWatch;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.Publisher.CloudWatch;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

@@ -1,7 +1,7 @@
-using Pulse.UI.Client;
-using Pulse.UIAndApi.Options;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Options;
+using Pulse.UI.Client;
+using Pulse.UIAndApi.Options;
 
 namespace Pulse.UIAndApi;
 

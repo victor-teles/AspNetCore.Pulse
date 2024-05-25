@@ -1,6 +1,6 @@
 using Azure.Security.KeyVault.Secrets;
-using Pulse.Azure.KeyVault.Secrets;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.Azure.KeyVault.Secrets;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

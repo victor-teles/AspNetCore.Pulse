@@ -1,5 +1,5 @@
-using Pulse.Azure.IoTHub;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.Azure.IoTHub;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

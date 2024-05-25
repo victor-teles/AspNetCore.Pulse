@@ -1,6 +1,6 @@
 using Azure.Data.Tables;
-using Pulse.Azure.Data.Tables;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.Azure.Data.Tables;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

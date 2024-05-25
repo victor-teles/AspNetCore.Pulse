@@ -1,5 +1,5 @@
-using Pulse.UI.Data;
 using Microsoft.EntityFrameworkCore;
+using Pulse.UI.Data;
 
 namespace Pulse.UI.Tests;
 

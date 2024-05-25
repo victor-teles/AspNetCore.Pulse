@@ -1,8 +1,8 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.ServiceProcess;
-using Pulse.System;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.System;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

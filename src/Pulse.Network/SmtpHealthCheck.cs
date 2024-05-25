@@ -1,5 +1,5 @@
-using Pulse.Network.Core;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.Network.Core;
 
 namespace Pulse.Network;
 

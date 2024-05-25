@@ -1,6 +1,6 @@
+using Microsoft.Extensions.Hosting;
 using Pulse.UI.Client;
 using Pulse.UI.Core;
-using Microsoft.Extensions.Hosting;
 
 namespace Pulse.UI.Tests;
 

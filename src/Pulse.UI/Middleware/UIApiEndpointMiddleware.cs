@@ -1,11 +1,11 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using Pulse.UI.Configuration;
-using Pulse.UI.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
+using Pulse.UI.Configuration;
+using Pulse.UI.Data;
 
 namespace Pulse.UI.Middleware;
 

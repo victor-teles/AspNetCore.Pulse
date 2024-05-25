@@ -1,6 +1,6 @@
+using Microsoft.AspNetCore.Mvc;
 using Pulse.UI.Image.Configuration;
 using Pulse.UI.Image.PushService;
-using Microsoft.AspNetCore.Mvc;
 
 namespace Pulse.UI.Image;
 

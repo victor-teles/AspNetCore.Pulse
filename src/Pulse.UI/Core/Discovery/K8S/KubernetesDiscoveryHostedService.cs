@@ -1,11 +1,11 @@
 using System.Net;
-using Pulse.UI.Core.Discovery.K8S.Extensions;
-using Pulse.UI.Data;
 using k8s;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Pulse.UI.Core.Discovery.K8S.Extensions;
+using Pulse.UI.Data;
 
 namespace Pulse.UI.Core.Discovery.K8S;
 

@@ -1,5 +1,5 @@
-using Pulse.Solr;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.Solr;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

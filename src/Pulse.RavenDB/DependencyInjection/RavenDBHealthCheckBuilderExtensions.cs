@@ -1,5 +1,5 @@
-using Pulse.RavenDB;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.RavenDB;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

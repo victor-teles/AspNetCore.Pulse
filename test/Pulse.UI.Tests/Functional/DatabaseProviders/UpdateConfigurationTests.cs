@@ -1,6 +1,6 @@
-using Pulse.UI.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
+using Pulse.UI.Data;
 
 namespace Pulse.UI.Tests;
 

@@ -1,5 +1,5 @@
-using Pulse.Nats;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.Nats;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

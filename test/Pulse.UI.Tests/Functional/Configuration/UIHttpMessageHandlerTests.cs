@@ -1,5 +1,5 @@
-using Pulse.UI.Core;
 using NSubstitute;
+using Pulse.UI.Core;
 
 namespace Pulse.UI.Tests;
 

@@ -1,7 +1,7 @@
 using Azure.Core;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Pulse.AzureServiceBus;
 using Pulse.AzureServiceBus.Configuration;
-using Microsoft.Extensions.Diagnostics.HealthChecks;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

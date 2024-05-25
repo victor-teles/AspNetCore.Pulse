@@ -1,5 +1,5 @@
-using Pulse.Uris;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.Uris;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

@@ -1,5 +1,5 @@
-using Pulse.DynamoDb;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.DynamoDb;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

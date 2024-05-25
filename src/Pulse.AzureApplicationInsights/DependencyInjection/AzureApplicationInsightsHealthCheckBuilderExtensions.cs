@@ -1,5 +1,5 @@
-using Pulse.AzureApplicationInsights;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.AzureApplicationInsights;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

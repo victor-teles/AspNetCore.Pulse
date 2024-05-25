@@ -1,6 +1,6 @@
-using Pulse.UI.Core;
 using Microsoft.AspNetCore.Hosting.Server.Features;
 using Microsoft.AspNetCore.Http.Features;
+using Pulse.UI.Core;
 
 namespace Pulse.UI.Tests;
 

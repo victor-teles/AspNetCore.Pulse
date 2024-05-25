@@ -1,7 +1,7 @@
 using Azure.Core;
-using Pulse.AzureDigitalTwin;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Rest;
+using Pulse.AzureDigitalTwin;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

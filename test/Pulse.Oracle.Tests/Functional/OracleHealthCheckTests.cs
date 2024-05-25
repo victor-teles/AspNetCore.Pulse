@@ -1,6 +1,6 @@
 using System.Net;
-using Pulse.UI.Client;
 using Oracle.ManagedDataAccess.Client;
+using Pulse.UI.Client;
 
 namespace Pulse.Oracle.Tests.Functional;
 

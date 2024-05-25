@@ -1,6 +1,6 @@
 using Azure.Identity;
-using Pulse.UI.Image.Configuration;
 using Microsoft.Extensions.Configuration.AzureAppConfiguration;
+using Pulse.UI.Image.Configuration;
 
 namespace Pulse.UI.Image.Extensions;
 

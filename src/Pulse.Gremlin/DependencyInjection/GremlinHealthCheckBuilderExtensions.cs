@@ -1,5 +1,5 @@
-using Pulse.Gremlin;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.Gremlin;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

@@ -1,5 +1,5 @@
-using Pulse.Hangfire;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.Hangfire;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

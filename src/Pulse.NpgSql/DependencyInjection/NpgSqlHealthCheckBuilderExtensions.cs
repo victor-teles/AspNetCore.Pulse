@@ -1,6 +1,6 @@
-using Pulse.NpgSql;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Npgsql;
+using Pulse.NpgSql;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

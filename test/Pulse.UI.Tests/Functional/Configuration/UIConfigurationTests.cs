@@ -1,8 +1,8 @@
 using System.Net;
-using Pulse.UI.Configuration;
-using Pulse.UI.Core;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
+using Pulse.UI.Configuration;
+using Pulse.UI.Core;
 
 namespace Pulse.UI.Tests;
 

@@ -1,6 +1,6 @@
-using Pulse.Prometheus.Metrics;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Http;
+using Pulse.Prometheus.Metrics;
 
 namespace Microsoft.AspNetCore.Builder;
 

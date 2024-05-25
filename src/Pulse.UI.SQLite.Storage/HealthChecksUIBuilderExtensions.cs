@@ -1,6 +1,6 @@
-using Pulse.UI.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Pulse.UI.Data;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

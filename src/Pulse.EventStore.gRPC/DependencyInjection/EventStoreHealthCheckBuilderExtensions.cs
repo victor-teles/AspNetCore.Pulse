@@ -1,5 +1,5 @@
-using Pulse.EventStore.gRPC;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.EventStore.gRPC;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

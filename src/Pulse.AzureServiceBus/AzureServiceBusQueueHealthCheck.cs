@@ -1,5 +1,5 @@
-using Pulse.AzureServiceBus.Configuration;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.AzureServiceBus.Configuration;
 
 namespace Pulse.AzureServiceBus;
 

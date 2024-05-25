@@ -1,5 +1,5 @@
-using Pulse.UI.K8s.Operator.Diagnostics;
 using k8s.Models;
+using Pulse.UI.K8s.Operator.Diagnostics;
 
 namespace Pulse.UI.K8s.Operator;
 

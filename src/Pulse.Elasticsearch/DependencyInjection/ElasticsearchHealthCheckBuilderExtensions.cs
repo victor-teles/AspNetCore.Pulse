@@ -1,5 +1,5 @@
-using Pulse.Elasticsearch;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.Elasticsearch;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

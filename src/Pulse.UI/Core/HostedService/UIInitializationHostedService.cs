@@ -1,11 +1,11 @@
-using Pulse.UI.Configuration;
-using Pulse.UI.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Pulse.UI.Configuration;
+using Pulse.UI.Data;
 
 namespace Pulse.UI.Core.HostedService;
 

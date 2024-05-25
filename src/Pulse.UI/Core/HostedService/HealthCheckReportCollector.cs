@@ -1,14 +1,14 @@
 using System.Net.Http.Json;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using Pulse.UI.Configuration;
-using Pulse.UI.Core.Extensions;
-using Pulse.UI.Core.Notifications;
-using Pulse.UI.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Pulse.UI.Configuration;
+using Pulse.UI.Core.Extensions;
+using Pulse.UI.Core.Notifications;
+using Pulse.UI.Data;
 
 namespace Pulse.UI.Core.HostedService;
 

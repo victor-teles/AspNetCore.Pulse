@@ -1,7 +1,7 @@
 using System.Collections;
-using Pulse.IbmMQ;
 using IBM.WMQ;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.IbmMQ;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

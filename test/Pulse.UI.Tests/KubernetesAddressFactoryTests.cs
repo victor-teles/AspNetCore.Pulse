@@ -1,6 +1,6 @@
 using System.Text.Json;
-using Pulse.UI.Core.Discovery.K8S;
 using k8s.Models;
+using Pulse.UI.Core.Discovery.K8S;
 
 namespace Pulse.UI.Tests;
 

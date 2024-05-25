@@ -1,5 +1,5 @@
-using Pulse.Publisher.Seq;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.Publisher.Seq;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

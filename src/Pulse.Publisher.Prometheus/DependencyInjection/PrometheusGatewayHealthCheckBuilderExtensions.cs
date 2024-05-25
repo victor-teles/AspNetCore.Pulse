@@ -1,5 +1,5 @@
-using Pulse.Publisher.Prometheus;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.Publisher.Prometheus;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

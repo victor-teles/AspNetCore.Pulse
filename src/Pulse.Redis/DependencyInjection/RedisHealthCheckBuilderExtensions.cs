@@ -1,5 +1,5 @@
-using Pulse.Redis;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.Redis;
 using StackExchange.Redis;
 
 namespace Microsoft.Extensions.DependencyInjection;

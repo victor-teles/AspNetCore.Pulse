@@ -1,6 +1,6 @@
-using Pulse.MySql;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using MySqlConnector;
+using Pulse.MySql;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

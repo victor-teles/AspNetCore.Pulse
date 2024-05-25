@@ -1,7 +1,7 @@
-using Pulse.UI.Configuration;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Pulse.UI.Configuration;
 namespace Pulse.UI.Middleware;
 
 internal sealed class UIApiRequestLimitingMiddleware : IDisposable

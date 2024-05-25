@@ -1,5 +1,5 @@
-using Pulse.ArangoDb;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.ArangoDb;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

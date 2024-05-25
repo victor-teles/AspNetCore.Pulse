@@ -1,5 +1,5 @@
-using Pulse.Publisher.Datadog;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.Publisher.Datadog;
 using StatsdClient;
 
 namespace Microsoft.Extensions.DependencyInjection;

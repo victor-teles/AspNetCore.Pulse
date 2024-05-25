@@ -1,5 +1,5 @@
-using Pulse.RabbitMQ;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.RabbitMQ;
 using RabbitMQ.Client;
 
 namespace Microsoft.Extensions.DependencyInjection;

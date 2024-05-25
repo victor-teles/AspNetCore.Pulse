@@ -1,7 +1,7 @@
+using Microsoft.AspNetCore.Routing;
 using Pulse.UI;
 using Pulse.UI.Core;
 using Pulse.UI.Middleware;
-using Microsoft.AspNetCore.Routing;
 using Options = Pulse.UI.Configuration.Options;
 
 namespace Microsoft.AspNetCore.Builder;

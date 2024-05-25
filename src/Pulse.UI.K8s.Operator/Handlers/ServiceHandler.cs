@@ -1,7 +1,7 @@
-using Pulse.UI.K8s.Operator.Extensions;
 using k8s;
 using k8s.Models;
 using Microsoft.Extensions.Logging;
+using Pulse.UI.K8s.Operator.Extensions;
 
 namespace Pulse.UI.K8s.Operator.Handlers;
 

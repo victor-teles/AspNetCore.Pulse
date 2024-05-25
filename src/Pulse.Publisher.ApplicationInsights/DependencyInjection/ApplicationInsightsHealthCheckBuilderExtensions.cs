@@ -1,7 +1,7 @@
-using Pulse.Publisher.ApplicationInsights;
 using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Options;
+using Pulse.Publisher.ApplicationInsights;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

@@ -1,6 +1,6 @@
 using Azure.Storage.Queues;
-using Pulse.Azure.Storage.Queues;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.Azure.Storage.Queues;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

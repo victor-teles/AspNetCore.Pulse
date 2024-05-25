@@ -1,7 +1,7 @@
 using System.Net;
+using Microsoft.Extensions.Logging;
 using Pulse.UI.Client;
 using Pulse.UI.Configuration;
-using Microsoft.Extensions.Logging;
 
 namespace Pulse.UI.Tests;
 

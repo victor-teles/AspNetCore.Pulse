@@ -1,5 +1,5 @@
-using Pulse.Aws.S3;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.Aws.S3;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

@@ -1,6 +1,6 @@
+using Microsoft.AspNetCore.Http;
 using Pulse.UI.Core;
 using Pulse.UI.Data;
-using Microsoft.AspNetCore.Http;
 
 namespace Pulse.UI.Configuration;
 

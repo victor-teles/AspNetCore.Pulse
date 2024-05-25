@@ -1,10 +1,10 @@
 using System.Threading.Channels;
-using Pulse.UI.K8s.Operator.Controller;
-using Pulse.UI.K8s.Operator.Diagnostics;
-using Pulse.UI.K8s.Operator.Operator;
 using k8s;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Pulse.UI.K8s.Operator.Controller;
+using Pulse.UI.K8s.Operator.Diagnostics;
+using Pulse.UI.K8s.Operator.Operator;
 using static Pulse.UI.K8s.Operator.Constants;
 
 namespace Pulse.UI.K8s.Operator;

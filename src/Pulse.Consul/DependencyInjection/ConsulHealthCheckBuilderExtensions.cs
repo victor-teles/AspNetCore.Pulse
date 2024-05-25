@@ -1,5 +1,5 @@
-using Pulse.Consul;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.Consul;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

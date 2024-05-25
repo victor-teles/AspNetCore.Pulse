@@ -1,5 +1,5 @@
-using Pulse.SendGrid;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.SendGrid;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

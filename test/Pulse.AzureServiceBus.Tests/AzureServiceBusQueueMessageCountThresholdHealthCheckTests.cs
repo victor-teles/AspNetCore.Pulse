@@ -2,8 +2,8 @@ using Azure;
 using Azure.Core;
 using Azure.Messaging.ServiceBus;
 using Azure.Messaging.ServiceBus.Administration;
-using Pulse.AzureServiceBus.Configuration;
 using NSubstitute;
+using Pulse.AzureServiceBus.Configuration;
 
 namespace Pulse.AzureServiceBus.Tests;
 

@@ -1,6 +1,6 @@
-using Pulse.Oracle;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Oracle.ManagedDataAccess.Client;
+using Pulse.Oracle;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

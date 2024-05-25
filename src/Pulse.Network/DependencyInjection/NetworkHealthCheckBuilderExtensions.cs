@@ -1,5 +1,5 @@
-using Pulse.Network;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.Network;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

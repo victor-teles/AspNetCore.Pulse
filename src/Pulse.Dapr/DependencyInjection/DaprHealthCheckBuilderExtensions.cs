@@ -1,6 +1,6 @@
 using Dapr.Client;
-using Pulse.Dapr;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.Dapr;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

@@ -1,7 +1,7 @@
-using Pulse.UI.Client;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Pulse.UI.Client;
 
 namespace Pulse.UI.Oidc;
 

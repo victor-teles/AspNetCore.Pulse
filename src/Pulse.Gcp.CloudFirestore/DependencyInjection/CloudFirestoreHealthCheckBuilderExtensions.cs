@@ -1,5 +1,5 @@
-using Pulse.Gcp.CloudFirestore;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.Gcp.CloudFirestore;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

@@ -1,5 +1,5 @@
-using Pulse.IdSvr;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.IdSvr;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

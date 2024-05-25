@@ -1,6 +1,6 @@
 using Azure.Storage.Files.Shares;
-using Pulse.Azure.Storage.Files.Shares;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.Azure.Storage.Files.Shares;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

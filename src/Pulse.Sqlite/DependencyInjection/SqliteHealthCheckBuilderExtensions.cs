@@ -1,6 +1,6 @@
-using Pulse.Sqlite;
 using Microsoft.Data.Sqlite;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.Sqlite;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

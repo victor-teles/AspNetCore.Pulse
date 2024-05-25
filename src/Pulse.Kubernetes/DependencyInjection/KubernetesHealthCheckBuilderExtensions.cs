@@ -1,6 +1,6 @@
-using Pulse.Kubernetes;
 using k8s;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.Kubernetes;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

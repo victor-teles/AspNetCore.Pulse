@@ -1,6 +1,6 @@
 using Confluent.Kafka;
-using Pulse.Kafka;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.Kafka;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

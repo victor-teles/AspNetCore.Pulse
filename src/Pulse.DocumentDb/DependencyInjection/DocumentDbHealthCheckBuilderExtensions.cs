@@ -1,5 +1,5 @@
-using Pulse.DocumentDb;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.DocumentDb;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

@@ -1,8 +1,8 @@
 using Azure.Core;
 using Azure.Messaging.ServiceBus.Administration;
-using Pulse.AzureServiceBus.Configuration;
 using NSubstitute;
 using NSubstitute.ExceptionExtensions;
+using Pulse.AzureServiceBus.Configuration;
 
 namespace Pulse.AzureServiceBus.Tests;
 

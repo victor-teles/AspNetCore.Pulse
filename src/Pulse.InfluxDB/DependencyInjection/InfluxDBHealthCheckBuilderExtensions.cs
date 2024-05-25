@@ -1,6 +1,6 @@
-using Pulse.InfluxDB;
 using InfluxDB.Client;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Pulse.InfluxDB;
 
 namespace Microsoft.Extensions.DependencyInjection;
 

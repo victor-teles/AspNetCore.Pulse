@@ -1,7 +1,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using Pulse.UI.Core;
 using Microsoft.AspNetCore.Http;
+using Pulse.UI.Core;
 
 namespace Pulse.UI.Client.Tests;
 
