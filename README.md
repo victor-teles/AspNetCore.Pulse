@@ -7,11 +7,8 @@
 </p>
 
 <div align="center">
+  
 [![License](https://img.shields.io/github/license/victor-teles/AspNetCore.Pulse)](LICENSE)
-[![codecov](https://codecov.io/github/victor-teles/AspNetCore.Pulse/coverage.svg?branch=main)](https://codecov.io/github/victor-teles/AspNetCore.Pulse?branch=main)
-[![GitHub Release Date](https://img.shields.io/github/release-date/victor-teles/AspNetCore.Pulse?label=released)](https://github.com/victor-teles/AspNetCore.Pulse/releases)
-[![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/victor-teles/AspNetCore.Pulse/latest?label=new+commits)](https://github.com/victor-teles/AspNetCore.Pulse/commits/main)
-![Size](https://img.shields.io/github/repo-size/victor-teles/AspNetCore.Pulse)
 
 [![GitHub contributors](https://img.shields.io/github/contributors/victor-teles/AspNetCore.Pulse)](https://github.com/victor-teles/AspNetCore.Pulse/contributors)
 ![Activity](https://img.shields.io/github/commit-activity/w/victor-teles/AspNetCore.Pulse)
