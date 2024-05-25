@@ -7,7 +7,17 @@
 </p>
 
 <div align="center">
+[![License](https://img.shields.io/github/license/victor-teles/AspNetCore.Pulse)](LICENSE)
+[![codecov](https://codecov.io/github/victor-teles/AspNetCore.Pulse/coverage.svg?branch=main)](https://codecov.io/github/victor-teles/AspNetCore.Pulse?branch=main)
+[![GitHub Release Date](https://img.shields.io/github/release-date/victor-teles/AspNetCore.Pulse?label=released)](https://github.com/victor-teles/AspNetCore.Pulse/releases)
+[![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/victor-teles/AspNetCore.Pulse/latest?label=new+commits)](https://github.com/victor-teles/AspNetCore.Pulse/commits/main)
+![Size](https://img.shields.io/github/repo-size/victor-teles/AspNetCore.Pulse)
 
+[![GitHub contributors](https://img.shields.io/github/contributors/victor-teles/AspNetCore.Pulse)](https://github.com/victor-teles/AspNetCore.Pulse/contributors)
+![Activity](https://img.shields.io/github/commit-activity/w/victor-teles/AspNetCore.Pulse)
+![Activity](https://img.shields.io/github/commit-activity/m/victor-teles/AspNetCore.Pulse)
+![Activity](https://img.shields.io/github/commit-activity/y/victor-teles/AspNetCore.Pulse)
+</div>
 
 ## Overview
 
@@ -19,7 +29,7 @@ You are able to check health of databases, messaging services, uris and much mor
 
 ## Credits
 
-This package is based on the excellent work from the X[Xabaril/AspNetCore.Diagnostics.HealthChecks](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks) project. We have forked their repository and built upon it to add more features and support for additional services.
+This package is based on the excellent work from the X[victor-teles/AspNetCore.Pulse](https://github.com/victor-teles/AspNetCore.Pulse) project. We have forked their repository and built upon it to add more features and support for additional services.
 
 ## License
 
