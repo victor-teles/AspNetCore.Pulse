@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Pulse.Publisher.CloudWatch\Pulse.Publisher.CloudWatch.csproj" />
+  </ItemGroup>
+
+</Project>

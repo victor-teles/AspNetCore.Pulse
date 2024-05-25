@@ -5,8 +5,8 @@ on:
   push:
     branches: [ master ]
     paths:
-      - src/HealthChecks.SqlServer/**
-      - test/HealthChecks.SqlServer.Tests/**
+      - src/Pulse.SqlServer/**
+      - test/Pulse.SqlServer.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_sqlserver_ci.yml
       - Directory.Build.props
@@ -18,8 +18,8 @@ on:
   pull_request:
     branches: [ master ]
     paths:
-      - src/HealthChecks.SqlServer/**
-      - test/HealthChecks.SqlServer.Tests/**
+      - src/Pulse.SqlServer/**
+      - test/Pulse.SqlServer.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_sqlserver_ci.yml
       - Directory.Build.props
@@ -47,20 +47,20 @@ jobs:
             8.0.x
       - name: Restore
         run: |
-          dotnet restore ./src/HealthChecks.SqlServer/HealthChecks.SqlServer.csproj &&
-          dotnet restore ./test/HealthChecks.SqlServer.Tests/HealthChecks.SqlServer.Tests.csproj
+          dotnet restore ./src/Pulse.SqlServer/Pulse.SqlServer.csproj &&
+          dotnet restore ./test/Pulse.SqlServer.Tests/Pulse.SqlServer.Tests.csproj
       - name: Check formatting
         run: |
-          dotnet format --no-restore --verify-no-changes --severity warn ./src/HealthChecks.SqlServer/HealthChecks.SqlServer.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
-          dotnet format --no-restore --verify-no-changes --severity warn ./test/HealthChecks.SqlServer.Tests/HealthChecks.SqlServer.Tests.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1)
+          dotnet format --no-restore --verify-no-changes --severity warn ./src/Pulse.SqlServer/Pulse.SqlServer.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
+          dotnet format --no-restore --verify-no-changes --severity warn ./test/Pulse.SqlServer.Tests/Pulse.SqlServer.Tests.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1)
       - name: Build
         run: |
-          dotnet build --no-restore ./src/HealthChecks.SqlServer/HealthChecks.SqlServer.csproj &&
-          dotnet build --no-restore ./test/HealthChecks.SqlServer.Tests/HealthChecks.SqlServer.Tests.csproj
+          dotnet build --no-restore ./src/Pulse.SqlServer/Pulse.SqlServer.csproj &&
+          dotnet build --no-restore ./test/Pulse.SqlServer.Tests/Pulse.SqlServer.Tests.csproj
       - name: Test
         run: >
           dotnet test
-          ./test/HealthChecks.SqlServer.Tests/HealthChecks.SqlServer.Tests.csproj
+          ./test/Pulse.SqlServer.Tests/Pulse.SqlServer.Tests.csproj
           --no-restore
           --no-build
           --collect "XPlat Code Coverage"

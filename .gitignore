@@ -1,10 +1,10 @@
 **/**/healthchecksdb
-src/HealthChecks.UI/assets/healthchecks-bundle.js
-src/HealthChecks.UI/assets/vendors-dll.js
-src/HealthChecks.UI/assets/vendors-manifest.json
-src/HealthChecks.UI/assets/healthchecksui-min.css
 build/docker-services/mail/chksum
 build/docker-services/mail/postfix-aliases.cf
+
+# next.js
+/.next/
+/assets/
 
 # User-specific files
 *.suo
@@ -341,6 +341,3 @@ AzureDevOpsTasks/**/*.vsix
 *.received.txt
 
 .DS_Store
-src/HealthChecks.UI/assets/healthchecks-bundle.js.LICENSE.txt
-src/HealthChecks.UI/assets/healthchecks-bundle.js.map
-src/HealthChecks.UI/assets/vendors-dll.js.LICENSE.txt

@@ -13,5 +13,5 @@ jobs:
     with:
       BUILD_CONFIG: Release
       VERSION_SUFFIX_PREFIX: rc1
-      PROJECT_PATH: ./src/HealthChecks.Uris/HealthChecks.Uris.csproj
-      PACKAGE_NAME: AspNetCore.HealthChecks.Uris
+      PROJECT_PATH: ./src/Pulse.Uris/Pulse.Uris.csproj
+      PACKAGE_NAME: AspNetCore.Pulse.Uris

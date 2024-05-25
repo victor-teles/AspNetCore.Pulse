@@ -1,7 +1,0 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\HealthChecks.UI.Core\HealthChecks.UI.Core.csproj" />
-  </ItemGroup>
-
-</Project>

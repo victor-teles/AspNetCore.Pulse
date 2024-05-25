@@ -12,5 +12,5 @@ jobs:
     secrets: inherit
     with:
       BUILD_CONFIG: Release
-      PROJECT_PATH: ./src/HealthChecks.Solr/HealthChecks.Solr.csproj
-      PACKAGE_NAME: AspNetCore.HealthChecks.Solr
+      PROJECT_PATH: ./src/Pulse.Solr/Pulse.Solr.csproj
+      PACKAGE_NAME: AspNetCore.Pulse.Solr

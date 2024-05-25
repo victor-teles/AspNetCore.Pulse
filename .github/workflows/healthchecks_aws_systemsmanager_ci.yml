@@ -5,8 +5,8 @@ on:
   push:
    branches: [ master ]
    paths:
-     - src/HealthChecks.Aws.SystemsManager/**
-     - test/HealthChecks.Aws.SystemsManager.Tests/**
+     - src/Pulse.Aws.SystemsManager/**
+     - test/Pulse.Aws.SystemsManager.Tests/**
      - test/_SHARED/**
      - .github/workflows/healthchecks_aws_systemsmanager_ci.yml
      - .github/workflows/reusable_ci_workflow.yml
@@ -19,8 +19,8 @@ on:
   pull_request:
     branches: [ master ]
     paths:
-      - src/HealthChecks.Aws.SystemsManager/**
-      - test/HealthChecks.Aws.SystemsManager.Tests/**
+      - src/Pulse.Aws.SystemsManager/**
+      - test/Pulse.Aws.SystemsManager.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_aws_systemsmanager_ci.yml
       - .github/workflows/reusable_ci_workflow.yml
@@ -31,6 +31,6 @@ jobs:
   build:
     uses: ./.github/workflows/reusable_ci_workflow.yml
     with:
-      PROJECT_PATH: ./src/HealthChecks.Aws.SystemsManager/HealthChecks.Aws.SystemsManager.csproj
-      TEST_PROJECT_PATH: ./test/HealthChecks.Aws.SystemsManager.Tests/HealthChecks.Aws.SystemsManager.Tests.csproj
+      PROJECT_PATH: ./src/Pulse.Aws.SystemsManager/Pulse.Aws.SystemsManager.csproj
+      TEST_PROJECT_PATH: ./test/Pulse.Aws.SystemsManager.Tests/Pulse.Aws.SystemsManager.Tests.csproj
       CODECOV_FLAGS: Aws.SystemsManager

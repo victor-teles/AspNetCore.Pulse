@@ -5,8 +5,8 @@ on:
   push:
     branches: [ master ]
     paths:
-      - src/HealthChecks.Gremlin/**
-      - test/HealthChecks.Gremlin.Tests/**
+      - src/Pulse.Gremlin/**
+      - test/Pulse.Gremlin.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_gremlin_ci.yml
       - Directory.Build.props
@@ -18,8 +18,8 @@ on:
   pull_request:
     branches: [ master ]
     paths:
-      - src/HealthChecks.Gremlin/**
-      - test/HealthChecks.Gremlin.Tests/**
+      - src/Pulse.Gremlin/**
+      - test/Pulse.Gremlin.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_gremlin_ci.yml
       - Directory.Build.props
@@ -47,20 +47,20 @@ jobs:
             8.0.x
       - name: Restore
         run: |
-          dotnet restore ./src/HealthChecks.Gremlin/HealthChecks.Gremlin.csproj &&
-          dotnet restore ./test/HealthChecks.Gremlin.Tests/HealthChecks.Gremlin.Tests.csproj
+          dotnet restore ./src/Pulse.Gremlin/Pulse.Gremlin.csproj &&
+          dotnet restore ./test/Pulse.Gremlin.Tests/Pulse.Gremlin.Tests.csproj
       - name: Check formatting
         run: |
-          dotnet format --no-restore --verify-no-changes --severity warn ./src/HealthChecks.Gremlin/HealthChecks.Gremlin.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
-          dotnet format --no-restore --verify-no-changes --severity warn ./test/HealthChecks.Gremlin.Tests/HealthChecks.Gremlin.Tests.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1)
+          dotnet format --no-restore --verify-no-changes --severity warn ./src/Pulse.Gremlin/Pulse.Gremlin.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
+          dotnet format --no-restore --verify-no-changes --severity warn ./test/Pulse.Gremlin.Tests/Pulse.Gremlin.Tests.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1)
       - name: Build
         run: |
-          dotnet build --no-restore ./src/HealthChecks.Gremlin/HealthChecks.Gremlin.csproj &&
-          dotnet build --no-restore ./test/HealthChecks.Gremlin.Tests/HealthChecks.Gremlin.Tests.csproj
+          dotnet build --no-restore ./src/Pulse.Gremlin/Pulse.Gremlin.csproj &&
+          dotnet build --no-restore ./test/Pulse.Gremlin.Tests/Pulse.Gremlin.Tests.csproj
       - name: Test
         run: >
           dotnet test
-          ./test/HealthChecks.Gremlin.Tests/HealthChecks.Gremlin.Tests.csproj
+          ./test/Pulse.Gremlin.Tests/Pulse.Gremlin.Tests.csproj
           --no-restore
           --no-build
           --collect "XPlat Code Coverage"

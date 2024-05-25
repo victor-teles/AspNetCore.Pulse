@@ -1,0 +1,35 @@
+namespace Pulse.Kubernetes
+{
+    public class KubernetesHealthCheck : Microsoft.Extensions.Diagnostics.Pulse.IHealthCheck
+    {
+        public KubernetesHealthCheck(Pulse.Kubernetes.KubernetesHealthCheckBuilder builder, k8s.Kubernetes client) { }
+        public System.Threading.Tasks.Task<Microsoft.Extensions.Diagnostics.Pulse.HealthCheckResult> CheckHealthAsync(Microsoft.Extensions.Diagnostics.Pulse.HealthCheckContext context, System.Threading.CancellationToken cancellationToken = default) { }
+    }
+    public class KubernetesHealthCheckBuilder
+    {
+        public KubernetesHealthCheckBuilder() { }
+        public Pulse.Kubernetes.KubernetesHealthCheckOptions WithConfiguration(k8s.KubernetesClientConfiguration configuration) { }
+    }
+    public class KubernetesHealthCheckOptions
+    {
+        public Pulse.Kubernetes.KubernetesHealthCheckOptions CheckDeployment(string name, System.Func<k8s.Models.V1Deployment, bool> condition, string namespace = "default") { }
+        public Pulse.Kubernetes.KubernetesHealthCheckOptions CheckPod(string name, System.Func<k8s.Models.V1Pod, bool> condition, string namespace = "default") { }
+        public Pulse.Kubernetes.KubernetesHealthCheckOptions CheckService(string name, System.Func<k8s.Models.V1Service, bool> condition, string namespace = "default") { }
+    }
+    public class KubernetesResourceCheck
+    {
+        public string Name { get; }
+        public string Namespace { get; }
+        public System.Type ResourceType { get; }
+        public bool Check(k8s.IKubernetesObject kubernetesObject) { }
+        public static Pulse.Kubernetes.KubernetesResourceCheck Create<T>(string name, string @namespace, System.Func<k8s.IKubernetesObject, bool> condition)
+            where T : k8s.IKubernetesObject { }
+    }
+}
+namespace Microsoft.Extensions.DependencyInjection
+{
+    public static class KubernetesHealthCheckBuilderExtensions
+    {
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddKubernetes(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, System.Action<Pulse.Kubernetes.KubernetesHealthCheckBuilder>? setup, string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+    }
+}

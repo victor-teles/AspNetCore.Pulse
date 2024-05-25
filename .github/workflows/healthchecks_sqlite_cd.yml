@@ -12,5 +12,5 @@ jobs:
     secrets: inherit
     with:
       BUILD_CONFIG: Release
-      PROJECT_PATH: ./src/HealthChecks.Sqlite/HealthChecks.Sqlite.csproj
-      PACKAGE_NAME: AspNetCore.HealthChecks.Sqlite
+      PROJECT_PATH: ./src/Pulse.Sqlite/Pulse.Sqlite.csproj
+      PACKAGE_NAME: AspNetCore.Pulse.Sqlite

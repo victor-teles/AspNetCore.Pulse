@@ -12,5 +12,5 @@ jobs:
     secrets: inherit
     with:
       BUILD_CONFIG: Release
-      PROJECT_PATH: ./src/HealthChecks.SendGrid/HealthChecks.SendGrid.csproj
-      PACKAGE_NAME: AspNetCore.HealthChecks.SendGrid
+      PROJECT_PATH: ./src/Pulse.SendGrid/Pulse.SendGrid.csproj
+      PACKAGE_NAME: AspNetCore.Pulse.SendGrid

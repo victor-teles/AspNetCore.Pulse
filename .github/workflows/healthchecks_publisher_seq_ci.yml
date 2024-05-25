@@ -5,8 +5,8 @@ on:
   push:
     branches: [ master ]
     paths:
-      - src/HealthChecks.Publisher.Seq/**
-      - test/HealthChecks.Publisher.Seq.Tests/**
+      - src/Pulse.Publisher.Seq/**
+      - test/Pulse.Publisher.Seq.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_publisher_seq_ci.yml
       - .github/workflows/reusable_ci_workflow.yml
@@ -19,8 +19,8 @@ on:
   pull_request:
     branches: [ master ]
     paths:
-      - src/HealthChecks.Publisher.Seq/**
-      - test/HealthChecks.Publisher.Seq.Tests/**
+      - src/Pulse.Publisher.Seq/**
+      - test/Pulse.Publisher.Seq.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_publisher_seq_ci.yml
       - .github/workflows/reusable_ci_workflow.yml
@@ -31,6 +31,6 @@ jobs:
   build:
     uses: ./.github/workflows/reusable_ci_workflow.yml
     with:
-      PROJECT_PATH: ./src/HealthChecks.Publisher.Seq/HealthChecks.Publisher.Seq.csproj
-      TEST_PROJECT_PATH: ./test/HealthChecks.Publisher.Seq.Tests/HealthChecks.Publisher.Seq.Tests.csproj
+      PROJECT_PATH: ./src/Pulse.Publisher.Seq/Pulse.Publisher.Seq.csproj
+      TEST_PROJECT_PATH: ./test/Pulse.Publisher.Seq.Tests/Pulse.Publisher.Seq.Tests.csproj
       CODECOV_FLAGS: Publisher.Seq

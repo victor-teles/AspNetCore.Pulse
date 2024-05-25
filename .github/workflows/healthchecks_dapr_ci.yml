@@ -5,8 +5,8 @@ on:
   push:
     branches: [ master ]
     paths:
-      - src/HealthChecks.Dapr/**
-      - test/HealthChecks.Dapr.Tests/**
+      - src/Pulse.Dapr/**
+      - test/Pulse.Dapr.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_dapr_ci.yml
       - .github/workflows/reusable_ci_workflow.yml
@@ -19,8 +19,8 @@ on:
   pull_request:
     branches: [ master ]
     paths:
-      - src/HealthChecks.Dapr/**
-      - test/HealthChecks.Dapr.Tests/**
+      - src/Pulse.Dapr/**
+      - test/Pulse.Dapr.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_dapr_ci.yml
       - .github/workflows/reusable_ci_workflow.yml
@@ -31,6 +31,6 @@ jobs:
   build:
     uses: ./.github/workflows/reusable_ci_workflow.yml
     with:
-      PROJECT_PATH: ./src/HealthChecks.Dapr/HealthChecks.Dapr.csproj
-      TEST_PROJECT_PATH: ./test/HealthChecks.Dapr.Tests/HealthChecks.Dapr.Tests.csproj
+      PROJECT_PATH: ./src/Pulse.Dapr/Pulse.Dapr.csproj
+      TEST_PROJECT_PATH: ./test/Pulse.Dapr.Tests/Pulse.Dapr.Tests.csproj
       CODECOV_FLAGS: Dapr

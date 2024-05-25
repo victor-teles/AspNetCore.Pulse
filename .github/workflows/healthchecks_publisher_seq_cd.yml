@@ -12,5 +12,5 @@ jobs:
     secrets: inherit
     with:
       BUILD_CONFIG: Release
-      PROJECT_PATH: ./src/HealthChecks.Publisher.Seq/HealthChecks.Publisher.Seq.csproj
-      PACKAGE_NAME: AspNetCore.HealthChecks.Publisher.Seq
+      PROJECT_PATH: ./src/Pulse.Publisher.Seq/Pulse.Publisher.Seq.csproj
+      PACKAGE_NAME: AspNetCore.Pulse.Publisher.Seq

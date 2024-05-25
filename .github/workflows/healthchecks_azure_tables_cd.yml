@@ -12,5 +12,5 @@ jobs:
     secrets: inherit
     with:
       BUILD_CONFIG: Release
-      PROJECT_PATH: ./src/HealthChecks.Azure.Data.Tables/HealthChecks.Azure.Data.Tables.csproj
-      PACKAGE_NAME: AspNetCore.HealthChecks.Azure.Data.Tables
+      PROJECT_PATH: ./src/Pulse.Azure.Data.Tables/Pulse.Azure.Data.Tables.csproj
+      PACKAGE_NAME: AspNetCore.Pulse.Azure.Data.Tables

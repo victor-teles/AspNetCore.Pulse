@@ -1,0 +1,22 @@
+namespace Pulse.AzureSearch
+{
+    public class AzureSearchHealthCheck : Microsoft.Extensions.Diagnostics.Pulse.IHealthCheck
+    {
+        public AzureSearchHealthCheck(Pulse.AzureSearch.AzureSearchOptions searchOptions) { }
+        public System.Threading.Tasks.Task<Microsoft.Extensions.Diagnostics.Pulse.HealthCheckResult> CheckHealthAsync(Microsoft.Extensions.Diagnostics.Pulse.HealthCheckContext context, System.Threading.CancellationToken cancellationToken = default) { }
+    }
+    public class AzureSearchOptions
+    {
+        public AzureSearchOptions() { }
+        public string AuthKey { get; set; }
+        public string Endpoint { get; set; }
+        public string IndexName { get; set; }
+    }
+}
+namespace Pulse.AzureSearch.DependencyInjection
+{
+    public static class AzureSearchHealthCheckBuilderExtensions
+    {
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddAzureSearch(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, System.Action<Pulse.AzureSearch.AzureSearchOptions>? setup, string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+    }
+}

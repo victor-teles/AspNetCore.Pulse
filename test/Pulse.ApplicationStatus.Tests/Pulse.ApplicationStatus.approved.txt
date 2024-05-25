@@ -1,0 +1,17 @@
+namespace Pulse.ApplicationStatus
+{
+    public class ApplicationStatusHealthCheck : Microsoft.Extensions.Diagnostics.Pulse.IHealthCheck, System.IDisposable
+    {
+        public ApplicationStatusHealthCheck(Microsoft.Extensions.Hosting.IHostApplicationLifetime lifetime) { }
+        public System.Threading.Tasks.Task<Microsoft.Extensions.Diagnostics.Pulse.HealthCheckResult> CheckHealthAsync(Microsoft.Extensions.Diagnostics.Pulse.HealthCheckContext context, System.Threading.CancellationToken cancellationToken = default) { }
+        public virtual void Dispose() { }
+    }
+}
+namespace Pulse.ApplicationStatus.DependencyInjection
+{
+    public static class ApplicationStatusHealthCheckBuilderExtensions
+    {
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddApplicationStatus(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddApplicationStatus(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, Microsoft.Extensions.Hosting.IHostApplicationLifetime lifetime, string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+    }
+}

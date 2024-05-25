@@ -12,5 +12,5 @@ jobs:
     secrets: inherit
     with:
       BUILD_CONFIG: Release
-      PROJECT_PATH: ./src/HealthChecks.Aws.SystemsManager/HealthChecks.Aws.SystemsManager.csproj
-      PACKAGE_NAME: AspNetCore.HealthChecks.Aws.SystemsManager
+      PROJECT_PATH: ./src/Pulse.Aws.SystemsManager/Pulse.Aws.SystemsManager.csproj
+      PACKAGE_NAME: AspNetCore.Pulse.Aws.SystemsManager

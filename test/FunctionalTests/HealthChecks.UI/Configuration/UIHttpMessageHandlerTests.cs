@@ -1,6 +1,6 @@
 ﻿using FunctionalTests.Base;
-using HealthChecks.UI.Core;
-using HealthChecks.UI.Data;
+using Pulse.UI.Core;
+using Pulse.UI.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 using Xunit;
 using YamlDotNet.Core.Tokens;
 
-namespace FunctionalTests.HealthChecks.UI.Configuration
+namespace FunctionalTests.Pulse.UI.Configuration
 {
     [Collection("execution")]
     public class UI_configuration_should

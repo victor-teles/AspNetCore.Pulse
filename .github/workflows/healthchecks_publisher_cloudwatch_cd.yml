@@ -12,5 +12,5 @@ jobs:
     secrets: inherit
     with:
       BUILD_CONFIG: Release
-      PROJECT_PATH: ./src/HealthChecks.Publisher.CloudWatch/HealthChecks.Publisher.CloudWatch.csproj
-      PACKAGE_NAME: AspNetCore.HealthChecks.Publisher.CloudWatch
+      PROJECT_PATH: ./src/Pulse.Publisher.CloudWatch/Pulse.Publisher.CloudWatch.csproj
+      PACKAGE_NAME: AspNetCore.Pulse.Publisher.CloudWatch

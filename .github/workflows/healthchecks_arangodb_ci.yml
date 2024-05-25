@@ -5,8 +5,8 @@ on:
   push:
    branches: [ master ]
    paths:
-     - src/HealthChecks.ArangoDb/**
-     - test/HealthChecks.ArangoDb.Tests/**
+     - src/Pulse.ArangoDb/**
+     - test/Pulse.ArangoDb.Tests/**
      - test/_SHARED/**
      - .github/workflows/healthchecks_arangodb_ci.yml
      - Directory.Build.props
@@ -18,8 +18,8 @@ on:
   pull_request:
     branches: [ master ]
     paths:
-      - src/HealthChecks.ArangoDb/**
-      - test/HealthChecks.ArangoDb.Tests/**
+      - src/Pulse.ArangoDb/**
+      - test/Pulse.ArangoDb.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_arangodb_ci.yml
       - Directory.Build.props
@@ -46,20 +46,20 @@ jobs:
             8.0.x
       - name: Restore
         run: |
-          dotnet restore ./src/HealthChecks.ArangoDb/HealthChecks.ArangoDb.csproj &&
-          dotnet restore ./test/HealthChecks.ArangoDb.Tests/HealthChecks.ArangoDb.Tests.csproj
+          dotnet restore ./src/Pulse.ArangoDb/Pulse.ArangoDb.csproj &&
+          dotnet restore ./test/Pulse.ArangoDb.Tests/Pulse.ArangoDb.Tests.csproj
       - name: Check formatting
         run: |
-          dotnet format --no-restore --verify-no-changes --severity warn ./src/HealthChecks.ArangoDb/HealthChecks.ArangoDb.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
-          dotnet format --no-restore --verify-no-changes --severity warn ./test/HealthChecks.ArangoDb.Tests/HealthChecks.ArangoDb.Tests.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1)
+          dotnet format --no-restore --verify-no-changes --severity warn ./src/Pulse.ArangoDb/Pulse.ArangoDb.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
+          dotnet format --no-restore --verify-no-changes --severity warn ./test/Pulse.ArangoDb.Tests/Pulse.ArangoDb.Tests.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1)
       - name: Build
         run: |
-          dotnet build --no-restore ./src/HealthChecks.ArangoDb/HealthChecks.ArangoDb.csproj &&
-          dotnet build --no-restore ./test/HealthChecks.ArangoDb.Tests/HealthChecks.ArangoDb.Tests.csproj
+          dotnet build --no-restore ./src/Pulse.ArangoDb/Pulse.ArangoDb.csproj &&
+          dotnet build --no-restore ./test/Pulse.ArangoDb.Tests/Pulse.ArangoDb.Tests.csproj
       - name: Test
         run: >
           dotnet test
-          ./test/HealthChecks.ArangoDb.Tests/HealthChecks.ArangoDb.Tests.csproj
+          ./test/Pulse.ArangoDb.Tests/Pulse.ArangoDb.Tests.csproj
           --no-restore
           --no-build
           --collect "XPlat Code Coverage"

@@ -7,7 +7,7 @@ services:
       - webapp
     build:
       context: ../../
-      dockerfile: build/docker-images/HealthChecks.UI.Image/Dockerfile
+      dockerfile: build/docker-images/Pulse.UI.Image/Dockerfile
     environment:
       - storage_provider=SqlServer
       - storage_connection=Server=sqlserver;initial catalog=UI;user id=sa;password=Password12!;

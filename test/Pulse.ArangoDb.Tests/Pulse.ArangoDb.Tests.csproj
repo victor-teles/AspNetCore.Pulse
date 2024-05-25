@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Pulse.ArangoDb\Pulse.ArangoDb.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="RichardSzalay.MockHttp" Version="7.0.0" />
+    <ProjectReference Include="..\..\src\Pulse.Uris\Pulse.Uris.csproj" />
+  </ItemGroup>
+
+</Project>

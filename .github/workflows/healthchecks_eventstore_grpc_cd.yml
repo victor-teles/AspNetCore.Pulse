@@ -12,5 +12,5 @@ jobs:
     secrets: inherit
     with:
       BUILD_CONFIG: Release
-      PROJECT_PATH: ./src/HealthChecks.EventStore.gRPC/HealthChecks.EventStore.gRPC.csproj
-      PACKAGE_NAME: AspNetCore.HealthChecks.EventStore.gRPC
+      PROJECT_PATH: ./src/Pulse.EventStore.gRPC/Pulse.EventStore.gRPC.csproj
+      PACKAGE_NAME: AspNetCore.Pulse.EventStore.gRPC

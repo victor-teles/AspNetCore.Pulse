@@ -1,7 +1,7 @@
 ﻿using FunctionalTests.Base;
 using System.Collections.Generic;
 
-namespace FunctionalTests.HealthChecks.UI.DatabaseProviders
+namespace FunctionalTests.Pulse.UI.DatabaseProviders
 {
     public class ProviderTestHelper
     {

@@ -18,39 +18,39 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\HealthChecks.ArangoDb\HealthChecks.ArangoDb.csproj" />
-    <ProjectReference Include="..\..\src\HealthChecks.Aws.S3\HealthChecks.Aws.S3.csproj" />
-    <ProjectReference Include="..\..\src\HealthChecks.Consul\HealthChecks.Consul.csproj" />
-    <ProjectReference Include="..\..\src\HealthChecks.DynamoDb\HealthChecks.DynamoDb.csproj" />
-    <ProjectReference Include="..\..\src\HealthChecks.EventStore\HealthChecks.EventStore.csproj" />
-    <ProjectReference Include="..\..\src\HealthChecks.Elasticsearch\HealthChecks.Elasticsearch.csproj" />
-    <ProjectReference Include="..\..\src\HealthChecks.Gremlin\HealthChecks.Gremlin.csproj" />
-    <ProjectReference Include="..\..\src\HealthChecks.Prometheus.Metrics\HealthChecks.Prometheus.Metrics.csproj" />
-    <ProjectReference Include="..\..\src\HealthChecks.Solr\HealthChecks.Solr.csproj" />
-    <ProjectReference Include="..\..\src\HealthChecks.IbmMQ\HealthChecks.IbmMQ.csproj" />
-    <ProjectReference Include="..\..\src\HealthChecks.OpenIdConnectServer\HealthChecks.OpenIdConnectServer.csproj" />
-    <ProjectReference Include="..\..\src\HealthChecks.Kafka\HealthChecks.Kafka.csproj" />
-    <ProjectReference Include="..\..\src\HealthChecks.MongoDb\HealthChecks.MongoDb.csproj" />
-    <ProjectReference Include="..\..\src\HealthChecks.MySql\HealthChecks.MySql.csproj" />
-    <ProjectReference Include="..\..\src\HealthChecks.Network\HealthChecks.Network.csproj" />
-    <ProjectReference Include="..\..\src\HealthChecks.NpgSql\HealthChecks.NpgSql.csproj" />
-    <ProjectReference Include="..\..\src\HealthChecks.Oracle\HealthChecks.Oracle.csproj" />
-    <ProjectReference Include="..\..\src\HealthChecks.Publisher.Prometheus\HealthChecks.Publisher.Prometheus.csproj" />
-    <ProjectReference Include="..\..\src\HealthChecks.Rabbitmq\HealthChecks.Rabbitmq.csproj" />
-    <ProjectReference Include="..\..\src\HealthChecks.RavenDB\HealthChecks.RavenDB.csproj" />
-    <ProjectReference Include="..\..\src\HealthChecks.Redis\HealthChecks.Redis.csproj" />
-    <ProjectReference Include="..\..\src\HealthChecks.SignalR\HealthChecks.SignalR.csproj" />
-    <ProjectReference Include="..\..\src\HealthChecks.Sqlite\HealthChecks.Sqlite.csproj" />
-    <ProjectReference Include="..\..\src\HealthChecks.SqlServer\HealthChecks.SqlServer.csproj" />
-    <ProjectReference Include="..\..\src\HealthChecks.System\HealthChecks.System.csproj" />
-    <ProjectReference Include="..\..\src\HealthChecks.UI.Client\HealthChecks.UI.Client.csproj" />
-    <ProjectReference Include="..\..\src\HealthChecks.UI.InMemory.Storage\HealthChecks.UI.InMemory.Storage.csproj" />
-    <ProjectReference Include="..\..\src\HealthChecks.UI.MySql.Storage\HealthChecks.UI.MySql.Storage.csproj" />
-    <ProjectReference Include="..\..\src\HealthChecks.UI.PostgreSQL.Storage\HealthChecks.UI.PostgreSQL.Storage.csproj" />
-    <ProjectReference Include="..\..\src\HealthChecks.UI.SQLite.Storage\HealthChecks.UI.SQLite.Storage.csproj" />
-    <ProjectReference Include="..\..\src\HealthChecks.UI.SqlServer.Storage\HealthChecks.UI.SqlServer.Storage.csproj" />
-    <ProjectReference Include="..\..\src\HealthChecks.UI\HealthChecks.UI.csproj" />
-    <ProjectReference Include="..\..\src\HealthChecks.Uris\HealthChecks.Uris.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.ArangoDb\Pulse.ArangoDb.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.Aws.S3\Pulse.Aws.S3.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.Consul\Pulse.Consul.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.DynamoDb\Pulse.DynamoDb.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.EventStore\Pulse.EventStore.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.Elasticsearch\Pulse.Elasticsearch.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.Gremlin\Pulse.Gremlin.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.Prometheus.Metrics\Pulse.Prometheus.Metrics.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.Solr\Pulse.Solr.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.IbmMQ\Pulse.IbmMQ.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.OpenIdConnectServer\Pulse.OpenIdConnectServer.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.Kafka\Pulse.Kafka.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.MongoDb\Pulse.MongoDb.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.MySql\Pulse.MySql.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.Network\Pulse.Network.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.NpgSql\Pulse.NpgSql.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.Oracle\Pulse.Oracle.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.Publisher.Prometheus\Pulse.Publisher.Prometheus.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.Rabbitmq\Pulse.Rabbitmq.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.RavenDB\Pulse.RavenDB.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.Redis\Pulse.Redis.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.SignalR\Pulse.SignalR.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.Sqlite\Pulse.Sqlite.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.SqlServer\Pulse.SqlServer.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.System\Pulse.System.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.UI.Client\Pulse.UI.Client.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.UI.InMemory.Storage\Pulse.UI.InMemory.Storage.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.UI.MySql.Storage\Pulse.UI.MySql.Storage.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.UI.PostgreSQL.Storage\Pulse.UI.PostgreSQL.Storage.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.UI.SQLite.Storage\Pulse.UI.SQLite.Storage.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.UI.SqlServer.Storage\Pulse.UI.SqlServer.Storage.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.UI\Pulse.UI.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.Uris\Pulse.Uris.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -60,7 +60,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="HealthChecks.UI\Configuration\appsettings.json">
+    <Content Include="Pulse.UI\Configuration\appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

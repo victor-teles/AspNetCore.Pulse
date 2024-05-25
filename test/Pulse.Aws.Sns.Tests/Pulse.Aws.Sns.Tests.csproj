@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Pulse.Aws.Sns\Pulse.Aws.Sns.csproj" />
+  </ItemGroup>
+
+</Project>

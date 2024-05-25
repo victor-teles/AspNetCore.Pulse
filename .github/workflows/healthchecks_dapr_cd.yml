@@ -12,5 +12,5 @@ jobs:
     secrets: inherit
     with:
       BUILD_CONFIG: Release
-      PROJECT_PATH: ./src/HealthChecks.Dapr/HealthChecks.Dapr.csproj
-      PACKAGE_NAME: AspNetCore.HealthChecks.Dapr
+      PROJECT_PATH: ./src/Pulse.Dapr/Pulse.Dapr.csproj
+      PACKAGE_NAME: AspNetCore.Pulse.Dapr

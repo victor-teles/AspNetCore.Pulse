@@ -5,8 +5,8 @@ on:
   push:
     branches: [ master ]
     paths:
-      - src/HealthChecks.Nats/**
-      - test/HealthChecks.Nats.Tests/**
+      - src/Pulse.Nats/**
+      - test/Pulse.Nats.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_nats_ci.yml
       - Directory.Build.props
@@ -18,8 +18,8 @@ on:
   pull_request:
     branches: [ master ]
     paths:
-      - src/HealthChecks.Nats/**
-      - test/HealthChecks.Nats.Tests/**
+      - src/Pulse.Nats/**
+      - test/Pulse.Nats.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_nats_ci.yml
       - Directory.Build.props
@@ -46,20 +46,20 @@ jobs:
             8.0.x
       - name: Restore
         run: |
-          dotnet restore ./src/HealthChecks.Nats/HealthChecks.Nats.csproj &&
-          dotnet restore ./test/HealthChecks.Nats.Tests/HealthChecks.Nats.Tests.csproj
+          dotnet restore ./src/Pulse.Nats/Pulse.Nats.csproj &&
+          dotnet restore ./test/Pulse.Nats.Tests/Pulse.Nats.Tests.csproj
       - name: Check formatting
         run: |
-          dotnet format --no-restore --verify-no-changes --severity warn ./src/HealthChecks.Nats/HealthChecks.Nats.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
-          dotnet format --no-restore --verify-no-changes --severity warn ./test/HealthChecks.Nats.Tests/HealthChecks.Nats.Tests.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1)
+          dotnet format --no-restore --verify-no-changes --severity warn ./src/Pulse.Nats/Pulse.Nats.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
+          dotnet format --no-restore --verify-no-changes --severity warn ./test/Pulse.Nats.Tests/Pulse.Nats.Tests.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1)
       - name: Build
         run: |
-          dotnet build --no-restore ./src/HealthChecks.Nats/HealthChecks.Nats.csproj &&
-          dotnet build --no-restore ./test/HealthChecks.Nats.Tests/HealthChecks.Nats.Tests.csproj
+          dotnet build --no-restore ./src/Pulse.Nats/Pulse.Nats.csproj &&
+          dotnet build --no-restore ./test/Pulse.Nats.Tests/Pulse.Nats.Tests.csproj
       - name: Test
         run: >
           dotnet test
-          ./test/HealthChecks.Nats.Tests/HealthChecks.Nats.Tests.csproj
+          ./test/Pulse.Nats.Tests/Pulse.Nats.Tests.csproj
           --no-restore
           --no-build
           --collect "XPlat Code Coverage"

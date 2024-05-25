@@ -104,7 +104,7 @@ services:
         image: tvial/docker-mailserver:latest
         hostname: mail
         container_name: mail
-        domainname: healthchecks.com
+        domainname: Pulse.com
         ports:
             - 25:25
             - 143:143
@@ -165,7 +165,7 @@ services:
         image: postgres
         ports:
         - "8010:5432"
-        environment: 
+        environment:
         - POSTGRES_USER=postgres
         - POSTGRES_PASSWORD=Password12!
     nats:
@@ -180,7 +180,7 @@ services:
         ports:
          - "8086:8086"
         environment:
-          DOCKER_INFLUXDB_INIT_MODE: setup 
+          DOCKER_INFLUXDB_INIT_MODE: setup
           DOCKER_INFLUXDB_INIT_USERNAME: ci_user
           DOCKER_INFLUXDB_INIT_PASSWORD: password
           DOCKER_INFLUXDB_INIT_ORG: influxdata

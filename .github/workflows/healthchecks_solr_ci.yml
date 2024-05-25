@@ -5,8 +5,8 @@ on:
   push:
     branches: [ master, netcore-6.0 ]
     paths:
-      - src/HealthChecks.Solr/**
-      - test/HealthChecks.Solr.Tests/**
+      - src/Pulse.Solr/**
+      - test/Pulse.Solr.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_solr_ci.yml
       - Directory.Build.props
@@ -18,8 +18,8 @@ on:
   pull_request:
     branches: [ master ]
     paths:
-      - src/HealthChecks.Solr/**
-      - test/HealthChecks.Solr.Tests/**
+      - src/Pulse.Solr/**
+      - test/Pulse.Solr.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_solr_ci.
       - Directory.Build.props
@@ -58,20 +58,20 @@ jobs:
             8.0.x
       - name: Restore
         run: |
-          dotnet restore ./src/HealthChecks.Solr/HealthChecks.Solr.csproj &&
-          dotnet restore ./test/HealthChecks.Solr.Tests/HealthChecks.Solr.Tests.csproj
+          dotnet restore ./src/Pulse.Solr/Pulse.Solr.csproj &&
+          dotnet restore ./test/Pulse.Solr.Tests/Pulse.Solr.Tests.csproj
       - name: Check formatting
         run: |
-          dotnet format --no-restore --verify-no-changes --severity warn ./src/HealthChecks.Solr/HealthChecks.Solr.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
-          dotnet format --no-restore --verify-no-changes --severity warn ./test/HealthChecks.Solr.Tests/HealthChecks.Solr.Tests.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1)
+          dotnet format --no-restore --verify-no-changes --severity warn ./src/Pulse.Solr/Pulse.Solr.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
+          dotnet format --no-restore --verify-no-changes --severity warn ./test/Pulse.Solr.Tests/Pulse.Solr.Tests.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1)
       - name: Build
         run: |
-          dotnet build --no-restore ./src/HealthChecks.Solr/HealthChecks.Solr.csproj &&
-          dotnet build --no-restore ./test/HealthChecks.Solr.Tests/HealthChecks.Solr.Tests.csproj
+          dotnet build --no-restore ./src/Pulse.Solr/Pulse.Solr.csproj &&
+          dotnet build --no-restore ./test/Pulse.Solr.Tests/Pulse.Solr.Tests.csproj
       #- name: Test
       #  run: >
       #  dotnet test
-      #  ./test/HealthChecks.Solr.Tests/HealthChecks.Solr.Tests.csproj
+      #  ./test/Pulse.Solr.Tests/Pulse.Solr.Tests.csproj
       #  --no-restore
       #  --no-build
       #  --collect "XPlat Code Coverage"

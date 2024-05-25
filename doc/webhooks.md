@@ -37,7 +37,7 @@ You can also configure webhooks by using code. This scenario allows greater cust
 **Sample with default failure message and descriptions**:
 
 ```csharp
-setup.AddWebhookNotification("webhook1", uri: "https://healthchecks.requestcatcher.com/",
+setup.AddWebhookNotification("webhook1", uri: "https://Pulse.requestcatcher.com/",
             payload: "{ message: \"Webhook report for [[LIVENESS]]: [[FAILURE]] - Description: [[DESCRIPTIONS]]\"}",
             restorePayload: "{ message: \"[[LIVENESS]] is back to life\"}");
 ```

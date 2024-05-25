@@ -1,7 +1,0 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\HealthChecks.Publisher.Seq\HealthChecks.Publisher.Seq.csproj" />
-  </ItemGroup>
-
-</Project>

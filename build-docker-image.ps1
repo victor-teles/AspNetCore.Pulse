@@ -28,7 +28,7 @@ $tag = $version.node.InnerXML
 echo "Building docker image with tag: $tag"
 echo "Publish to Docker Hub : $PublishToDockerHub"
 
-exec { & docker build . -f ${PSScriptRoot}/build/docker-images/HealthChecks.UI.Image/Dockerfile -t xabarilcoding/healthchecksui:$tag }
+exec { & docker build . -f ${PSScriptRoot}/build/docker-images/Pulse.UI.Image/Dockerfile -t xabarilcoding/healthchecksui:$tag }
 exec { & docker tag xabarilcoding/healthchecksui:$tag xabarilcoding/healthchecksui:latest }
 
 echo "Created docker image healthchecksui:$tag. You can execute this image using docker run"

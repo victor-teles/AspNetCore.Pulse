@@ -5,8 +5,8 @@ on:
   push:
     branches: [ master ]
     paths:
-      - src/HealthChecks.Elasticsearch/**
-      - test/HealthChecks.Elasticsearch.Tests/**
+      - src/Pulse.Elasticsearch/**
+      - test/Pulse.Elasticsearch.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_elasticsearch_ci.yml
       - Directory.Build.props
@@ -18,8 +18,8 @@ on:
   pull_request:
     branches: [ master ]
     paths:
-      - src/HealthChecks.Elasticsearch/**
-      - test/HealthChecks.Elasticsearch.Tests/**
+      - src/Pulse.Elasticsearch/**
+      - test/Pulse.Elasticsearch.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_elasticsearch_ci.yml
       - Directory.Build.props
@@ -45,20 +45,20 @@ jobs:
             8.0.x
       - name: Restore
         run: |
-          dotnet restore ./src/HealthChecks.Elasticsearch/HealthChecks.Elasticsearch.csproj &&
-          dotnet restore ./test/HealthChecks.Elasticsearch.Tests/HealthChecks.Elasticsearch.Tests.csproj
+          dotnet restore ./src/Pulse.Elasticsearch/Pulse.Elasticsearch.csproj &&
+          dotnet restore ./test/Pulse.Elasticsearch.Tests/Pulse.Elasticsearch.Tests.csproj
       - name: Check formatting
         run: |
-          dotnet format --no-restore --verify-no-changes --severity warn ./src/HealthChecks.Elasticsearch/HealthChecks.Elasticsearch.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
-          dotnet format --no-restore --verify-no-changes --severity warn ./test/HealthChecks.Elasticsearch.Tests/HealthChecks.Elasticsearch.Tests.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1)
+          dotnet format --no-restore --verify-no-changes --severity warn ./src/Pulse.Elasticsearch/Pulse.Elasticsearch.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
+          dotnet format --no-restore --verify-no-changes --severity warn ./test/Pulse.Elasticsearch.Tests/Pulse.Elasticsearch.Tests.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1)
       - name: Build
         run: |
-          dotnet build --no-restore ./src/HealthChecks.Elasticsearch/HealthChecks.Elasticsearch.csproj &&
-          dotnet build --no-restore ./test/HealthChecks.Elasticsearch.Tests/HealthChecks.Elasticsearch.Tests.csproj
+          dotnet build --no-restore ./src/Pulse.Elasticsearch/Pulse.Elasticsearch.csproj &&
+          dotnet build --no-restore ./test/Pulse.Elasticsearch.Tests/Pulse.Elasticsearch.Tests.csproj
       - name: Test
         run: >
           dotnet test
-          ./test/HealthChecks.Elasticsearch.Tests/HealthChecks.Elasticsearch.Tests.csproj
+          ./test/Pulse.Elasticsearch.Tests/Pulse.Elasticsearch.Tests.csproj
           --no-restore
           --no-build
           --collect "XPlat Code Coverage"

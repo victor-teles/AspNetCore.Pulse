@@ -5,8 +5,8 @@ on:
   push:
     branches: [ master ]
     paths:
-      - src/HealthChecks.Rabbitmq/**
-      - test/HealthChecks.RabbitMQ.Tests/**
+      - src/Pulse.Rabbitmq/**
+      - test/Pulse.RabbitMQ.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_rabbitmq_ci.yml
       - Directory.Build.props
@@ -18,8 +18,8 @@ on:
   pull_request:
     branches: [ master ]
     paths:
-      - src/HealthChecks.Rabbitmq/**
-      - test/HealthChecks.RabbitMQ.Tests/**
+      - src/Pulse.Rabbitmq/**
+      - test/Pulse.RabbitMQ.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_rabbitmq_ci.yml
       - Directory.Build.props
@@ -44,20 +44,20 @@ jobs:
             8.0.x
       - name: Restore
         run: |
-          dotnet restore ./src/HealthChecks.Rabbitmq/HealthChecks.Rabbitmq.csproj &&
-          dotnet restore ./test/HealthChecks.RabbitMQ.Tests/HealthChecks.RabbitMQ.Tests.csproj
+          dotnet restore ./src/Pulse.Rabbitmq/Pulse.Rabbitmq.csproj &&
+          dotnet restore ./test/Pulse.RabbitMQ.Tests/Pulse.RabbitMQ.Tests.csproj
       - name: Check formatting
         run: |
-          dotnet format --no-restore --verify-no-changes --severity warn ./src/HealthChecks.Rabbitmq/HealthChecks.Rabbitmq.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
-          dotnet format --no-restore --verify-no-changes --severity warn ./test/HealthChecks.RabbitMQ.Tests/HealthChecks.RabbitMQ.Tests.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1)
+          dotnet format --no-restore --verify-no-changes --severity warn ./src/Pulse.Rabbitmq/Pulse.Rabbitmq.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
+          dotnet format --no-restore --verify-no-changes --severity warn ./test/Pulse.RabbitMQ.Tests/Pulse.RabbitMQ.Tests.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1)
       - name: Build
         run: |
-          dotnet build --no-restore ./src/HealthChecks.Rabbitmq/HealthChecks.Rabbitmq.csproj &&
-          dotnet build --no-restore ./test/HealthChecks.RabbitMQ.Tests/HealthChecks.RabbitMQ.Tests.csproj
+          dotnet build --no-restore ./src/Pulse.Rabbitmq/Pulse.Rabbitmq.csproj &&
+          dotnet build --no-restore ./test/Pulse.RabbitMQ.Tests/Pulse.RabbitMQ.Tests.csproj
       - name: Test
         run: >
           dotnet test
-          ./test/HealthChecks.RabbitMQ.Tests/HealthChecks.RabbitMQ.Tests.csproj
+          ./test/Pulse.RabbitMQ.Tests/Pulse.RabbitMQ.Tests.csproj
           --no-restore
           --no-build
           --collect "XPlat Code Coverage"

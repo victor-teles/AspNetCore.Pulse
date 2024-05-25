@@ -12,5 +12,5 @@ jobs:
     secrets: inherit
     with:
       BUILD_CONFIG: Release
-      PROJECT_PATH: ./src/HealthChecks.Aws.Sqs/HealthChecks.Aws.Sqs.csproj
-      PACKAGE_NAME: AspNetCore.HealthChecks.Aws.Sqs
+      PROJECT_PATH: ./src/Pulse.Aws.Sqs/Pulse.Aws.Sqs.csproj
+      PACKAGE_NAME: AspNetCore.Pulse.Aws.Sqs

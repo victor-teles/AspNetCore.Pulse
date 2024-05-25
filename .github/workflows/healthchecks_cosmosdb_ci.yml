@@ -5,8 +5,8 @@ on:
   push:
     branches: [ master ]
     paths:
-      - src/HealthChecks.CosmosDb/**
-      - test/HealthChecks.CosmosDb.Tests/**
+      - src/Pulse.CosmosDb/**
+      - test/Pulse.CosmosDb.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_cosmosdb_ci.yml
       - Directory.Build.props
@@ -18,8 +18,8 @@ on:
   pull_request:
     branches: [ master ]
     paths:
-      - src/HealthChecks.CosmosDb/**
-      - test/HealthChecks.CosmosDb.Tests/**
+      - src/Pulse.CosmosDb/**
+      - test/Pulse.CosmosDb.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_cosmosdb_ci.yml
       - Directory.Build.props
@@ -29,6 +29,6 @@ jobs:
   build:
     uses: ./.github/workflows/reusable_ci_workflow.yml
     with:
-      PROJECT_PATH: ./src/HealthChecks.CosmosDb/HealthChecks.CosmosDb.csproj
-      TEST_PROJECT_PATH: ./test/HealthChecks.CosmosDb.Tests/HealthChecks.CosmosDb.Tests.csproj
+      PROJECT_PATH: ./src/Pulse.CosmosDb/Pulse.CosmosDb.csproj
+      TEST_PROJECT_PATH: ./test/Pulse.CosmosDb.Tests/Pulse.CosmosDb.Tests.csproj
       CODECOV_FLAGS: CosmosDb

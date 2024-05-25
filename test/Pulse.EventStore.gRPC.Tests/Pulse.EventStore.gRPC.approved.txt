@@ -1,0 +1,17 @@
+namespace Pulse.EventStore.gRPC
+{
+    public class EventStoreHealthCheck : Microsoft.Extensions.Diagnostics.Pulse.IHealthCheck, System.IDisposable
+    {
+        public EventStoreHealthCheck(string connectionString) { }
+        public System.Threading.Tasks.Task<Microsoft.Extensions.Diagnostics.Pulse.HealthCheckResult> CheckHealthAsync(Microsoft.Extensions.Diagnostics.Pulse.HealthCheckContext context, System.Threading.CancellationToken cancellationToken = default) { }
+        public virtual void Dispose() { }
+    }
+}
+namespace Microsoft.Extensions.DependencyInjection
+{
+    public static class EventStoreHealthCheckBuilderExtensions
+    {
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddEventStore(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, System.Func<System.IServiceProvider, string> connectionStringFactory, string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddEventStore(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, string connectionString, string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+    }
+}

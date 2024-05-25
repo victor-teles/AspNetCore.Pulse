@@ -1,0 +1,65 @@
+using Pulse.UI.Data;
+using Microsoft.EntityFrameworkCore;
+
+namespace Pulse.UI.Image.PushService;
+
+internal class HealthChecksPushService
+{
+    private readonly HealthChecksDb _db;
+    private readonly ILogger<HealthChecksPushService> _logger;
+
+    public HealthChecksPushService(HealthChecksDb db, ILogger<HealthChecksPushService> logger)
+    {
+        _db = Guard.ThrowIfNull(db);
+        _logger = Guard.ThrowIfNull(logger);
+    }
+
+    public async Task AddAsync(string name, string uri)
+    {
+        if (await Get(name).ConfigureAwait(false) == null)
+        {
+            await _db.Configurations.AddAsync(new HealthCheckConfiguration
+            {
+                Name = name,
+                Uri = uri,
+                DiscoveryService = "kubernetes"
+            }).ConfigureAwait(false);
+
+            await _db.SaveChangesAsync().ConfigureAwait(false);
+
+            _logger.LogInformation("[Push] New service added: {name} with uri: {uri}", name, uri);
+        }
+    }
+
+    public async Task RemoveAsync(string name)
+    {
+        var endpoint = await Get(name).ConfigureAwait(false);
+
+        if (endpoint != null)
+        {
+            _db.Configurations.Remove(endpoint);
+            await _db.SaveChangesAsync().ConfigureAwait(false);
+
+            _logger.LogInformation("[Push] Service removed: {name}", name);
+        }
+    }
+
+    public async Task UpdateAsync(string name, string uri)
+    {
+        var endpoint = await Get(name).ConfigureAwait(false);
+
+        if (endpoint != null)
+        {
+            endpoint.Uri = uri;
+            _db.Configurations.Update(endpoint);
+            await _db.SaveChangesAsync().ConfigureAwait(false);
+
+            _logger.LogInformation("[Push] Service updated: {name} with uri {uri}", name, uri);
+        }
+    }
+
+    private Task<HealthCheckConfiguration?> Get(string name)
+    {
+        return _db.Configurations.FirstOrDefaultAsync(c => c.Name == name);
+    }
+}

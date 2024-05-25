@@ -4,10 +4,10 @@ using Microsoft.AspNetCore.Http.Features;
 using Xunit;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.TestHost;
-using HealthChecks.UI.Core;
+using Pulse.UI.Core;
 using FluentAssertions;
 
-namespace FunctionalTests.HealthChecks.UI
+namespace FunctionalTests.Pulse.UI
 {
     public class server_addresses_service_should
     {

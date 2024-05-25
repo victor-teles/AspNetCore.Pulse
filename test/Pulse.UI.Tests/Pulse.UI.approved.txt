@@ -1,0 +1,137 @@
+namespace Pulse.UI.Configuration
+{
+    public class HealthCheckSetting
+    {
+        public HealthCheckSetting() { }
+        public string Name { get; set; }
+        public string Uri { get; set; }
+    }
+    public class Options
+    {
+        public bool UseRelativeApiPath;
+        public bool UseRelativeResourcesPath;
+        public bool UseRelativeWebhookPath;
+        public Options() { }
+        public string ApiPath { get; set; }
+        public bool AsideMenuOpened { get; set; }
+        public string PageTitle { get; set; }
+        public string ResourcesPath { get; set; }
+        public string UIPath { get; set; }
+        public string WebhookPath { get; set; }
+        public Pulse.UI.Configuration.Options AddCustomStylesheet(string path) { }
+    }
+    public class Settings
+    {
+        public Settings() { }
+        public Pulse.UI.Configuration.Settings AddHealthCheckEndpoint(string name, string uri) { }
+        public Pulse.UI.Configuration.Settings AddWebhookNotification(string name, string uri, string payload, string restorePayload = "", System.Func<string, Pulse.UI.Core.UIHealthReport, bool>? shouldNotifyFunc = null, System.Func<string, Pulse.UI.Core.UIHealthReport, string>? customMessageFunc = null, System.Func<string, Pulse.UI.Core.UIHealthReport, string>? customDescriptionFunc = null) { }
+        public Pulse.UI.Configuration.Settings ConfigureApiEndpointHttpclient(System.Action<System.IServiceProvider, System.Net.Http.HttpClient> apiEndpointHttpClientconfig) { }
+        public Pulse.UI.Configuration.Settings ConfigureWebhooksEndpointHttpclient(System.Action<System.IServiceProvider, System.Net.Http.HttpClient> webhooksEndpointHttpClientconfig) { }
+        public Pulse.UI.Configuration.Settings DisableDatabaseMigrations() { }
+        public Pulse.UI.Configuration.Settings MaximumHistoryEntriesPerEndpoint(int maxValue) { }
+        public Pulse.UI.Configuration.Settings SetApiMaxActiveRequests(int apiMaxActiveRequests) { }
+        public Pulse.UI.Configuration.Settings SetEvaluationTimeInSeconds(int seconds) { }
+        public Pulse.UI.Configuration.Settings SetHeaderText(string text) { }
+        public Pulse.UI.Configuration.Settings SetMinimumSecondsBetweenFailureNotifications(int seconds) { }
+        public Pulse.UI.Configuration.Settings SetNotifyUnHealthyOneTimeUntilChange() { }
+        public Pulse.UI.Configuration.Settings UseApiEndpointDelegatingHandler<T>()
+            where T : System.Net.Http.DelegatingHandler { }
+        public Pulse.UI.Configuration.Settings UseApiEndpointHttpMessageHandler(System.Func<System.IServiceProvider, System.Net.Http.HttpClientHandler> apiEndpointHttpHandler) { }
+        public Pulse.UI.Configuration.Settings UseWebHooksEndpointDelegatingHandler<T>()
+            where T : System.Net.Http.DelegatingHandler { }
+        public Pulse.UI.Configuration.Settings UseWebhookEndpointHttpMessageHandler(System.Func<System.IServiceProvider, System.Net.Http.HttpClientHandler> webhookEndpointHttpHandler) { }
+    }
+    public class WebHookNotification
+    {
+        public WebHookNotification() { }
+        public string Name { get; set; }
+        public string Payload { get; set; }
+        public string RestoredPayload { get; set; }
+        public string Uri { get; set; }
+    }
+}
+namespace Pulse.UI.Core.Extensions
+{
+    public static class UriExtensions
+    {
+        public static bool IsValidHealthCheckEndpoint(this System.Uri uri) { }
+    }
+}
+namespace Pulse.UI.Core.HostedService
+{
+    public interface IHealthCheckReportCollector
+    {
+        System.Threading.Tasks.Task Collect(System.Threading.CancellationToken cancellationToken);
+    }
+}
+namespace Pulse.UI.Core
+{
+    public interface IHealthCheckCollectorInterceptor
+    {
+        System.Threading.Tasks.ValueTask OnCollectExecuted(Pulse.UI.Core.UIHealthReport report);
+        System.Threading.Tasks.ValueTask OnCollectExecuting(Pulse.UI.Data.HealthCheckConfiguration healthCheck);
+    }
+    public class UIStylesheet
+    {
+        public byte[] Content { get; }
+        public string FileName { get; }
+        public string ResourcePath { get; }
+        public static Pulse.UI.Core.UIStylesheet Create(Pulse.UI.Configuration.Options options, string filePath) { }
+    }
+    public class UIWebHooksApiMiddleware
+    {
+        public UIWebHooksApiMiddleware(Microsoft.AspNetCore.Http.RequestDelegate next, Microsoft.Extensions.DependencyInjection.IServiceScopeFactory serviceScopeFactory) { }
+        public System.Threading.Tasks.Task InvokeAsync(Microsoft.AspNetCore.Http.HttpContext context) { }
+    }
+}
+namespace Pulse.UI.Core.Notifications
+{
+    public interface IHealthCheckFailureNotifier
+    {
+        System.Threading.Tasks.Task NotifyDown(string name, Pulse.UI.Core.UIHealthReport report);
+        System.Threading.Tasks.Task NotifyWakeUp(string name);
+    }
+}
+namespace Microsoft.AspNetCore.Builder
+{
+    public static class ApplicationBuilderExtensions
+    {
+        public static Microsoft.AspNetCore.Builder.IApplicationBuilder UseHealthChecksUI(this Microsoft.AspNetCore.Builder.IApplicationBuilder app) { }
+        public static Microsoft.AspNetCore.Builder.IApplicationBuilder UseHealthChecksUI(this Microsoft.AspNetCore.Builder.IApplicationBuilder app, System.Action<Pulse.UI.Configuration.Options> setup) { }
+    }
+    public static class EndpointRouteBuilderExtensions
+    {
+        public static Microsoft.AspNetCore.Builder.IEndpointConventionBuilder MapHealthChecksUI(this Microsoft.AspNetCore.Routing.IEndpointRouteBuilder builder, System.Action<Pulse.UI.Configuration.Options>? setupOptions = null) { }
+    }
+}
+namespace Microsoft.EntityFrameworkCore
+{
+    public static class DatabaseFacadeExtensions
+    {
+        public static bool IsInMemory(this Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade database) { }
+    }
+}
+namespace Microsoft.Extensions.Configuration
+{
+    public static class ConfigurationExtensions
+    {
+        public static Pulse.UI.Configuration.Settings BindUISettings(this Microsoft.Extensions.Configuration.IConfiguration configuration, Pulse.UI.Configuration.Settings settings) { }
+        public static Microsoft.Extensions.Configuration.IConfigurationSection GetSectionWithFallBack(this Microsoft.Extensions.Configuration.IConfiguration configuration, string section, string fallback) { }
+    }
+}
+namespace Microsoft.Extensions.DependencyInjection
+{
+    public static class ServiceCollectionExtensions
+    {
+        public static Microsoft.Extensions.DependencyInjection.IServiceCollection AddApiEndpointHttpClient(this Microsoft.Extensions.DependencyInjection.IServiceCollection services) { }
+        public static Microsoft.Extensions.DependencyInjection.HealthChecksUIBuilder AddHealthChecksUI(this Microsoft.Extensions.DependencyInjection.IServiceCollection services, System.Action<Pulse.UI.Configuration.Settings>? setupSettings = null) { }
+        public static Microsoft.Extensions.DependencyInjection.IServiceCollection AddWebhooksEndpointHttpClient(this Microsoft.Extensions.DependencyInjection.IServiceCollection services) { }
+    }
+}
+namespace Microsoft.Extensions.Diagnostics.HealthChecks
+{
+    public static class HealthReportExtensions
+    {
+        public static System.Collections.Generic.List<Pulse.UI.Data.HealthCheckExecutionEntry> ToExecutionEntries(this Pulse.UI.Core.UIHealthReport report) { }
+    }
+}

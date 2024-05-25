@@ -94,13 +94,13 @@ spec:
   servicesLabel: HealthChecks
   serviceType: LoadBalancer
   stylesheetContent: >
-    :root {    
+    :root {
       --primaryColor: #2a3950;
-      --secondaryColor: #f4f4f4;  
+      --secondaryColor: #f4f4f4;
       --bgMenuActive: #e1b015;
       --bgButton: #e1b015;
       --logoImageUrl: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/WoW_icon.svg/1200px-WoW_icon.svg.png');
-      --bgAside: var(--primaryColor);   
+      --bgAside: var(--primaryColor);
     }
   serviceAnnotations:
     - name: service.beta.kubernetes.io/azure-load-balancer-internal
@@ -125,10 +125,10 @@ The operator also starts services watchers per namespace that will monitor creat
 
 ## Deploying an Application with HealthChecks to be monitored automatically
 
-The next step is creating an AspNetCore core uses some HealthChecks. We are going to use a sample app that is already deployed in dockerhub (carloslanderas/hc-website) using the following code:
+The next step is creating an AspNetCore core uses some Pulse. We are going to use a sample app that is already deployed in dockerhub (carloslanderas/hc-website) using the following code:
 
 ```csharp
-using HealthChecks.UI.Client;
+using Pulse.UI.Client;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
@@ -282,7 +282,7 @@ spec:
     }
   webhooks:
     - name: requestcatcher1
-      uri: https://healthchecks.requestcatcher.com
+      uri: https://Pulse.requestcatcher.com
       payload: '{ message: "Webhook report for [[LIVENESS]]: [[FAILURE]] - Description: [[DESCRIPTIONS]]"}'
       restoredPayload: '{ message: "[[LIVENESS]] is back to life"}'
     - name: requestcatcher2

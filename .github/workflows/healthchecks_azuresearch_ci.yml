@@ -5,8 +5,8 @@ on:
   push:
     branches: [ master ]
     paths:
-      - src/HealthChecks.AzureSearch/**
-      - test/HealthChecks.AzureSearch.Tests/**
+      - src/Pulse.AzureSearch/**
+      - test/Pulse.AzureSearch.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_azuresearch_ci.yml
       - .github/workflows/reusable_ci_workflow.yml
@@ -19,8 +19,8 @@ on:
   pull_request:
     branches: [ master ]
     paths:
-      - src/HealthChecks.AzureSearch/**
-      - test/HealthChecks.AzureSearch.Tests/**
+      - src/Pulse.AzureSearch/**
+      - test/Pulse.AzureSearch.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_azuresearch_ci.yml
       - .github/workflows/reusable_ci_workflow.yml
@@ -31,6 +31,6 @@ jobs:
   build:
     uses: ./.github/workflows/reusable_ci_workflow.yml
     with:
-      PROJECT_PATH: ./src/HealthChecks.AzureSearch/HealthChecks.AzureSearch.csproj
-      TEST_PROJECT_PATH: ./test/HealthChecks.AzureSearch.Tests/HealthChecks.AzureSearch.Tests.csproj
+      PROJECT_PATH: ./src/Pulse.AzureSearch/Pulse.AzureSearch.csproj
+      TEST_PROJECT_PATH: ./test/Pulse.AzureSearch.Tests/Pulse.AzureSearch.Tests.csproj
       CODECOV_FLAGS: AzureSearch

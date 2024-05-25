@@ -5,15 +5,15 @@ on:
   push:
     branches: [ master ]
     paths:
-      - src/HealthChecks.UI/**
-      - src/HealthChecks.UI.*/**
-      - test/HealthChecks.UI.*/**
+      - src/Pulse.UI/**
+      - src/Pulse.UI.*/**
+      - test/Pulse.UI.*/**
       - test/_SHARED/**
-      - samples/HealthChecks.UI*/**
+      - samples/Pulse.UI*/**
       - .github/workflows/healthchecks_ui_ci.yml
       - Directory.Build.props
       - Directory.Build.targets
-      - build/docker-images/HealthChecks.UI.Image/**
+      - build/docker-images/Pulse.UI.Image/**
     tags-ignore:
       - release-*
       - preview-*
@@ -21,15 +21,15 @@ on:
   pull_request:
     branches: [ master ]
     paths:
-      - src/HealthChecks.UI/**
-      - src/HealthChecks.UI.*/**
-      - test/HealthChecks.UI.*/**
+      - src/Pulse.UI/**
+      - src/Pulse.UI.*/**
+      - test/Pulse.UI.*/**
       - test/_SHARED/**
-      - samples/HealthChecks.UI*/**
+      - samples/Pulse.UI*/**
       - .github/workflows/healthchecks_ui_ci.yml
       - Directory.Build.props
       - Directory.Build.targets
-      - build/docker-images/HealthChecks.UI.Image/**
+      - build/docker-images/Pulse.UI.Image/**
 
 jobs:
   build:
@@ -66,59 +66,59 @@ jobs:
             8.0.x
       - name: Restore
         run: |
-          dotnet restore ./src/HealthChecks.UI/HealthChecks.UI.csproj &&
-          dotnet restore ./test/HealthChecks.UI.Tests/HealthChecks.UI.Tests.csproj &&
-          dotnet restore ./src/HealthChecks.UI.Client/HealthChecks.UI.Client.csproj &&
-          dotnet restore ./test/HealthChecks.UI.Client.Tests/HealthChecks.UI.Client.Tests.csproj &&
-          dotnet restore ./src/HealthChecks.UI.Core/HealthChecks.UI.Core.csproj &&
-          dotnet restore ./test/HealthChecks.UI.Core.Tests/HealthChecks.UI.Core.Tests.csproj &&
-          dotnet restore ./src/HealthChecks.UI.Data/HealthChecks.UI.Data.csproj &&
-          dotnet restore ./test/HealthChecks.UI.Data.Tests/HealthChecks.UI.Data.Tests.csproj &&
-          dotnet restore ./src/HealthChecks.UI.InMemory.Storage/HealthChecks.UI.InMemory.Storage.csproj &&
-          dotnet restore ./src/HealthChecks.UI.MySql.Storage/HealthChecks.UI.MySql.Storage.csproj &&
-          dotnet restore ./src/HealthChecks.UI.PostgreSQL.Storage/HealthChecks.UI.PostgreSQL.Storage.csproj &&
-          dotnet restore ./src/HealthChecks.UI.SQLite.Storage/HealthChecks.UI.SQLite.Storage.csproj &&
-          dotnet restore ./src/HealthChecks.UI.SqlServer.Storage/HealthChecks.UI.SqlServer.Storage.csproj &&
-          dotnet restore ./src/HealthChecks.UI.K8s.Operator/HealthChecks.UI.K8s.Operator.csproj
+          dotnet restore ./src/Pulse.UI/Pulse.UI.csproj &&
+          dotnet restore ./test/Pulse.UI.Tests/Pulse.UI.Tests.csproj &&
+          dotnet restore ./src/Pulse.UI.Client/Pulse.UI.Client.csproj &&
+          dotnet restore ./test/Pulse.UI.Client.Tests/Pulse.UI.Client.Tests.csproj &&
+          dotnet restore ./src/Pulse.UI.Core/Pulse.UI.Core.csproj &&
+          dotnet restore ./test/Pulse.UI.Core.Tests/Pulse.UI.Core.Tests.csproj &&
+          dotnet restore ./src/Pulse.UI.Data/Pulse.UI.Data.csproj &&
+          dotnet restore ./test/Pulse.UI.Data.Tests/Pulse.UI.Data.Tests.csproj &&
+          dotnet restore ./src/Pulse.UI.InMemory.Storage/Pulse.UI.InMemory.Storage.csproj &&
+          dotnet restore ./src/Pulse.UI.MySql.Storage/Pulse.UI.MySql.Storage.csproj &&
+          dotnet restore ./src/Pulse.UI.PostgreSQL.Storage/Pulse.UI.PostgreSQL.Storage.csproj &&
+          dotnet restore ./src/Pulse.UI.SQLite.Storage/Pulse.UI.SQLite.Storage.csproj &&
+          dotnet restore ./src/Pulse.UI.SqlServer.Storage/Pulse.UI.SqlServer.Storage.csproj &&
+          dotnet restore ./src/Pulse.UI.K8s.Operator/Pulse.UI.K8s.Operator.csproj
 
       - name: Check formatting
         run: |
-          dotnet format --no-restore --verify-no-changes --severity warn ./src/HealthChecks.UI/HealthChecks.UI.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
-          dotnet format --no-restore --verify-no-changes --severity warn ./test/HealthChecks.UI.Tests/HealthChecks.UI.Tests.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
-          dotnet format --no-restore --verify-no-changes --severity warn ./src/HealthChecks.UI.Client/HealthChecks.UI.Client.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
-          dotnet format --no-restore --verify-no-changes --severity warn ./test/HealthChecks.UI.Client.Tests/HealthChecks.UI.Client.Tests.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
-          dotnet format --no-restore --verify-no-changes --severity warn ./src/HealthChecks.UI.Core/HealthChecks.UI.Core.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
-          dotnet format --no-restore --verify-no-changes --severity warn ./test/HealthChecks.UI.Core.Tests/HealthChecks.UI.Core.Tests.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
-          dotnet format --no-restore --verify-no-changes --severity warn ./src/HealthChecks.UI.Data/HealthChecks.UI.Data.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
-          dotnet format --no-restore --verify-no-changes --severity warn ./test/HealthChecks.UI.Data.Tests/HealthChecks.UI.Data.Tests.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
-          dotnet format --no-restore --verify-no-changes --severity warn ./src/HealthChecks.UI.InMemory.Storage/HealthChecks.UI.InMemory.Storage.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
-          dotnet format --no-restore --verify-no-changes --severity warn ./src/HealthChecks.UI.MySql.Storage/HealthChecks.UI.MySql.Storage.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
-          dotnet format --no-restore --verify-no-changes --severity warn ./src/HealthChecks.UI.PostgreSQL.Storage/HealthChecks.UI.PostgreSQL.Storage.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
-          dotnet format --no-restore --verify-no-changes --severity warn ./src/HealthChecks.UI.SQLite.Storage/HealthChecks.UI.SQLite.Storage.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
-          dotnet format --no-restore --verify-no-changes --severity warn ./src/HealthChecks.UI.SqlServer.Storage/HealthChecks.UI.SqlServer.Storage.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
-          dotnet format --no-restore --verify-no-changes --severity warn ./src/HealthChecks.UI.K8s.Operator/HealthChecks.UI.K8s.Operator.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1)
+          dotnet format --no-restore --verify-no-changes --severity warn ./src/Pulse.UI/Pulse.UI.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
+          dotnet format --no-restore --verify-no-changes --severity warn ./test/Pulse.UI.Tests/Pulse.UI.Tests.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
+          dotnet format --no-restore --verify-no-changes --severity warn ./src/Pulse.UI.Client/Pulse.UI.Client.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
+          dotnet format --no-restore --verify-no-changes --severity warn ./test/Pulse.UI.Client.Tests/Pulse.UI.Client.Tests.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
+          dotnet format --no-restore --verify-no-changes --severity warn ./src/Pulse.UI.Core/Pulse.UI.Core.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
+          dotnet format --no-restore --verify-no-changes --severity warn ./test/Pulse.UI.Core.Tests/Pulse.UI.Core.Tests.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
+          dotnet format --no-restore --verify-no-changes --severity warn ./src/Pulse.UI.Data/Pulse.UI.Data.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
+          dotnet format --no-restore --verify-no-changes --severity warn ./test/Pulse.UI.Data.Tests/Pulse.UI.Data.Tests.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
+          dotnet format --no-restore --verify-no-changes --severity warn ./src/Pulse.UI.InMemory.Storage/Pulse.UI.InMemory.Storage.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
+          dotnet format --no-restore --verify-no-changes --severity warn ./src/Pulse.UI.MySql.Storage/Pulse.UI.MySql.Storage.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
+          dotnet format --no-restore --verify-no-changes --severity warn ./src/Pulse.UI.PostgreSQL.Storage/Pulse.UI.PostgreSQL.Storage.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
+          dotnet format --no-restore --verify-no-changes --severity warn ./src/Pulse.UI.SQLite.Storage/Pulse.UI.SQLite.Storage.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
+          dotnet format --no-restore --verify-no-changes --severity warn ./src/Pulse.UI.SqlServer.Storage/Pulse.UI.SqlServer.Storage.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
+          dotnet format --no-restore --verify-no-changes --severity warn ./src/Pulse.UI.K8s.Operator/Pulse.UI.K8s.Operator.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1)
 
       - name: Build
         run: |
-          dotnet build --no-restore ./src/HealthChecks.UI/HealthChecks.UI.csproj &&
-          dotnet build --no-restore ./test/HealthChecks.UI.Tests/HealthChecks.UI.Tests.csproj &&
-          dotnet build --no-restore ./src/HealthChecks.UI.Client/HealthChecks.UI.Client.csproj &&
-          dotnet build --no-restore ./test/HealthChecks.UI.Client.Tests/HealthChecks.UI.Client.Tests.csproj &&
-          dotnet build --no-restore ./src/HealthChecks.UI.Core/HealthChecks.UI.Core.csproj &&
-          dotnet build --no-restore ./test/HealthChecks.UI.Core.Tests/HealthChecks.UI.Core.Tests.csproj &&
-          dotnet build --no-restore ./src/HealthChecks.UI.Data/HealthChecks.UI.Data.csproj &&
-          dotnet build --no-restore ./test/HealthChecks.UI.Data.Tests/HealthChecks.UI.Data.Tests.csproj &&
-          dotnet build --no-restore ./src/HealthChecks.UI.InMemory.Storage/HealthChecks.UI.InMemory.Storage.csproj &&
-          dotnet build --no-restore ./src/HealthChecks.UI.MySql.Storage/HealthChecks.UI.MySql.Storage.csproj &&
-          dotnet build --no-restore ./src/HealthChecks.UI.PostgreSQL.Storage/HealthChecks.UI.PostgreSQL.Storage.csproj &&
-          dotnet build --no-restore ./src/HealthChecks.UI.SQLite.Storage/HealthChecks.UI.SQLite.Storage.csproj &&
-          dotnet build --no-restore ./src/HealthChecks.UI.SqlServer.Storage/HealthChecks.UI.SqlServer.Storage.csproj &&
-          dotnet build --no-restore ./src/HealthChecks.UI.K8s.Operator/HealthChecks.UI.K8s.Operator.csproj
+          dotnet build --no-restore ./src/Pulse.UI/Pulse.UI.csproj &&
+          dotnet build --no-restore ./test/Pulse.UI.Tests/Pulse.UI.Tests.csproj &&
+          dotnet build --no-restore ./src/Pulse.UI.Client/Pulse.UI.Client.csproj &&
+          dotnet build --no-restore ./test/Pulse.UI.Client.Tests/Pulse.UI.Client.Tests.csproj &&
+          dotnet build --no-restore ./src/Pulse.UI.Core/Pulse.UI.Core.csproj &&
+          dotnet build --no-restore ./test/Pulse.UI.Core.Tests/Pulse.UI.Core.Tests.csproj &&
+          dotnet build --no-restore ./src/Pulse.UI.Data/Pulse.UI.Data.csproj &&
+          dotnet build --no-restore ./test/Pulse.UI.Data.Tests/Pulse.UI.Data.Tests.csproj &&
+          dotnet build --no-restore ./src/Pulse.UI.InMemory.Storage/Pulse.UI.InMemory.Storage.csproj &&
+          dotnet build --no-restore ./src/Pulse.UI.MySql.Storage/Pulse.UI.MySql.Storage.csproj &&
+          dotnet build --no-restore ./src/Pulse.UI.PostgreSQL.Storage/Pulse.UI.PostgreSQL.Storage.csproj &&
+          dotnet build --no-restore ./src/Pulse.UI.SQLite.Storage/Pulse.UI.SQLite.Storage.csproj &&
+          dotnet build --no-restore ./src/Pulse.UI.SqlServer.Storage/Pulse.UI.SqlServer.Storage.csproj &&
+          dotnet build --no-restore ./src/Pulse.UI.K8s.Operator/Pulse.UI.K8s.Operator.csproj
 
       - name: Test
         run: >
           dotnet test
-          ./test/HealthChecks.UI.Tests/HealthChecks.UI.Tests.csproj
+          ./test/Pulse.UI.Tests/Pulse.UI.Tests.csproj
           --no-restore
           --no-build
           --collect "XPlat Code Coverage"
@@ -126,7 +126,7 @@ jobs:
           --
           DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover &&
           dotnet test
-          ./test/HealthChecks.UI.Client.Tests/HealthChecks.UI.Client.Tests.csproj
+          ./test/Pulse.UI.Client.Tests/Pulse.UI.Client.Tests.csproj
           --no-restore
           --no-build
           --collect "XPlat Code Coverage"
@@ -134,7 +134,7 @@ jobs:
           --
           DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover &&
           dotnet test
-          ./test/HealthChecks.UI.Core.Tests/HealthChecks.UI.Core.Tests.csproj
+          ./test/Pulse.UI.Core.Tests/Pulse.UI.Core.Tests.csproj
           --no-restore
           --no-build
           --collect "XPlat Code Coverage"
@@ -142,7 +142,7 @@ jobs:
           --
           DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
           dotnet test
-          ./test/HealthChecks.UI.Data.Tests/HealthChecks.UI.Data.Tests.csproj
+          ./test/Pulse.UI.Data.Tests/Pulse.UI.Data.Tests.csproj
           --no-restore
           --no-build
           --collect "XPlat Code Coverage"

@@ -1,6 +1,6 @@
 ﻿using FunctionalTests.Base;
-using HealthChecks.UI.Client;
-using HealthChecks.UI.Core;
+using Pulse.UI.Client;
+using Pulse.UI.Core;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
@@ -10,7 +10,7 @@ using Microsoft.Extensions.Hosting;
 using System;
 using System.Threading;
 
-namespace FunctionalTests.HealthChecks.UI.DatabaseProviders
+namespace FunctionalTests.Pulse.UI.DatabaseProviders
 {
     public class HostBuilderHelper
     {

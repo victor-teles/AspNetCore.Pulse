@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Pulse.Publisher.Seq\Pulse.Publisher.Seq.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -5,8 +5,8 @@ on:
   push:
     branches: [ master ]
     paths:
-      - src/HealthChecks.OpenIdConnectServer/**
-      - test/HealthChecks.IdSvr.Tests/**
+      - src/Pulse.OpenIdConnectServer/**
+      - test/Pulse.IdSvr.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_idsvr_ci.yml
       - Directory.Build.props
@@ -18,8 +18,8 @@ on:
   pull_request:
     branches: [ master ]
     paths:
-      - src/HealthChecks.OpenIdConnectServer/**
-      - test/HealthChecks.IdSvr.Tests/**
+      - src/Pulse.OpenIdConnectServer/**
+      - test/Pulse.IdSvr.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_idsvr_ci.yml
       - Directory.Build.props
@@ -44,20 +44,20 @@ jobs:
             8.0.x
       - name: Restore
         run: |
-          dotnet restore ./src/HealthChecks.OpenIdConnectServer/HealthChecks.OpenIdConnectServer.csproj &&
-          dotnet restore ./test/HealthChecks.OpenIdConnectServer.Tests/HealthChecks.OpenIdConnectServer.Tests.csproj
+          dotnet restore ./src/Pulse.OpenIdConnectServer/Pulse.OpenIdConnectServer.csproj &&
+          dotnet restore ./test/Pulse.OpenIdConnectServer.Tests/Pulse.OpenIdConnectServer.Tests.csproj
       - name: Check formatting
         run: |
-          dotnet format --no-restore --verify-no-changes --severity warn ./src/HealthChecks.OpenIdConnectServer/HealthChecks.OpenIdConnectServer.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
-          dotnet format --no-restore --verify-no-changes --severity warn ./test/HealthChecks.OpenIdConnectServer.Tests/HealthChecks.OpenIdConnectServer.Tests.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1)
+          dotnet format --no-restore --verify-no-changes --severity warn ./src/Pulse.OpenIdConnectServer/Pulse.OpenIdConnectServer.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
+          dotnet format --no-restore --verify-no-changes --severity warn ./test/Pulse.OpenIdConnectServer.Tests/Pulse.OpenIdConnectServer.Tests.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1)
       - name: Build
         run: |
-          dotnet build --no-restore ./src/HealthChecks.OpenIdConnectServer/HealthChecks.OpenIdConnectServer.csproj &&
-          dotnet build --no-restore ./test/HealthChecks.OpenIdConnectServer.Tests/HealthChecks.OpenIdConnectServer.Tests.csproj
+          dotnet build --no-restore ./src/Pulse.OpenIdConnectServer/Pulse.OpenIdConnectServer.csproj &&
+          dotnet build --no-restore ./test/Pulse.OpenIdConnectServer.Tests/Pulse.OpenIdConnectServer.Tests.csproj
       - name: Test
         run: >
           dotnet test
-          ./test/HealthChecks.OpenIdConnectServer.Tests/HealthChecks.OpenIdConnectServer.Tests.csproj
+          ./test/Pulse.OpenIdConnectServer.Tests/Pulse.OpenIdConnectServer.Tests.csproj
           --no-restore
           --no-build
           --collect "XPlat Code Coverage"

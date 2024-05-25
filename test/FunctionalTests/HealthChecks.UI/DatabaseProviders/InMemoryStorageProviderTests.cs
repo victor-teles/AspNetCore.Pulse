@@ -1,6 +1,6 @@
 ﻿using FluentAssertions;
 using FunctionalTests.Base;
-using HealthChecks.UI.Data;
+using Pulse.UI.Data;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -10,7 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace FunctionalTests.HealthChecks.UI.DatabaseProviders
+namespace FunctionalTests.Pulse.UI.DatabaseProviders
 {
     [Collection("execution")]
     public class inmemory_storage_should

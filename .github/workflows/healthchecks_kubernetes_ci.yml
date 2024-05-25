@@ -5,8 +5,8 @@ on:
   push:
     branches: [ master ]
     paths:
-      - src/HealthChecks.Kubernetes/**
-      - test/HealthChecks.Kubernetes.Tests/**
+      - src/Pulse.Kubernetes/**
+      - test/Pulse.Kubernetes.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_kubernetes_ci.yml
       - .github/workflows/reusable_ci_workflow.yml
@@ -19,8 +19,8 @@ on:
   pull_request:
     branches: [ master ]
     paths:
-      - src/HealthChecks.Kubernetes/**
-      - test/HealthChecks.Kubernetes.Tests/**
+      - src/Pulse.Kubernetes/**
+      - test/Pulse.Kubernetes.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_kubernetes_ci.yml
       - .github/workflows/reusable_ci_workflow.yml
@@ -31,6 +31,6 @@ jobs:
   build:
     uses: ./.github/workflows/reusable_ci_workflow.yml
     with:
-      PROJECT_PATH: ./src/HealthChecks.Kubernetes/HealthChecks.Kubernetes.csproj
-      TEST_PROJECT_PATH: ./test/HealthChecks.Kubernetes.Tests/HealthChecks.Kubernetes.Tests.csproj
+      PROJECT_PATH: ./src/Pulse.Kubernetes/Pulse.Kubernetes.csproj
+      TEST_PROJECT_PATH: ./test/Pulse.Kubernetes.Tests/Pulse.Kubernetes.Tests.csproj
       CODECOV_FLAGS: Kubernetes

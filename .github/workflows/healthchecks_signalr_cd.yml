@@ -12,5 +12,5 @@ jobs:
     secrets: inherit
     with:
       BUILD_CONFIG: Release
-      PROJECT_PATH: ./src/HealthChecks.SignalR/HealthChecks.SignalR.csproj
-      PACKAGE_NAME: AspNetCore.HealthChecks.SignalR
+      PROJECT_PATH: ./src/Pulse.SignalR/Pulse.SignalR.csproj
+      PACKAGE_NAME: AspNetCore.Pulse.SignalR

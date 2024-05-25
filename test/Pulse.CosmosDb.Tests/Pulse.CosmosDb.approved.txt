@@ -1,0 +1,21 @@
+namespace Pulse.CosmosDb
+{
+    public sealed class AzureCosmosDbHealthCheck : Microsoft.Extensions.Diagnostics.Pulse.IHealthCheck
+    {
+        public AzureCosmosDbHealthCheck(Microsoft.Azure.Cosmos.CosmosClient cosmosClient, Pulse.CosmosDb.AzureCosmosDbHealthCheckOptions? options) { }
+        public System.Threading.Tasks.Task<Microsoft.Extensions.Diagnostics.Pulse.HealthCheckResult> CheckHealthAsync(Microsoft.Extensions.Diagnostics.Pulse.HealthCheckContext context, System.Threading.CancellationToken cancellationToken = default) { }
+    }
+    public sealed class AzureCosmosDbHealthCheckOptions
+    {
+        public AzureCosmosDbHealthCheckOptions() { }
+        public System.Collections.Generic.IEnumerable<string>? ContainerIds { get; set; }
+        public string? DatabaseId { get; set; }
+    }
+}
+namespace Microsoft.Extensions.DependencyInjection
+{
+    public static class CosmosDbHealthCheckBuilderExtensions
+    {
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddAzureCosmosDB(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, System.Func<System.IServiceProvider, Microsoft.Azure.Cosmos.CosmosClient>? clientFactory = null, System.Func<System.IServiceProvider, Pulse.CosmosDb.AzureCosmosDbHealthCheckOptions>? optionsFactory = null, string? name = "azure_cosmosdb", Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+    }
+}

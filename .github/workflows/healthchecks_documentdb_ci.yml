@@ -5,8 +5,8 @@ on:
   push:
     branches: [ master ]
     paths:
-      - src/HealthChecks.DocumentDb/**
-      - test/HealthChecks.DocumentDb.Tests/**
+      - src/Pulse.DocumentDb/**
+      - test/Pulse.DocumentDb.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_documentdb_ci.yml
       - .github/workflows/reusable_ci_workflow.yml
@@ -19,8 +19,8 @@ on:
   pull_request:
     branches: [ master ]
     paths:
-      - src/HealthChecks.DocumentDb/**
-      - test/HealthChecks.DocumentDb.Tests/**
+      - src/Pulse.DocumentDb/**
+      - test/Pulse.DocumentDb.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_documentdb_ci.yml
       - .github/workflows/reusable_ci_workflow.yml
@@ -31,6 +31,6 @@ jobs:
   build:
     uses: ./.github/workflows/reusable_ci_workflow.yml
     with:
-      PROJECT_PATH: ./src/HealthChecks.DocumentDb/HealthChecks.DocumentDb.csproj
-      TEST_PROJECT_PATH: ./test/HealthChecks.DocumentDb.Tests/HealthChecks.DocumentDb.Tests.csproj
+      PROJECT_PATH: ./src/Pulse.DocumentDb/Pulse.DocumentDb.csproj
+      TEST_PROJECT_PATH: ./test/Pulse.DocumentDb.Tests/Pulse.DocumentDb.Tests.csproj
       CODECOV_FLAGS: DocumentDb

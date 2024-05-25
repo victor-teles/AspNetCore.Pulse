@@ -5,8 +5,8 @@ on:
   push:
     branches: [ master ]
     paths:
-      - src/HealthChecks.Redis/**
-      - test/HealthChecks.Redis.Tests/**
+      - src/Pulse.Redis/**
+      - test/Pulse.Redis.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_redis_ci.yml
       - Directory.Build.props
@@ -18,8 +18,8 @@ on:
   pull_request:
     branches: [ master ]
     paths:
-      - src/HealthChecks.Redis/**
-      - test/HealthChecks.Redis.Tests/**
+      - src/Pulse.Redis/**
+      - test/Pulse.Redis.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_redis_ci.yml
       - Directory.Build.props
@@ -44,20 +44,20 @@ jobs:
             8.0.x
       - name: Restore
         run: |
-          dotnet restore ./src/HealthChecks.Redis/HealthChecks.Redis.csproj &&
-          dotnet restore ./test/HealthChecks.Redis.Tests/HealthChecks.Redis.Tests.csproj
+          dotnet restore ./src/Pulse.Redis/Pulse.Redis.csproj &&
+          dotnet restore ./test/Pulse.Redis.Tests/Pulse.Redis.Tests.csproj
       - name: Check formatting
         run: |
-          dotnet format --no-restore --verify-no-changes --severity warn ./src/HealthChecks.Redis/HealthChecks.Redis.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
-          dotnet format --no-restore --verify-no-changes --severity warn ./test/HealthChecks.Redis.Tests/HealthChecks.Redis.Tests.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1)
+          dotnet format --no-restore --verify-no-changes --severity warn ./src/Pulse.Redis/Pulse.Redis.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
+          dotnet format --no-restore --verify-no-changes --severity warn ./test/Pulse.Redis.Tests/Pulse.Redis.Tests.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1)
       - name: Build
         run: |
-          dotnet build --no-restore ./src/HealthChecks.Redis/HealthChecks.Redis.csproj &&
-          dotnet build --no-restore ./test/HealthChecks.Redis.Tests/HealthChecks.Redis.Tests.csproj
+          dotnet build --no-restore ./src/Pulse.Redis/Pulse.Redis.csproj &&
+          dotnet build --no-restore ./test/Pulse.Redis.Tests/Pulse.Redis.Tests.csproj
       - name: Test
         run: >
           dotnet test
-          ./test/HealthChecks.Redis.Tests/HealthChecks.Redis.Tests.csproj
+          ./test/Pulse.Redis.Tests/Pulse.Redis.Tests.csproj
           --no-restore
           --no-build
           --collect "XPlat Code Coverage"

@@ -13,5 +13,5 @@ jobs:
     with:
       BUILD_CONFIG: Release
       VERSION_SUFFIX_PREFIX: rc1
-      PROJECT_PATH: ./src/HealthChecks.Publisher.Seq/HealthChecks.Publisher.Seq.csproj
-      PACKAGE_NAME: AspNetCore.HealthChecks.Publisher.Seq
+      PROJECT_PATH: ./src/Pulse.Publisher.Seq/Pulse.Publisher.Seq.csproj
+      PACKAGE_NAME: AspNetCore.Pulse.Publisher.Seq

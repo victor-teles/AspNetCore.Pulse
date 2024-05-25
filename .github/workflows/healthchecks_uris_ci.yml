@@ -5,8 +5,8 @@ on:
   push:
     branches: [ master ]
     paths:
-      - src/HealthChecks.Uris/**
-      - test/HealthChecks.Uris.Tests/**
+      - src/Pulse.Uris/**
+      - test/Pulse.Uris.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_uris_ci.yml
       - .github/workflows/reusable_ci_workflow.yml
@@ -19,8 +19,8 @@ on:
   pull_request:
     branches: [ master ]
     paths:
-      - src/HealthChecks.Uris/**
-      - test/HealthChecks.Uris.Tests/**
+      - src/Pulse.Uris/**
+      - test/Pulse.Uris.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_uris_ci.yml
       - .github/workflows/reusable_ci_workflow.yml
@@ -31,6 +31,6 @@ jobs:
   build:
     uses: ./.github/workflows/reusable_ci_workflow.yml
     with:
-      PROJECT_PATH: ./src/HealthChecks.Uris/HealthChecks.Uris.csproj
-      TEST_PROJECT_PATH: ./test/HealthChecks.Uris.Tests/HealthChecks.Uris.Tests.csproj
+      PROJECT_PATH: ./src/Pulse.Uris/Pulse.Uris.csproj
+      TEST_PROJECT_PATH: ./test/Pulse.Uris.Tests/Pulse.Uris.Tests.csproj
       CODECOV_FLAGS: Uris

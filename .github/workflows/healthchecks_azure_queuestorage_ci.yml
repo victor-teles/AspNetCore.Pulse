@@ -5,8 +5,8 @@ on:
   push:
    branches: [ master ]
    paths:
-     - src/HealthChecks.Azure.Storage.Queues/**
-     - test/HealthChecks.Azure.Storage.Queues.Tests/**
+     - src/Pulse.Azure.Storage.Queues/**
+     - test/Pulse.Azure.Storage.Queues.Tests/**
      - test/_SHARED/**
      - .github/workflows/healthchecks_azure_queuestorage_ci.yml
      - .github/workflows/reusable_ci_workflow.yml
@@ -19,8 +19,8 @@ on:
   pull_request:
     branches: [ master ]
     paths:
-     - src/HealthChecks.Azure.Storage.Queues/**
-     - test/HealthChecks.Azure.Storage.Queues.Tests/**
+     - src/Pulse.Azure.Storage.Queues/**
+     - test/Pulse.Azure.Storage.Queues.Tests/**
      - test/_SHARED/**
      - .github/workflows/healthchecks_azure_queuestorage_ci.yml
      - .github/workflows/reusable_ci_workflow.yml
@@ -31,7 +31,7 @@ jobs:
   build:
     uses: ./.github/workflows/reusable_ci_workflow.yml
     with:
-      PROJECT_PATH: ./src/HealthChecks.Azure.Storage.Queues/HealthChecks.Azure.Storage.Queues.csproj
-      TEST_PROJECT_PATH: ./test/HealthChecks.Azure.Storage.Queues.Tests/HealthChecks.Azure.Storage.Queues.Tests.csproj
+      PROJECT_PATH: ./src/Pulse.Azure.Storage.Queues/Pulse.Azure.Storage.Queues.csproj
+      TEST_PROJECT_PATH: ./test/Pulse.Azure.Storage.Queues.Tests/Pulse.Azure.Storage.Queues.Tests.csproj
       CODECOV_FLAGS: AzureQueueStorage
 

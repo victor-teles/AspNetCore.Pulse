@@ -1,7 +1,0 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\HealthChecks.Aws.SystemsManager\HealthChecks.Aws.SystemsManager.csproj" />
-  </ItemGroup>
-
-</Project>

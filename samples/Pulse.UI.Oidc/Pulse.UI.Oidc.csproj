@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Pulse.UI.Client\Pulse.UI.Client.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.UI.InMemory.Storage\Pulse.UI.InMemory.Storage.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.UI\Pulse.UI.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.Uris\Pulse.Uris.csproj" />
+  </ItemGroup>
+
+</Project>

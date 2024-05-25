@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Pulse.SignalR\Pulse.SignalR.csproj" />
+  </ItemGroup>
+
+</Project>

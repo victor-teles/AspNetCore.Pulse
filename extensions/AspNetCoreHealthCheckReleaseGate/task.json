@@ -47,7 +47,7 @@
 			"required": true,
 			"defaultValue": "Healthy",
 			"groupName":"aspNetCoreHealthChecks",
-			"helpMarkDown": "Text to check when for **Healthy** Health Check when verifying particular checks. By default is **Healthy**. Needs [AspNetCore.HealthChecks.UI](https://www.nuget.org/packages/AspNetCore.HealthChecks.UI/) package."
+			"helpMarkDown": "Text to check when for **Healthy** Health Check when verifying particular checks. By default is **Healthy**. Needs [AspNetCore.Pulse.UI](https://www.nuget.org/packages/AspNetCore.Pulse.UI/) package."
 		}, {
 			"name": "aspNetCoreHealthCheckCheck",
 			"type": "string",
@@ -55,7 +55,7 @@
 			"required": false,
 			"defaultValue": "",
 			"groupName":"aspNetCoreHealthChecks",
-			"helpMarkDown": "Name of the configured check in Asp.Net Core Health Check to verify. Needs [AspNetCore.HealthChecks.UI](https://www.nuget.org/packages/AspNetCore.HealthChecks.UI/) package."
+			"helpMarkDown": "Name of the configured check in Asp.Net Core Health Check to verify. Needs [AspNetCore.Pulse.UI](https://www.nuget.org/packages/AspNetCore.Pulse.UI/) package."
 		}
 	],
 

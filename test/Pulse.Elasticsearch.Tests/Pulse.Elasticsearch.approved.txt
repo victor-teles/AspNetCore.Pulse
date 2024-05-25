@@ -1,0 +1,36 @@
+namespace Pulse.Elasticsearch
+{
+    public class ElasticsearchHealthCheck : Microsoft.Extensions.Diagnostics.Pulse.IHealthCheck
+    {
+        public ElasticsearchHealthCheck(Pulse.Elasticsearch.ElasticsearchOptions options) { }
+        public System.Threading.Tasks.Task<Microsoft.Extensions.Diagnostics.Pulse.HealthCheckResult> CheckHealthAsync(Microsoft.Extensions.Diagnostics.Pulse.HealthCheckContext context, System.Threading.CancellationToken cancellationToken = default) { }
+    }
+    public class ElasticsearchOptions
+    {
+        public ElasticsearchOptions() { }
+        public Elasticsearch.Net.ApiKeyAuthenticationCredentials? ApiKeyAuthenticationCredentials { get; }
+        public bool AuthenticateWithApiKey { get; }
+        public bool AuthenticateWithBasicCredentials { get; }
+        public bool AuthenticateWithCertificate { get; }
+        public System.Security.Cryptography.X509Certificates.X509Certificate? Certificate { get; }
+        public System.Func<object, System.Security.Cryptography.X509Certificates.X509Certificate, System.Security.Cryptography.X509Certificates.X509Chain, System.Net.Security.SslPolicyErrors, bool>? CertificateValidationCallback { get; }
+        public string? Password { get; }
+        public System.TimeSpan? RequestTimeout { get; set; }
+        public string Uri { get; }
+        public bool UseClusterHealthApi { get; set; }
+        public string? UserName { get; }
+        public Pulse.Elasticsearch.ElasticsearchOptions UseApiKey(Elasticsearch.Net.ApiKeyAuthenticationCredentials apiKey) { }
+        public Pulse.Elasticsearch.ElasticsearchOptions UseBasicAuthentication(string name, string password) { }
+        public Pulse.Elasticsearch.ElasticsearchOptions UseCertificate(System.Security.Cryptography.X509Certificates.X509Certificate certificate) { }
+        public Pulse.Elasticsearch.ElasticsearchOptions UseCertificateValidationCallback(System.Func<object, System.Security.Cryptography.X509Certificates.X509Certificate, System.Security.Cryptography.X509Certificates.X509Chain, System.Net.Security.SslPolicyErrors, bool> callback) { }
+        public Pulse.Elasticsearch.ElasticsearchOptions UseServer(string uri) { }
+    }
+}
+namespace Microsoft.Extensions.DependencyInjection
+{
+    public static class ElasticsearchHealthCheckBuilderExtensions
+    {
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddElasticsearch(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, System.Action<Pulse.Elasticsearch.ElasticsearchOptions>? setup, string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddElasticsearch(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, string elasticsearchUri, string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+    }
+}

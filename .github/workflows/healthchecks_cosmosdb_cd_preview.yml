@@ -13,5 +13,5 @@ jobs:
     with:
       BUILD_CONFIG: Release
       VERSION_SUFFIX_PREFIX: rc2
-      PROJECT_PATH: ./src/HealthChecks.CosmosDb/HealthChecks.CosmosDb.csproj
-      PACKAGE_NAME: AspNetCore.HealthChecks.CosmosDb
+      PROJECT_PATH: ./src/Pulse.CosmosDb/Pulse.CosmosDb.csproj
+      PACKAGE_NAME: AspNetCore.Pulse.CosmosDb

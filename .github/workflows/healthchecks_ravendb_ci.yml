@@ -5,8 +5,8 @@ on:
   push:
     branches: [ master ]
     paths:
-      - src/HealthChecks.RavenDB/**
-      - test/HealthChecks.RavenDb.Tests/**
+      - src/Pulse.RavenDB/**
+      - test/Pulse.RavenDb.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_ravendb_ci.yml
       - Directory.Build.props
@@ -18,8 +18,8 @@ on:
   pull_request:
     branches: [ master ]
     paths:
-      - src/HealthChecks.RavenDB/**
-      - test/HealthChecks.RavenDb.Tests/**
+      - src/Pulse.RavenDB/**
+      - test/Pulse.RavenDb.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_ravendb_ci.yml
       - Directory.Build.props
@@ -46,20 +46,20 @@ jobs:
             8.0.x
       - name: Restore
         run: |
-          dotnet restore ./src/HealthChecks.RavenDB/HealthChecks.RavenDB.csproj &&
-          dotnet restore ./test/HealthChecks.RavenDb.Tests/HealthChecks.RavenDb.Tests.csproj
+          dotnet restore ./src/Pulse.RavenDB/Pulse.RavenDB.csproj &&
+          dotnet restore ./test/Pulse.RavenDb.Tests/Pulse.RavenDb.Tests.csproj
       - name: Check formatting
         run: |
-          dotnet format --no-restore --verify-no-changes --severity warn ./src/HealthChecks.RavenDB/HealthChecks.RavenDB.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
-          dotnet format --no-restore --verify-no-changes --severity warn ./test/HealthChecks.RavenDb.Tests/HealthChecks.RavenDb.Tests.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1)
+          dotnet format --no-restore --verify-no-changes --severity warn ./src/Pulse.RavenDB/Pulse.RavenDB.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
+          dotnet format --no-restore --verify-no-changes --severity warn ./test/Pulse.RavenDb.Tests/Pulse.RavenDb.Tests.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1)
       - name: Build
         run: |
-          dotnet build --no-restore ./src/HealthChecks.RavenDB/HealthChecks.RavenDB.csproj &&
-          dotnet build --no-restore ./test/HealthChecks.RavenDb.Tests/HealthChecks.RavenDb.Tests.csproj
+          dotnet build --no-restore ./src/Pulse.RavenDB/Pulse.RavenDB.csproj &&
+          dotnet build --no-restore ./test/Pulse.RavenDb.Tests/Pulse.RavenDb.Tests.csproj
       - name: Test
         run: >
           dotnet test
-          ./test/HealthChecks.RavenDb.Tests/HealthChecks.RavenDb.Tests.csproj
+          ./test/Pulse.RavenDb.Tests/Pulse.RavenDb.Tests.csproj
           --no-restore
           --no-build
           --collect "XPlat Code Coverage"

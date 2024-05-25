@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <WarningsNotAsErrors>$(WarningsNotAsErrors);RCS1090</WarningsNotAsErrors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azure.Identity" Version="1.11.3" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.AzureAppConfiguration" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\Pulse.UI.InMemory.Storage\Pulse.UI.InMemory.Storage.csproj" />
+    <ProjectReference Include="..\..\..\src\Pulse.UI.MySql.Storage\Pulse.UI.MySql.Storage.csproj" />
+    <ProjectReference Include="..\..\..\src\Pulse.UI.PostgreSQL.Storage\Pulse.UI.PostgreSQL.Storage.csproj" />
+    <ProjectReference Include="..\..\..\src\Pulse.UI.SQLite.Storage\Pulse.UI.SQLite.Storage.csproj" />
+    <ProjectReference Include="..\..\..\src\Pulse.UI.SqlServer.Storage\Pulse.UI.SqlServer.Storage.csproj" />
+    <ProjectReference Include="..\..\..\src\Pulse.UI\Pulse.UI.csproj" />
+  </ItemGroup>
+
+</Project>

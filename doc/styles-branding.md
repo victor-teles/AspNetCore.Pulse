@@ -11,7 +11,7 @@ To customize your styles and branding just register your custom stylesheets in U
  app
   .UseRouting()
   .UseEndpoints(config =>
-  {                 
+  {
      config.MapHealthChecksUI(setup =>
      {
         setup.AddCustomStylesheet("dotnet.css");
@@ -67,4 +67,4 @@ rgba(255, 255, 255, 0.8)
 ## Source Sample:
 
 
-[You can check here the dotnet custom branding sample](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks/tree/master/samples/HealthChecks.UI.Branding)
+[You can check here the dotnet custom branding sample](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks/tree/master/samples/Pulse.UI.Branding)

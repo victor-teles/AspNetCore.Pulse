@@ -12,5 +12,5 @@ jobs:
     secrets: inherit
     with:
       BUILD_CONFIG: Release
-      PROJECT_PATH: ./src/HealthChecks.NpgSql/HealthChecks.NpgSql.csproj
-      PACKAGE_NAME: AspNetCore.HealthChecks.NpgSql
+      PROJECT_PATH: ./src/Pulse.NpgSql/Pulse.NpgSql.csproj
+      PACKAGE_NAME: AspNetCore.Pulse.NpgSql

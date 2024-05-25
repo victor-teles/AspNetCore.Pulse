@@ -1,0 +1,24 @@
+namespace Pulse.Solr
+{
+    public class SolrHealthCheck : Microsoft.Extensions.Diagnostics.Pulse.IHealthCheck
+    {
+        public SolrHealthCheck(Pulse.Solr.SolrOptions options) { }
+        public System.Threading.Tasks.Task<Microsoft.Extensions.Diagnostics.Pulse.HealthCheckResult> CheckHealthAsync(Microsoft.Extensions.Diagnostics.Pulse.HealthCheckContext context, System.Threading.CancellationToken cancellationToken = default) { }
+    }
+    public class SolrOptions
+    {
+        public SolrOptions() { }
+        public string Core { get; }
+        public System.TimeSpan Timeout { get; }
+        public string Uri { get; }
+        public Pulse.Solr.SolrOptions UseServer(string uri, string core, System.TimeSpan? timeout) { }
+    }
+}
+namespace Microsoft.Extensions.DependencyInjection
+{
+    public static class SolrHealthCheckBuilderExtensions
+    {
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddSolr(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, System.Action<Pulse.Solr.SolrOptions>? setup, string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddSolr(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, string solrUri, string solrCore, string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+    }
+}

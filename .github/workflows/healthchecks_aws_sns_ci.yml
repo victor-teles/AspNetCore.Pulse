@@ -5,8 +5,8 @@ on:
   push:
    branches: [ master ]
    paths:
-     - src/HealthChecks.Aws.Sns/**
-     - test/HealthChecks.Aws.Sns.Tests/**
+     - src/Pulse.Aws.Sns/**
+     - test/Pulse.Aws.Sns.Tests/**
      - test/_SHARED/**
      - .github/workflows/healthchecks_aws_sns_ci.yml
      - .github/workflows/reusable_ci_workflow.yml
@@ -19,8 +19,8 @@ on:
   pull_request:
     branches: [ master ]
     paths:
-      - src/HealthChecks.Aws.Sns/**
-      - test/HealthChecks.Aws.Sns.Tests/**
+      - src/Pulse.Aws.Sns/**
+      - test/Pulse.Aws.Sns.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_aws_sns_ci.yml
       - .github/workflows/reusable_ci_workflow.yml
@@ -31,6 +31,6 @@ jobs:
   build:
     uses: ./.github/workflows/reusable_ci_workflow.yml
     with:
-      PROJECT_PATH: ./src/HealthChecks.Aws.Sns/HealthChecks.Aws.Sns.csproj
-      TEST_PROJECT_PATH: ./test/HealthChecks.Aws.Sns.Tests/HealthChecks.Aws.Sns.Tests.csproj
+      PROJECT_PATH: ./src/Pulse.Aws.Sns/Pulse.Aws.Sns.csproj
+      TEST_PROJECT_PATH: ./test/Pulse.Aws.Sns.Tests/Pulse.Aws.Sns.Tests.csproj
       CODECOV_FLAGS: Aws.Sns

@@ -1,0 +1,50 @@
+<Project Sdk=" Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <PackageTags>$(PackageTags);UI</PackageTags>
+    <Description>Pulse.UI is a ASP.NET Core UI viewer of ASP.NET Core Pulse. For more information see https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks</Description>
+    <VersionPrefix>$(HealthCheckUI)</VersionPrefix>
+    <TypeScriptCompileBlocked>True</TypeScriptCompileBlocked>
+    <WarningsNotAsErrors>$(WarningsNotAsErrors);RCS1090</WarningsNotAsErrors>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0" />
+    <PackageReference Include="KubernetesClient" Version="12.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Pulse.UI.Data\Pulse.UI.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Pulse.UI.Image" />
+  </ItemGroup>
+
+  <Target Name="PreBuild" BeforeTargets="BeforeBuild">
+    <RemoveDir Condition="Exists('$(ProjectDir)assets')" Directories="$(ProjectDir)assets" />
+  </Target>
+
+  <Target Name="InstallPackages" BeforeTargets="BeforeBuild" DependsOnTargets="PreBuild">
+    <Message Importance="high" Text="*** Installing npm packages ***" />
+    <Exec Command="yarn install" ContinueOnError="false" />
+  </Target>
+
+  <Target Name="BuildClient" BeforeTargets="BeforeBuild" DependsOnTargets="InstallPackages">
+    <Message Importance="high" Text="*** Bundling client files ***" />
+    <Exec Command="yarn build" ContinueOnError="false" />
+  </Target>
+
+
+  <Target Name="EmbedGeneratedAssets" AfterTargets="BuildClient">
+    <ItemGroup>
+      <EmbeddedResource Include="assets\*.html" />
+      <EmbeddedResource Include="assets\**\*.js" />
+      <EmbeddedResource Include="assets\**\*.css" />
+    </ItemGroup>
+  </Target>
+</Project>

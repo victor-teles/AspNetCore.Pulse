@@ -1,0 +1,105 @@
+namespace Pulse.AzureServiceBus
+{
+    public abstract class AzureServiceBusHealthCheck<TOptions>
+        where TOptions : Pulse.AzureServiceBus.Configuration.AzureServiceBusHealthCheckOptions
+    {
+        protected AzureServiceBusHealthCheck(TOptions options, Pulse.AzureServiceBus.ServiceBusClientProvider clientProvider) { }
+        protected virtual string ConnectionKey { get; }
+        protected TOptions Options { get; }
+        [System.Obsolete("Please, override ConnectionKey property instead.")]
+        protected string Prefix { get; }
+        protected Azure.Messaging.ServiceBus.ServiceBusClient CreateClient() { }
+        protected Azure.Messaging.ServiceBus.Administration.ServiceBusAdministrationClient CreateManagementClient() { }
+    }
+    public class AzureServiceBusQueueHealthCheck : Pulse.AzureServiceBus.AzureServiceBusHealthCheck<Pulse.AzureServiceBus.Configuration.AzureServiceBusQueueHealthCheckOptions>, Microsoft.Extensions.Diagnostics.Pulse.IHealthCheck
+    {
+        public AzureServiceBusQueueHealthCheck(Pulse.AzureServiceBus.Configuration.AzureServiceBusQueueHealthCheckOptions options) { }
+        public AzureServiceBusQueueHealthCheck(Pulse.AzureServiceBus.Configuration.AzureServiceBusQueueHealthCheckOptions options, Pulse.AzureServiceBus.ServiceBusClientProvider clientProvider) { }
+        public System.Threading.Tasks.Task<Microsoft.Extensions.Diagnostics.Pulse.HealthCheckResult> CheckHealthAsync(Microsoft.Extensions.Diagnostics.Pulse.HealthCheckContext context, System.Threading.CancellationToken cancellationToken = default) { }
+    }
+    public class AzureServiceBusQueueMessageCountThresholdHealthCheck : Pulse.AzureServiceBus.AzureServiceBusHealthCheck<Pulse.AzureServiceBus.Configuration.AzureServiceBusQueueMessagesCountThresholdHealthCheckOptions>, Microsoft.Extensions.Diagnostics.Pulse.IHealthCheck
+    {
+        public AzureServiceBusQueueMessageCountThresholdHealthCheck(Pulse.AzureServiceBus.Configuration.AzureServiceBusQueueMessagesCountThresholdHealthCheckOptions options) { }
+        public AzureServiceBusQueueMessageCountThresholdHealthCheck(Pulse.AzureServiceBus.Configuration.AzureServiceBusQueueMessagesCountThresholdHealthCheckOptions options, Pulse.AzureServiceBus.ServiceBusClientProvider clientProvider) { }
+        public System.Threading.Tasks.Task<Microsoft.Extensions.Diagnostics.Pulse.HealthCheckResult> CheckHealthAsync(Microsoft.Extensions.Diagnostics.Pulse.HealthCheckContext context, System.Threading.CancellationToken cancellationToken = default) { }
+    }
+    public class AzureServiceBusSubscriptionHealthCheck : Pulse.AzureServiceBus.AzureServiceBusHealthCheck<Pulse.AzureServiceBus.Configuration.AzureServiceBusSubscriptionHealthCheckHealthCheckOptions>, Microsoft.Extensions.Diagnostics.Pulse.IHealthCheck
+    {
+        public AzureServiceBusSubscriptionHealthCheck(Pulse.AzureServiceBus.Configuration.AzureServiceBusSubscriptionHealthCheckHealthCheckOptions options) { }
+        public AzureServiceBusSubscriptionHealthCheck(Pulse.AzureServiceBus.Configuration.AzureServiceBusSubscriptionHealthCheckHealthCheckOptions options, Pulse.AzureServiceBus.ServiceBusClientProvider clientProvider) { }
+        public System.Threading.Tasks.Task<Microsoft.Extensions.Diagnostics.Pulse.HealthCheckResult> CheckHealthAsync(Microsoft.Extensions.Diagnostics.Pulse.HealthCheckContext context, System.Threading.CancellationToken cancellationToken = default) { }
+    }
+    public class AzureServiceBusTopicHealthCheck : Pulse.AzureServiceBus.AzureServiceBusHealthCheck<Pulse.AzureServiceBus.Configuration.AzureServiceBusTopicHealthCheckOptions>, Microsoft.Extensions.Diagnostics.Pulse.IHealthCheck
+    {
+        public AzureServiceBusTopicHealthCheck(Pulse.AzureServiceBus.Configuration.AzureServiceBusTopicHealthCheckOptions options) { }
+        public AzureServiceBusTopicHealthCheck(Pulse.AzureServiceBus.Configuration.AzureServiceBusTopicHealthCheckOptions options, Pulse.AzureServiceBus.ServiceBusClientProvider clientProvider) { }
+        public System.Threading.Tasks.Task<Microsoft.Extensions.Diagnostics.Pulse.HealthCheckResult> CheckHealthAsync(Microsoft.Extensions.Diagnostics.Pulse.HealthCheckContext context, System.Threading.CancellationToken cancellationToken = default) { }
+    }
+    public class ServiceBusClientProvider
+    {
+        public ServiceBusClientProvider() { }
+        public virtual Azure.Messaging.ServiceBus.ServiceBusClient CreateClient(string? connectionString) { }
+        public virtual Azure.Messaging.ServiceBus.ServiceBusClient CreateClient(string? fullyQualifiedName, Azure.Core.TokenCredential credential) { }
+        public virtual Azure.Messaging.ServiceBus.Administration.ServiceBusAdministrationClient CreateManagementClient(string? connectionString) { }
+        public virtual Azure.Messaging.ServiceBus.Administration.ServiceBusAdministrationClient CreateManagementClient(string? fullyQualifiedName, Azure.Core.TokenCredential credential) { }
+    }
+}
+namespace Pulse.AzureServiceBus.Configuration
+{
+    public abstract class AzureServiceBusHealthCheckOptions
+    {
+        protected AzureServiceBusHealthCheckOptions() { }
+        public string? ConnectionString { get; set; }
+        public Azure.Core.TokenCredential? Credential { get; set; }
+        public string? FullyQualifiedNamespace { get; set; }
+    }
+    public class AzureServiceBusQueueHealthCheckOptions : Pulse.AzureServiceBus.Configuration.AzureServiceBusHealthCheckOptions
+    {
+        public AzureServiceBusQueueHealthCheckOptions(string queueName) { }
+        public string QueueName { get; set; }
+        public bool UsePeekMode { get; set; }
+    }
+    public struct AzureServiceBusQueueMessagesCountThreshold
+    {
+        public AzureServiceBusQueueMessagesCountThreshold() { }
+        public int DegradedThreshold { get; set; }
+        public int UnhealthyThreshold { get; set; }
+    }
+    public class AzureServiceBusQueueMessagesCountThresholdHealthCheckOptions : Pulse.AzureServiceBus.Configuration.AzureServiceBusQueueHealthCheckOptions
+    {
+        public AzureServiceBusQueueMessagesCountThresholdHealthCheckOptions(string queueName) { }
+        public Pulse.AzureServiceBus.Configuration.AzureServiceBusQueueMessagesCountThreshold? ActiveMessages { get; set; }
+        public Pulse.AzureServiceBus.Configuration.AzureServiceBusQueueMessagesCountThreshold? DeadLetterMessages { get; set; }
+    }
+    public class AzureServiceBusSubscriptionHealthCheckHealthCheckOptions : Pulse.AzureServiceBus.Configuration.AzureServiceBusTopicHealthCheckOptions
+    {
+        public AzureServiceBusSubscriptionHealthCheckHealthCheckOptions(string topicName, string subscriptionName) { }
+        public string SubscriptionName { get; set; }
+        public bool UsePeekMode { get; set; }
+    }
+    public class AzureServiceBusTopicHealthCheckOptions : Pulse.AzureServiceBus.Configuration.AzureServiceBusHealthCheckOptions
+    {
+        public AzureServiceBusTopicHealthCheckOptions(string topicName) { }
+        public string TopicName { get; set; }
+    }
+}
+namespace Microsoft.Extensions.DependencyInjection
+{
+    public static class AzureServiceBusHealthCheckBuilderExtensions
+    {
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddAzureServiceBusQueue(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, System.Func<System.IServiceProvider, string> connectionStringFactory, System.Func<System.IServiceProvider, string> queueNameFactory, System.Action<Pulse.AzureServiceBus.Configuration.AzureServiceBusQueueHealthCheckOptions>? configure = null, string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddAzureServiceBusQueue(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, string connectionString, string queueName, System.Action<Pulse.AzureServiceBus.Configuration.AzureServiceBusQueueHealthCheckOptions>? configure = null, string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddAzureServiceBusQueue(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, System.Func<System.IServiceProvider, string> fullyQualifiedNamespaceFactory, System.Func<System.IServiceProvider, string> queueNameFactory, System.Func<System.IServiceProvider, Azure.Core.TokenCredential> tokenCredentialFactory, System.Action<Pulse.AzureServiceBus.Configuration.AzureServiceBusQueueHealthCheckOptions>? configure = null, string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddAzureServiceBusQueue(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, string fullyQualifiedNamespace, string queueName, Azure.Core.TokenCredential tokenCredential, System.Action<Pulse.AzureServiceBus.Configuration.AzureServiceBusQueueHealthCheckOptions>? configure = null, string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddAzureServiceBusQueueMessageCountThreshold(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, string connectionString, string queueName, string? name = null, System.Action<Pulse.AzureServiceBus.Configuration.AzureServiceBusQueueMessagesCountThresholdHealthCheckOptions>? configure = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddAzureServiceBusQueueMessageCountThreshold(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, string endpoint, string queueName, Azure.Core.TokenCredential tokenCredential, System.Action<Pulse.AzureServiceBus.Configuration.AzureServiceBusQueueMessagesCountThresholdHealthCheckOptions>? configure = null, string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddAzureServiceBusSubscription(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, System.Func<System.IServiceProvider, string> connectionStringFactory, System.Func<System.IServiceProvider, string> topicNameFactory, System.Func<System.IServiceProvider, string> subscriptionNameFactory, System.Action<Pulse.AzureServiceBus.Configuration.AzureServiceBusSubscriptionHealthCheckHealthCheckOptions>? configure = null, string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddAzureServiceBusSubscription(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, string connectionString, string topicName, string subscriptionName, System.Action<Pulse.AzureServiceBus.Configuration.AzureServiceBusSubscriptionHealthCheckHealthCheckOptions>? configure = null, string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddAzureServiceBusSubscription(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, System.Func<System.IServiceProvider, string> fullyQualifiedNamespaceFactory, System.Func<System.IServiceProvider, string> topicNameFactory, System.Func<System.IServiceProvider, string> subscriptionNameFactory, System.Func<System.IServiceProvider, Azure.Core.TokenCredential> tokenCredentialFactory, System.Action<Pulse.AzureServiceBus.Configuration.AzureServiceBusSubscriptionHealthCheckHealthCheckOptions>? configure = null, string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddAzureServiceBusSubscription(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, string fullyQualifiedNamespace, string topicName, string subscriptionName, Azure.Core.TokenCredential tokenCredential, System.Action<Pulse.AzureServiceBus.Configuration.AzureServiceBusSubscriptionHealthCheckHealthCheckOptions>? configure = null, string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddAzureServiceBusTopic(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, System.Func<System.IServiceProvider, string> connectionStringFactory, System.Func<System.IServiceProvider, string> topicNameFactory, System.Action<Pulse.AzureServiceBus.Configuration.AzureServiceBusTopicHealthCheckOptions>? configure = null, string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddAzureServiceBusTopic(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, string connectionString, string topicName, System.Action<Pulse.AzureServiceBus.Configuration.AzureServiceBusTopicHealthCheckOptions>? configure = null, string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddAzureServiceBusTopic(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, string fullyQualifiedNamespace, string topicName, Azure.Core.TokenCredential tokenCredential, string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddAzureServiceBusTopic(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, System.Func<System.IServiceProvider, string> fullyQualifiedNamespaceFactory, System.Func<System.IServiceProvider, string> topicNameFactory, System.Func<System.IServiceProvider, Azure.Core.TokenCredential> tokenCredentialFactory, System.Action<Pulse.AzureServiceBus.Configuration.AzureServiceBusTopicHealthCheckOptions>? configure = null, string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+    }
+}

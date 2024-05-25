@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Pulse.Consul\Pulse.Consul.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0</TargetFrameworks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Functional\Configuration\appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="xunit.runner.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\build\docker-images\Pulse.UI.Image\Pulse.UI.Image.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.UI.Client\Pulse.UI.Client.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.UI.InMemory.Storage\Pulse.UI.InMemory.Storage.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.UI.MySql.Storage\Pulse.UI.MySql.Storage.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.UI.PostgreSQL.Storage\Pulse.UI.PostgreSQL.Storage.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.UI.SQLite.Storage\Pulse.UI.SQLite.Storage.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.UI.SqlServer.Storage\Pulse.UI.SqlServer.Storage.csproj" />
+    <ProjectReference Include="..\..\src\Pulse.UI\Pulse.UI.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="SampleData\local-cluster-discovery-sample.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SampleData\remote-cluster-discovery-sample.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

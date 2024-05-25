@@ -1,7 +1,7 @@
 ﻿using FluentAssertions;
 using FunctionalTests.Base;
-using HealthChecks.UI.Client;
-using HealthChecks.UI.Configuration;
+using Pulse.UI.Client;
+using Pulse.UI.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
@@ -20,7 +20,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace FunctionalTests.HealthChecks.UI
+namespace FunctionalTests.Pulse.UI
 {
 
     public class ui_api_request_limiting

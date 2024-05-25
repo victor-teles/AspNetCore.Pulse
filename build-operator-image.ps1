@@ -27,7 +27,7 @@ $tag = $version.node.InnerXML
 echo "Building k8s operator docker image with tag: $tag"
 echo "Publishing to Docker Hub : $PublishToDockerHub"
 
-exec { & docker build . -f .\src\HealthChecks.UI.K8s.Operator\Dockerfile -t xabarilcoding/healthchecksui-k8s-operator:$tag }
+exec { & docker build . -f .\src\Pulse.UI.K8s.Operator\Dockerfile -t xabarilcoding/healthchecksui-k8s-operator:$tag }
 exec { & docker tag xabarilcoding/healthchecksui-k8s-operator:$tag xabarilcoding/healthchecksui-k8s-operator:latest }
 
 echo "Created docker image healthchecksui-k8s-operator:$tag. You can execute this image using docker run"

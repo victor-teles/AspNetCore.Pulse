@@ -12,5 +12,5 @@ jobs:
     secrets: inherit
     with:
       BUILD_CONFIG: Release
-      PROJECT_PATH: ./src/HealthChecks.MongoDb/HealthChecks.MongoDb.csproj
-      PACKAGE_NAME: AspNetCore.HealthChecks.MongoDb
+      PROJECT_PATH: ./src/Pulse.MongoDb/Pulse.MongoDb.csproj
+      PACKAGE_NAME: AspNetCore.Pulse.MongoDb

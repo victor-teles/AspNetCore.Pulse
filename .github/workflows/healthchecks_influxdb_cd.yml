@@ -5,12 +5,12 @@ on:
     tags:
       - release-influxdb-*
       - release-all-*
-      
+
 jobs:
   build:
     uses: ./.github/workflows/reusable_cd_workflow.yml
     secrets: inherit
     with:
       BUILD_CONFIG: Release
-      PROJECT_PATH: ./src/HealthChecks.InfluxDB/HealthChecks.InfluxDB.csproj
-      PACKAGE_NAME: AspNetCore.HealthChecks.InfluxDB
+      PROJECT_PATH: ./src/Pulse.InfluxDB/Pulse.InfluxDB.csproj
+      PACKAGE_NAME: AspNetCore.Pulse.InfluxDB

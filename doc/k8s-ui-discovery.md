@@ -75,7 +75,7 @@ Here are all the available parameters detailed:
 | ServicesLabel            | The labeled services the UI will look for in k8s                                                                                                  | HealthChecks       |
 | ServicesPathAnnotation   | The annotation on a service that can override the configured url path                                                                             | HealthChecksPath   |
 | ServicesPortAnnotation   | The annotation on a service to define which port to call. If the annotation does not exist on the service the first defined port will be used     | HealthChecksPort   |
-| ServicesSchemeAnnotation | The annotation on a service to define which URI scheme to use for healthchecks. If the annotation does not exist on the service http will be used | HealthChecksScheme |
+| ServicesSchemeAnnotation | The annotation on a service to define which URI scheme to use for Pulse. If the annotation does not exist on the service http will be used | HealthChecksScheme |
 | RefreshTimeOnSeconds     | Healthchecks refresh time in seconds                                                                                                              | 300                |
 | Namespaces               | The namespace(s) to query services in                                                                                                             | []                 |
 

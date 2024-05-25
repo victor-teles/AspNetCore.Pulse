@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
+    <PackageTags>$(PackageTags);UI;Client</PackageTags>
+    <Description>Pulse.UI.Client contains some mandatory abstractions to work with Pulse.UI.</Description>
+    <VersionPrefix>$(HealthCheckUIClient)</VersionPrefix>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Pulse.UI.Core\Pulse.UI.Core.csproj" />
+  </ItemGroup>
+
+</Project>

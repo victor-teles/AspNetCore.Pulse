@@ -5,8 +5,8 @@ on:
   push:
     branches: [ master ]
     paths:
-      - src/HealthChecks.Kafka/**
-      - test/HealthChecks.Kafka.Tests/**
+      - src/Pulse.Kafka/**
+      - test/Pulse.Kafka.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_kafka_ci.yml
       - Directory.Build.props
@@ -18,8 +18,8 @@ on:
   pull_request:
     branches: [ master ]
     paths:
-      - src/HealthChecks.Kafka/**
-      - test/HealthChecks.Kafka.Tests/**
+      - src/Pulse.Kafka/**
+      - test/Pulse.Kafka.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_kafka_ci.yml
       - Directory.Build.props
@@ -52,20 +52,20 @@ jobs:
             8.0.x
       - name: Restore
         run: |
-          dotnet restore ./src/HealthChecks.Kafka/HealthChecks.Kafka.csproj &&
-          dotnet restore ./test/HealthChecks.Kafka.Tests/HealthChecks.Kafka.Tests.csproj
+          dotnet restore ./src/Pulse.Kafka/Pulse.Kafka.csproj &&
+          dotnet restore ./test/Pulse.Kafka.Tests/Pulse.Kafka.Tests.csproj
       - name: Check formatting
         run: |
-          dotnet format --no-restore --verify-no-changes --severity warn ./src/HealthChecks.Kafka/HealthChecks.Kafka.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
-          dotnet format --no-restore --verify-no-changes --severity warn ./test/HealthChecks.Kafka.Tests/HealthChecks.Kafka.Tests.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1)
+          dotnet format --no-restore --verify-no-changes --severity warn ./src/Pulse.Kafka/Pulse.Kafka.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
+          dotnet format --no-restore --verify-no-changes --severity warn ./test/Pulse.Kafka.Tests/Pulse.Kafka.Tests.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1)
       - name: Build
         run: |
-          dotnet build --no-restore ./src/HealthChecks.Kafka/HealthChecks.Kafka.csproj &&
-          dotnet build --no-restore ./test/HealthChecks.Kafka.Tests/HealthChecks.Kafka.Tests.csproj
+          dotnet build --no-restore ./src/Pulse.Kafka/Pulse.Kafka.csproj &&
+          dotnet build --no-restore ./test/Pulse.Kafka.Tests/Pulse.Kafka.Tests.csproj
       - name: Test
         run: >
           dotnet test
-          ./test/HealthChecks.Kafka.Tests/HealthChecks.Kafka.Tests.csproj
+          ./test/Pulse.Kafka.Tests/Pulse.Kafka.Tests.csproj
           --no-restore
           --no-build
           --collect "XPlat Code Coverage"

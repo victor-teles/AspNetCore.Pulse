@@ -4,9 +4,9 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using FluentAssertions;
 using FunctionalTests.Base;
-using HealthChecks.UI;
-using HealthChecks.UI.Configuration;
-using HealthChecks.UI.Core;
+using Pulse.UI;
+using Pulse.UI.Configuration;
+using Pulse.UI.Core;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
@@ -55,7 +55,7 @@ namespace FunctionalTests.UI.Configuration
             UISettings.MinimumSecondsBetweenFailureNotifications.Should().Be(minimumSeconds);
 
             UISettings.Webhooks.Count.Should().Be(1);
-            UISettings.HealthChecks.Count.Should().Be(1);
+            UISettings.Pulse.Count.Should().Be(1);
 
             var healthcheck = UISettings.HealthChecks[0];
             healthcheck.Name.Should().Be(healthCheckName);
@@ -76,7 +76,7 @@ namespace FunctionalTests.UI.Configuration
                 .ConfigureAppConfiguration(conf =>
                 {
                     conf.Sources.Clear();
-                    conf.AddJsonFile("HealthChecks.UI/Configuration/appsettings.json", false);
+                    conf.AddJsonFile("Pulse.UI/Configuration/appsettings.json", false);
                 }).ConfigureServices(services => { services.AddHealthChecksUI(); });
 
 
@@ -86,7 +86,7 @@ namespace FunctionalTests.UI.Configuration
 
             UISettings.EvaluationTimeInSeconds.Should().Be(20);
             UISettings.MinimumSecondsBetweenFailureNotifications.Should().Be(120);
-            UISettings.HealthChecks.Count.Should().Be(1);
+            UISettings.Pulse.Count.Should().Be(1);
             UISettings.Webhooks.Count.Should().Be(1);
 
             var healthcheck = UISettings.HealthChecks[0];
@@ -115,7 +115,7 @@ namespace FunctionalTests.UI.Configuration
                 .ConfigureAppConfiguration(conf =>
                 {
                     conf.Sources.Clear();
-                    conf.AddJsonFile("HealthChecks.UI/Configuration/appsettings.json", false);
+                    conf.AddJsonFile("Pulse.UI/Configuration/appsettings.json", false);
                 }).ConfigureServices(services =>
                 {
                     services.AddHealthChecksUI(setupSettings: setup =>
@@ -133,7 +133,7 @@ namespace FunctionalTests.UI.Configuration
             UISettings.MinimumSecondsBetweenFailureNotifications.Should().Be(200);
             UISettings.EvaluationTimeInSeconds.Should().Be(20);
             UISettings.Webhooks.Count.Should().Be(2);
-            UISettings.HealthChecks.Count.Should().Be((2));
+            UISettings.Pulse.Count.Should().Be((2));
 
             var healthCheck1 = UISettings.HealthChecks[0];
             var healthCheck2 = UISettings.HealthChecks[1];
@@ -164,7 +164,7 @@ namespace FunctionalTests.UI.Configuration
                 .ConfigureAppConfiguration(conf =>
                 {
                     conf.Sources.Clear();
-                    conf.AddJsonFile("HealthChecks.UI/Configuration/appsettings.json", false);
+                    conf.AddJsonFile("Pulse.UI/Configuration/appsettings.json", false);
                 })
                 .ConfigureServices(services =>
                 {
@@ -349,7 +349,7 @@ namespace FunctionalTests.UI.Configuration
                 });
 
             var server = new TestServer(builder);
-            var options = server.Services.GetRequiredService<IOptions<global::HealthChecks.UI.Configuration.Options>>().Value;
+            var options = server.Services.GetRequiredService<IOptions<global::Pulse.UI.Configuration.Options>>().Value;
             var response = await server.CreateRequest(options.UIPath).GetAsync();
             var html = await response.Content.ReadAsStringAsync();
 

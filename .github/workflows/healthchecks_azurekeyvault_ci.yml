@@ -5,8 +5,8 @@ on:
   push:
    branches: [ master ]
    paths:
-     - src/HealthChecks.AzureKeyVault/**
-     - test/HealthChecks.AzureKeyVault.Tests/**
+     - src/Pulse.AzureKeyVault/**
+     - test/Pulse.AzureKeyVault.Tests/**
      - test/_SHARED/**
      - .github/workflows/healthchecks_azurekeyvault_ci.yml
      - .github/workflows/reusable_ci_workflow.yml
@@ -19,8 +19,8 @@ on:
   pull_request:
     branches: [ master ]
     paths:
-      - src/HealthChecks.AzureKeyVault/**
-      - test/HealthChecks.AzureKeyVault.Tests/**
+      - src/Pulse.AzureKeyVault/**
+      - test/Pulse.AzureKeyVault.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_azurekeyvault_ci.yml
       - .github/workflows/reusable_ci_workflow.yml
@@ -31,6 +31,6 @@ jobs:
   build:
     uses: ./.github/workflows/reusable_ci_workflow.yml
     with:
-      PROJECT_PATH: ./src/HealthChecks.AzureKeyVault/HealthChecks.AzureKeyVault.csproj
-      TEST_PROJECT_PATH: ./test/HealthChecks.AzureKeyVault.Tests/HealthChecks.AzureKeyVault.Tests.csproj
+      PROJECT_PATH: ./src/Pulse.AzureKeyVault/Pulse.AzureKeyVault.csproj
+      TEST_PROJECT_PATH: ./test/Pulse.AzureKeyVault.Tests/Pulse.AzureKeyVault.Tests.csproj
       CODECOV_FLAGS: AzureKeyVault

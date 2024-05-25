@@ -1,5 +1,5 @@
 ﻿using FluentAssertions;
-using HealthChecks.UI.Data;
+using Pulse.UI.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
@@ -11,7 +11,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace FunctionalTests.HealthChecks.UI.DatabaseProviders
+namespace FunctionalTests.Pulse.UI.DatabaseProviders
 {
     public class UpdateConfigurationTests
     {

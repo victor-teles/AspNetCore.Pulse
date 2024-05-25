@@ -17,9 +17,9 @@ services.AddHealthChecks()
 After this, we are going to install the health check packages for sql server and redis that will be the dependencies we use in our application. Open a terminal
 located where the csproj was created:
 
-`dotnet add package AspNetCore.HealthChecks.SqlServer`
+`dotnet add package AspNetCore.Pulse.SqlServer`
 
-`dotnet add package AspNetCore.HealthChecks.Redis`
+`dotnet add package AspNetCore.Pulse.Redis`
 
 Once you confirm the packages are installed, we are going to configure this two health checks under a tag called "services"
 
@@ -49,7 +49,7 @@ Let's register our endpoint under "/self" path, telling the registrations predic
     });
 ```
 
-Launch the project and open a browser or a curl request to 
+Launch the project and open a browser or a curl request to
 http://localhost:{port}/self. The ouput should be the following:
 
 >>clanderas@Mephisto:~$ curl  http://localhost:5000/self
@@ -115,10 +115,10 @@ Open a terminal and locate your path where the project sln is located and execut
 
 `docker build -t webapp . -f WebApp/Dockerfile`
 
-Once our docker image is created, we are going to deploy to kubernetes 3 deployments. 
+Once our docker image is created, we are going to deploy to kubernetes 3 deployments.
 
 - One for sqlserver
-- One for redis 
+- One for redis
 
 (both of them with a service exposing the containers to the cluster using ClusterIp)
 
@@ -187,7 +187,7 @@ In the line 23 of the deployment yaml we can find the readiness probe described 
 As you can see the declaration is very similar, but this time we are targetting the path /ready where we are returning the health of all our application dependencies (sql and redis)
 
 
-**IMPORTANT**: The difference between a liveness and a readiness check is the liveness check will tell k8s if our pod is healthy. 
+**IMPORTANT**: The difference between a liveness and a readiness check is the liveness check will tell k8s if our pod is healthy.
 
 If the pod is not healthy, k8s will kill the pod and restart it so it can get recovered.
 

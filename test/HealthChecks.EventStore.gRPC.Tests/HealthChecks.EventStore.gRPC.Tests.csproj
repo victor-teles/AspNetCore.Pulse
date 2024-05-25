@@ -1,7 +1,0 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\HealthChecks.EventStore.gRPC\HealthChecks.EventStore.gRPC.csproj" />
-  </ItemGroup>
-
-</Project>

@@ -5,8 +5,8 @@ on:
   push:
     branches: [ master ]
     paths:
-      - src/HealthChecks.Publisher.Prometheus/**
-      - test/HealthChecks.Publisher.Prometheus.Tests/**
+      - src/Pulse.Publisher.Prometheus/**
+      - test/Pulse.Publisher.Prometheus.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_publisher_prometheus_ci.yml
       - .github/workflows/reusable_ci_workflow.yml
@@ -19,8 +19,8 @@ on:
   pull_request:
     branches: [ master ]
     paths:
-      - src/HealthChecks.Publisher.Prometheus/**
-      - test/HealthChecks.Publisher.Prometheus.Tests/**
+      - src/Pulse.Publisher.Prometheus/**
+      - test/Pulse.Publisher.Prometheus.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_publisher_prometheus_ci.yml
       - .github/workflows/reusable_ci_workflow.yml
@@ -31,6 +31,6 @@ jobs:
   build:
     uses: ./.github/workflows/reusable_ci_workflow.yml
     with:
-      PROJECT_PATH: ./src/HealthChecks.Publisher.Prometheus/HealthChecks.Publisher.Prometheus.csproj
-      TEST_PROJECT_PATH: ./test/HealthChecks.Publisher.Prometheus.Tests/HealthChecks.Publisher.Prometheus.Tests.csproj
+      PROJECT_PATH: ./src/Pulse.Publisher.Prometheus/Pulse.Publisher.Prometheus.csproj
+      TEST_PROJECT_PATH: ./test/Pulse.Publisher.Prometheus.Tests/Pulse.Publisher.Prometheus.Tests.csproj
       CODECOV_FLAGS: Publisher.Prometheus

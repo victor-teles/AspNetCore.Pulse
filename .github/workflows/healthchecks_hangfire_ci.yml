@@ -5,8 +5,8 @@ on:
   push:
     branches: [ master ]
     paths:
-      - src/HealthChecks.Hangfire/**
-      - test/HealthChecks.Hangfire.Tests/**
+      - src/Pulse.Hangfire/**
+      - test/Pulse.Hangfire.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_hangfire_ci.yml
       - .github/workflows/reusable_ci_workflow.yml
@@ -19,8 +19,8 @@ on:
   pull_request:
     branches: [ master ]
     paths:
-      - src/HealthChecks.Hangfire/**
-      - test/HealthChecks.Hangfire.Tests/**
+      - src/Pulse.Hangfire/**
+      - test/Pulse.Hangfire.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_hangfire_ci.yml
       - .github/workflows/reusable_ci_workflow.yml
@@ -31,6 +31,6 @@ jobs:
   build:
     uses: ./.github/workflows/reusable_ci_workflow.yml
     with:
-      PROJECT_PATH: ./src/HealthChecks.Hangfire/HealthChecks.Hangfire.csproj
-      TEST_PROJECT_PATH: ./test/HealthChecks.Hangfire.Tests/HealthChecks.Hangfire.Tests.csproj
+      PROJECT_PATH: ./src/Pulse.Hangfire/Pulse.Hangfire.csproj
+      TEST_PROJECT_PATH: ./test/Pulse.Hangfire.Tests/Pulse.Hangfire.Tests.csproj
       CODECOV_FLAGS: Hangfire

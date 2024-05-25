@@ -1,0 +1,15 @@
+namespace Pulse.AzureApplicationInsights
+{
+    public class AzureApplicationInsightsHealthCheck : Microsoft.Extensions.Diagnostics.Pulse.IHealthCheck
+    {
+        public AzureApplicationInsightsHealthCheck(string instrumentationKey, System.Net.Http.IHttpClientFactory httpClientFactory) { }
+        public System.Threading.Tasks.Task<Microsoft.Extensions.Diagnostics.Pulse.HealthCheckResult> CheckHealthAsync(Microsoft.Extensions.Diagnostics.Pulse.HealthCheckContext context, System.Threading.CancellationToken cancellationToken = default) { }
+    }
+}
+namespace Microsoft.Extensions.DependencyInjection
+{
+    public static class AzureApplicationInsightsHealthCheckBuilderExtensions
+    {
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddAzureApplicationInsights(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, string instrumentationKey, string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+    }
+}

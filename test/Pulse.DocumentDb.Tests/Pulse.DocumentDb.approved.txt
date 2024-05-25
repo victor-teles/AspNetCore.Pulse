@@ -1,0 +1,23 @@
+namespace Pulse.DocumentDb
+{
+    public class DocumentDbHealthCheck : Microsoft.Extensions.Diagnostics.Pulse.IHealthCheck
+    {
+        public DocumentDbHealthCheck(Pulse.DocumentDb.DocumentDbOptions documentDbOptions) { }
+        public System.Threading.Tasks.Task<Microsoft.Extensions.Diagnostics.Pulse.HealthCheckResult> CheckHealthAsync(Microsoft.Extensions.Diagnostics.Pulse.HealthCheckContext context, System.Threading.CancellationToken cancellationToken = default) { }
+    }
+    public class DocumentDbOptions
+    {
+        public DocumentDbOptions() { }
+        public string? CollectionName { get; set; }
+        public string? DatabaseName { get; set; }
+        public string PrimaryKey { get; set; }
+        public string UriEndpoint { get; set; }
+    }
+}
+namespace Microsoft.Extensions.DependencyInjection
+{
+    public static class DocumentDbHealthCheckBuilderExtensions
+    {
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddDocumentDb(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, System.Action<Pulse.DocumentDb.DocumentDbOptions>? setup, string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+    }
+}

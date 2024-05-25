@@ -5,8 +5,8 @@ on:
   push:
     branches: [ master ]
     paths:
-      - src/HealthChecks.Publisher.CloudWatch/**
-      - test/HealthChecks.Publisher.CloudWatch.Tests/**
+      - src/Pulse.Publisher.CloudWatch/**
+      - test/Pulse.Publisher.CloudWatch.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_publisher_cloudwatch_ci.yml
       - Directory.Build.props
@@ -18,8 +18,8 @@ on:
   pull_request:
     branches: [ master ]
     paths:
-      - src/HealthChecks.Publisher.CloudWatch/**
-      - test/HealthChecks.Publisher.CloudWatch.Tests/**
+      - src/Pulse.Publisher.CloudWatch/**
+      - test/Pulse.Publisher.CloudWatch.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_publisher_cloudwatch_ci.yml
       - Directory.Build.props
@@ -41,20 +41,20 @@ jobs:
             8.0.x
       - name: Restore
         run: |
-          dotnet restore ./src/HealthChecks.Publisher.CloudWatch/HealthChecks.Publisher.CloudWatch.csproj &&
-          dotnet restore ./test/HealthChecks.Publisher.CloudWatch.Tests/HealthChecks.Publisher.CloudWatch.Tests.csproj
+          dotnet restore ./src/Pulse.Publisher.CloudWatch/Pulse.Publisher.CloudWatch.csproj &&
+          dotnet restore ./test/Pulse.Publisher.CloudWatch.Tests/Pulse.Publisher.CloudWatch.Tests.csproj
       - name: Check formatting
         run: |
-          dotnet format --no-restore --verify-no-changes --severity warn ./src/HealthChecks.Publisher.CloudWatch/HealthChecks.Publisher.CloudWatch.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
-          dotnet format --no-restore --verify-no-changes --severity warn ./test/HealthChecks.Publisher.CloudWatch.Tests/HealthChecks.Publisher.CloudWatch.Tests.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1)
+          dotnet format --no-restore --verify-no-changes --severity warn ./src/Pulse.Publisher.CloudWatch/Pulse.Publisher.CloudWatch.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
+          dotnet format --no-restore --verify-no-changes --severity warn ./test/Pulse.Publisher.CloudWatch.Tests/Pulse.Publisher.CloudWatch.Tests.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1)
       - name: Build
         run: |
-          dotnet build --no-restore ./src/HealthChecks.Publisher.CloudWatch/HealthChecks.Publisher.CloudWatch.csproj &&
-          dotnet build --no-restore ./test/HealthChecks.Publisher.CloudWatch.Tests/HealthChecks.Publisher.CloudWatch.Tests.csproj
+          dotnet build --no-restore ./src/Pulse.Publisher.CloudWatch/Pulse.Publisher.CloudWatch.csproj &&
+          dotnet build --no-restore ./test/Pulse.Publisher.CloudWatch.Tests/Pulse.Publisher.CloudWatch.Tests.csproj
       - name: Test
         run: >
           dotnet test
-          ./test/HealthChecks.Publisher.CloudWatch.Tests/HealthChecks.Publisher.CloudWatch.Tests.csproj
+          ./test/Pulse.Publisher.CloudWatch.Tests/Pulse.Publisher.CloudWatch.Tests.csproj
           --no-restore
           --no-build
           --collect "XPlat Code Coverage"

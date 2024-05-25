@@ -1,0 +1,25 @@
+namespace Pulse.Consul
+{
+    public class ConsulHealthCheck : Microsoft.Extensions.Diagnostics.Pulse.IHealthCheck
+    {
+        public ConsulHealthCheck(Pulse.Consul.ConsulOptions options, System.Func<System.Net.Http.HttpClient> httpClientFactory) { }
+        public System.Threading.Tasks.Task<Microsoft.Extensions.Diagnostics.Pulse.HealthCheckResult> CheckHealthAsync(Microsoft.Extensions.Diagnostics.Pulse.HealthCheckContext context, System.Threading.CancellationToken cancellationToken = default) { }
+    }
+    public class ConsulOptions
+    {
+        public ConsulOptions() { }
+        public string HostName { get; set; }
+        public string? Password { get; set; }
+        public int Port { get; set; }
+        public bool RequireBasicAuthentication { get; set; }
+        public bool RequireHttps { get; set; }
+        public string? Username { get; set; }
+    }
+}
+namespace Microsoft.Extensions.DependencyInjection
+{
+    public static class ConsulHealthCheckBuilderExtensions
+    {
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddConsul(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, System.Action<Pulse.Consul.ConsulOptions>? setup, string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+    }
+}

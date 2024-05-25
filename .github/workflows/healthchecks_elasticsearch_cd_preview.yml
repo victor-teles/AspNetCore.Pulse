@@ -13,5 +13,5 @@ jobs:
     with:
       BUILD_CONFIG: Release
       VERSION_SUFFIX_PREFIX: rc1
-      PROJECT_PATH: ./src/HealthChecks.Elasticsearch/HealthChecks.Elasticsearch.csproj
-      PACKAGE_NAME: AspNetCore.HealthChecks.Elasticsearch
+      PROJECT_PATH: ./src/Pulse.Elasticsearch/Pulse.Elasticsearch.csproj
+      PACKAGE_NAME: AspNetCore.Pulse.Elasticsearch

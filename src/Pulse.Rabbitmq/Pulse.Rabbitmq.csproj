@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>$(DefaultLibraryTargetFrameworks)</TargetFrameworks>
+    <PackageTags>$(PackageTags);RabbitMQ</PackageTags>
+    <Description>Pulse.RabbitMQ is the health check package for RabbitMQ.</Description>
+    <VersionPrefix>$(HealthCheckRabbitMQ)</VersionPrefix>
+    <RootNamespace>Pulse.RabbitMQ</RootNamespace> <!--For backward naming compatibility-->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="RabbitMQ.Client" Version="6.7.0" />
+    <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="8.0.0" />
+    <Compile Include="../HealthCheckResultTask.cs" />
+  </ItemGroup>
+
+</Project>

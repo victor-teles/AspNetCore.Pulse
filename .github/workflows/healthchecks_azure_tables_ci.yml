@@ -5,8 +5,8 @@ on:
   push:
    branches: [ master ]
    paths:
-     - src/HealthChecks.Azure.Data.Tables/**
-     - test/HealthChecks.Azure.Data.Tables.Tests/**
+     - src/Pulse.Azure.Data.Tables/**
+     - test/Pulse.Azure.Data.Tables.Tests/**
      - test/_SHARED/**
      - .github/workflows/healthchecks_azure_tables_ci.yml
      - .github/workflows/reusable_ci_workflow.yml
@@ -19,8 +19,8 @@ on:
   pull_request:
     branches: [ master ]
     paths:
-     - src/HealthChecks.Azure.Data.Tables/**
-     - test/HealthChecks.Azure.Data.Tables.Tests/**
+     - src/Pulse.Azure.Data.Tables/**
+     - test/Pulse.Azure.Data.Tables.Tests/**
      - test/_SHARED/**
      - .github/workflows/healthchecks_azure_tables_ci.yml
      - .github/workflows/reusable_ci_workflow.yml
@@ -31,7 +31,7 @@ jobs:
   build:
     uses: ./.github/workflows/reusable_ci_workflow.yml
     with:
-      PROJECT_PATH: ./src/HealthChecks.Azure.Data.Tables/HealthChecks.Azure.Data.Tables.csproj
-      TEST_PROJECT_PATH: ./test/HealthChecks.Azure.Data.Tables.Tests/HealthChecks.Azure.Data.Tables.Tests.csproj
+      PROJECT_PATH: ./src/Pulse.Azure.Data.Tables/Pulse.Azure.Data.Tables.csproj
+      TEST_PROJECT_PATH: ./test/Pulse.Azure.Data.Tables.Tests/Pulse.Azure.Data.Tables.Tests.csproj
       CODECOV_FLAGS: AzureTableStorage
 

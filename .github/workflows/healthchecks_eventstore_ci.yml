@@ -4,8 +4,8 @@ on:
   push:
     branches: [ master ]
     paths:
-      - src/HealthChecks.EventStore/**
-      - test/HealthChecks.EventStore.Tests/**
+      - src/Pulse.EventStore/**
+      - test/Pulse.EventStore.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_eventstore_ci.yml
       - Directory.Build.props
@@ -17,8 +17,8 @@ on:
   pull_request:
     branches: [ master ]
     paths:
-      - src/HealthChecks.EventStore/**
-      - test/HealthChecks.EventStore.Tests/**
+      - src/Pulse.EventStore/**
+      - test/Pulse.EventStore.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_eventstore_ci.yml
       - Directory.Build.props
@@ -48,20 +48,20 @@ jobs:
             8.0.x
       - name: Restore
         run: |
-          dotnet restore ./src/HealthChecks.EventStore/HealthChecks.EventStore.csproj &&
-          dotnet restore ./test/HealthChecks.EventStore.Tests/HealthChecks.EventStore.Tests.csproj
+          dotnet restore ./src/Pulse.EventStore/Pulse.EventStore.csproj &&
+          dotnet restore ./test/Pulse.EventStore.Tests/Pulse.EventStore.Tests.csproj
       - name: Check formatting
         run: |
-          dotnet format --no-restore --verify-no-changes --severity warn ./src/HealthChecks.EventStore/HealthChecks.EventStore.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
-          dotnet format --no-restore --verify-no-changes --severity warn ./test/HealthChecks.EventStore.Tests/HealthChecks.EventStore.Tests.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1)
+          dotnet format --no-restore --verify-no-changes --severity warn ./src/Pulse.EventStore/Pulse.EventStore.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
+          dotnet format --no-restore --verify-no-changes --severity warn ./test/Pulse.EventStore.Tests/Pulse.EventStore.Tests.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1)
       - name: Build
         run: |
-          dotnet build --no-restore ./src/HealthChecks.EventStore/HealthChecks.EventStore.csproj &&
-          dotnet build --no-restore ./test/HealthChecks.EventStore.Tests/HealthChecks.EventStore.Tests.csproj
+          dotnet build --no-restore ./src/Pulse.EventStore/Pulse.EventStore.csproj &&
+          dotnet build --no-restore ./test/Pulse.EventStore.Tests/Pulse.EventStore.Tests.csproj
       - name: Test
         run: >
           dotnet test
-          ./test/HealthChecks.EventStore.Tests/HealthChecks.EventStore.Tests.csproj
+          ./test/Pulse.EventStore.Tests/Pulse.EventStore.Tests.csproj
           --no-restore
           --no-build
           --collect "XPlat Code Coverage"

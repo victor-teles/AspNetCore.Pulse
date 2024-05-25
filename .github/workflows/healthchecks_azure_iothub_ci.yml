@@ -5,8 +5,8 @@ on:
   push:
    branches: [ master ]
    paths:
-     - src/HealthChecks.Azure.IoTHub/**
-     - test/HealthChecks.Azure.IoTHub.Tests/**
+     - src/Pulse.Azure.IoTHub/**
+     - test/Pulse.Azure.IoTHub.Tests/**
      - test/_SHARED/**
      - .github/workflows/healthchecks_azure_iothub_ci.yml
      - .github/workflows/reusable_ci_workflow.yml
@@ -19,8 +19,8 @@ on:
   pull_request:
     branches: [ master ]
     paths:
-      - src/HealthChecks.Azure.IoTHub/**
-      - test/HealthChecks.Azure.IoTHub.Tests/**
+      - src/Pulse.Azure.IoTHub/**
+      - test/Pulse.Azure.IoTHub.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_azure_iothub_ci.yml
       - .github/workflows/reusable_ci_workflow.yml
@@ -31,6 +31,6 @@ jobs:
   build:
     uses: ./.github/workflows/reusable_ci_workflow.yml
     with:
-      PROJECT_PATH: ./src/HealthChecks.Azure.IoTHub/HealthChecks.Azure.IoTHub.csproj
-      TEST_PROJECT_PATH: ./test/HealthChecks.Azure.IoTHub.Tests/HealthChecks.Azure.IoTHub.Tests.csproj
+      PROJECT_PATH: ./src/Pulse.Azure.IoTHub/Pulse.Azure.IoTHub.csproj
+      TEST_PROJECT_PATH: ./test/Pulse.Azure.IoTHub.Tests/Pulse.Azure.IoTHub.Tests.csproj
       CODECOV_FLAGS: Azure.IoTHub

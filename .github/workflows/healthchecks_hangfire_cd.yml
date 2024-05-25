@@ -12,5 +12,5 @@ jobs:
     secrets: inherit
     with:
       BUILD_CONFIG: Release
-      PROJECT_PATH: ./src/HealthChecks.Hangfire/HealthChecks.Hangfire.csproj
-      PACKAGE_NAME: AspNetCore.HealthChecks.Hangfire
+      PROJECT_PATH: ./src/Pulse.Hangfire/Pulse.Hangfire.csproj
+      PACKAGE_NAME: AspNetCore.Pulse.Hangfire

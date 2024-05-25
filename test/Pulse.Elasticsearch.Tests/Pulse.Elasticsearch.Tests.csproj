@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Pulse.Elasticsearch\Pulse.Elasticsearch.csproj" />
+    <PackageReference Include="Ductus.FluentDocker" Version="2.10.59" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Resources\docker-compose.yml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Pulse.Rabbitmq\Pulse.Rabbitmq.csproj" />
+  </ItemGroup>
+
+</Project>

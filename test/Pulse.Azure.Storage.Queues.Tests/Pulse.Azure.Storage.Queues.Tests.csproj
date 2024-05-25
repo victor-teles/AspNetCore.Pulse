@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <PackageReference Include="Azure.Identity" Version="1.11.3" />
+    <ProjectReference Include="..\..\src\Pulse.Azure.Storage.Queues\Pulse.Azure.Storage.Queues.csproj" />
+  </ItemGroup>
+
+</Project>

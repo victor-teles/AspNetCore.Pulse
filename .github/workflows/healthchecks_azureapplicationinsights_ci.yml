@@ -5,8 +5,8 @@ on:
   push:
     branches: [ master ]
     paths:
-      - src/HealthChecks.AzureApplicationInsights/**
-      - test/HealthChecks.AzureApplicationInsights.Tests/**
+      - src/Pulse.AzureApplicationInsights/**
+      - test/Pulse.AzureApplicationInsights.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_azureapplicationinsights_ci.yml
       - .github/workflows/reusable_ci_workflow.yml
@@ -19,8 +19,8 @@ on:
   pull_request:
     branches: [ master ]
     paths:
-      - src/HealthChecks.AzureApplicationInsights/**
-      - test/HealthChecks.AzureApplicationInsights.Tests/**
+      - src/Pulse.AzureApplicationInsights/**
+      - test/Pulse.AzureApplicationInsights.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_azureapplicationinsights_ci.yml
       - .github/workflows/reusable_ci_workflow.yml
@@ -31,6 +31,6 @@ jobs:
   build:
     uses: ./.github/workflows/reusable_ci_workflow.yml
     with:
-      PROJECT_PATH: ./src/HealthChecks.AzureApplicationInsights/HealthChecks.AzureApplicationInsights.csproj
-      TEST_PROJECT_PATH: ./test/HealthChecks.AzureApplicationInsights.Tests/HealthChecks.AzureApplicationInsights.Tests.csproj
+      PROJECT_PATH: ./src/Pulse.AzureApplicationInsights/Pulse.AzureApplicationInsights.csproj
+      TEST_PROJECT_PATH: ./test/Pulse.AzureApplicationInsights.Tests/Pulse.AzureApplicationInsights.Tests.csproj
       CODECOV_FLAGS: AzureApplicationInsights

@@ -12,5 +12,5 @@ jobs:
     secrets: inherit
     with:
       BUILD_CONFIG: Release
-      PROJECT_PATH: ./src/HealthChecks.Gremlin/HealthChecks.Gremlin.csproj
-      PACKAGE_NAME: AspNetCore.HealthChecks.Gremlin
+      PROJECT_PATH: ./src/Pulse.Gremlin/Pulse.Gremlin.csproj
+      PACKAGE_NAME: AspNetCore.Pulse.Gremlin

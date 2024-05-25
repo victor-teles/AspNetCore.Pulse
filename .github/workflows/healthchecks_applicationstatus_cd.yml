@@ -1,4 +1,4 @@
-name: HealthChecks Application Status CD
+name: Pulse Application Status CD
 
 on:
   push:
@@ -12,5 +12,5 @@ jobs:
     secrets: inherit
     with:
       BUILD_CONFIG: Release
-      PROJECT_PATH: ./src/HealthChecks.ApplicationStatus/HealthChecks.ApplicationStatus.csproj
-      PACKAGE_NAME: AspNetCore.HealthChecks.ApplicationStatus
+      PROJECT_PATH: ./src/Pulse.ApplicationStatus/Pulse.ApplicationStatus.csproj
+      PACKAGE_NAME: AspNetCore.Pulse.ApplicationStatus

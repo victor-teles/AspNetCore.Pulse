@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Pulse.InfluxDB\Pulse.InfluxDB.csproj" />
+  </ItemGroup>
+
+</Project>

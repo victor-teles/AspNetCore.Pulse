@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Pulse.Publisher.ApplicationInsights\Pulse.Publisher.ApplicationInsights.csproj" />
+  </ItemGroup>
+
+</Project>

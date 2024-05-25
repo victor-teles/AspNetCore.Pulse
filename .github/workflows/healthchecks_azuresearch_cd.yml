@@ -12,5 +12,5 @@ jobs:
     secrets: inherit
     with:
       BUILD_CONFIG: Release
-      PROJECT_PATH: ./src/HealthChecks.AzureSearch/HealthChecks.AzureSearch.csproj
-      PACKAGE_NAME: AspNetCore.HealthChecks.AzureSearch
+      PROJECT_PATH: ./src/Pulse.AzureSearch/Pulse.AzureSearch.csproj
+      PACKAGE_NAME: AspNetCore.Pulse.AzureSearch

@@ -5,8 +5,8 @@ on:
   push:
     branches: [ master ]
     paths:
-      - src/HealthChecks.SendGrid/**
-      - test/HealthChecks.SendGrid.Tests/**
+      - src/Pulse.SendGrid/**
+      - test/Pulse.SendGrid.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_sendgrid_ci.yml
       - .github/workflows/reusable_ci_workflow.yml
@@ -19,8 +19,8 @@ on:
   pull_request:
     branches: [ master ]
     paths:
-      - src/HealthChecks.SendGrid/**
-      - test/HealthChecks.SendGrid.Tests/**
+      - src/Pulse.SendGrid/**
+      - test/Pulse.SendGrid.Tests/**
       - test/_SHARED/**
       - .github/workflows/healthchecks_sendgrid_ci.yml
       - .github/workflows/reusable_ci_workflow.yml
@@ -31,6 +31,6 @@ jobs:
   build:
     uses: ./.github/workflows/reusable_ci_workflow.yml
     with:
-      PROJECT_PATH: ./src/HealthChecks.SendGrid/HealthChecks.SendGrid.csproj
-      TEST_PROJECT_PATH: ./test/HealthChecks.SendGrid.Tests/HealthChecks.SendGrid.Tests.csproj
+      PROJECT_PATH: ./src/Pulse.SendGrid/Pulse.SendGrid.csproj
+      TEST_PROJECT_PATH: ./test/Pulse.SendGrid.Tests/Pulse.SendGrid.Tests.csproj
       CODECOV_FLAGS: SendGrid

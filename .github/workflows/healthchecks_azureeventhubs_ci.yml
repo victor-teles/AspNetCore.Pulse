@@ -5,8 +5,8 @@ on:
   push:
    branches: [ master ]
    paths:
-     - src/HealthChecks.Azure.Messaging.EventHubs/**
-     - test/HealthChecks.Azure.Messaging.EventHubs.Tests/**
+     - src/Pulse.Azure.Messaging.EventHubs/**
+     - test/Pulse.Azure.Messaging.EventHubs.Tests/**
      - test/_SHARED/**
      - .github/workflows/healthchecks_azureeventhubs_ci.yml
      - .github/workflows/reusable_ci_workflow.yml
@@ -19,8 +19,8 @@ on:
   pull_request:
     branches: [ master ]
     paths:
-     - src/HealthChecks.Azure.Messaging.EventHubs/**
-     - test/HealthChecks.Azure.Messaging.EventHubs.Tests/**
+     - src/Pulse.Azure.Messaging.EventHubs/**
+     - test/Pulse.Azure.Messaging.EventHubs.Tests/**
      - test/_SHARED/**
      - .github/workflows/healthchecks_azureeventhubs_ci.yml
      - .github/workflows/reusable_ci_workflow.yml
@@ -31,7 +31,7 @@ jobs:
   build:
     uses: ./.github/workflows/reusable_ci_workflow.yml
     with:
-      PROJECT_PATH: ./src/HealthChecks.Azure.Messaging.EventHubs/HealthChecks.Azure.Messaging.EventHubs.csproj
-      TEST_PROJECT_PATH: ./test/HealthChecks.Azure.Messaging.EventHubs.Tests/HealthChecks.Azure.Messaging.EventHubs.Tests.csproj
+      PROJECT_PATH: ./src/Pulse.Azure.Messaging.EventHubs/Pulse.Azure.Messaging.EventHubs.csproj
+      TEST_PROJECT_PATH: ./test/Pulse.Azure.Messaging.EventHubs.Tests/Pulse.Azure.Messaging.EventHubs.Tests.csproj
       CODECOV_FLAGS: AzureEventHubs
 

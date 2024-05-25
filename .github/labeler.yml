@@ -18,126 +18,126 @@ samples:
   - samples/**/*
 
 applicationstatus:
-  - src/HealthChecks.ApplicationStatus/**/*
+  - src/Pulse.ApplicationStatus/**/*
 
 arrangodb:
-  - src/HealthChecks.ArangoDb/**/*
+  - src/Pulse.ArangoDb/**/*
 
 aws:
-  - src/HealthChecks.Aws.*/**/*
+  - src/Pulse.Aws.*/**/*
 
 azure:
-  - src/HealthChecks.Azure*/**/*
+  - src/Pulse.Azure*/**/*
 
 consul:
-  - src/HealthChecks.Consul/**/*
+  - src/Pulse.Consul/**/*
 
 cosmosdb:
-  - src/HealthChecks.CosmosDb/**/*
+  - src/Pulse.CosmosDb/**/*
 
 dapr:
-  - src/HealthChecks.Dapr/**/*
+  - src/Pulse.Dapr/**/*
 
 documentdb:
-  - src/HealthChecks.DocumentDb/**/*
+  - src/Pulse.DocumentDb/**/*
 
 dynamodb:
-  - src/HealthChecks.DynamoDb/**/*
+  - src/Pulse.DynamoDb/**/*
 
 elasticsearch:
-  - src/HealthChecks.Elasticsearch/**/*
+  - src/Pulse.Elasticsearch/**/*
 
 eventstore:
-  - src/HealthChecks.EventStore*/**/*
+  - src/Pulse.EventStore*/**/*
 
 cloudfirestore:
-  - src/HealthChecks.Gcp.CloudFirestore/**/*
+  - src/Pulse.Gcp.CloudFirestore/**/*
 
 gremlin:
-  - src/HealthChecks.Gremlin/**/*
+  - src/Pulse.Gremlin/**/*
 
 hangfire:
-  - src/HealthChecks.Hangfire/**/*
+  - src/Pulse.Hangfire/**/*
 
 ibmmq:
-  src/HealthChecks.IbmMQ/**/*
+  src/Pulse.IbmMQ/**/*
 
 influxdb:
-  src/HealthChecks.InfluxDB/**/*
+  src/Pulse.InfluxDB/**/*
 
 kafka:
-  - src/HealthChecks.Kafka/**/*
+  - src/Pulse.Kafka/**/*
 
 kubernetes:
-  - src/HealthChecks.Kubernetes/**/*
+  - src/Pulse.Kubernetes/**/*
 
 mongodb:
-  - src/HealthChecks.MongoDb/**/*
+  - src/Pulse.MongoDb/**/*
 
 mysql:
-  - src/HealthChecks.MySql/**/*
+  - src/Pulse.MySql/**/*
 
 nats:
-  - src/HealthChecks.Nats/**/*
+  - src/Pulse.Nats/**/*
 
 network:
-  - src/HealthChecks.Network/**/*
+  - src/Pulse.Network/**/*
 
 npgsql:
-  - src/HealthChecks.NpgSql/**/*
+  - src/Pulse.NpgSql/**/*
 
 openidconnect:
-  - src/HealthChecks.OpenIdConnectServer/**/*
+  - src/Pulse.OpenIdConnectServer/**/*
 
 oracle:
-  - src/HealthChecks.Oracle/**/*
+  - src/Pulse.Oracle/**/*
 
 prometheus:
-  - src/HealthChecks.Prometheus.Metrics/**/*
-  - src/HealthChecks.Publisher.Prometheus/**/*
+  - src/Pulse.Prometheus.Metrics/**/*
+  - src/Pulse.Publisher.Prometheus/**/*
 
 applicationinsights:
-  - src/HealthChecks.Publisher.ApplicationInsights/**/*
+  - src/Pulse.Publisher.ApplicationInsights/**/*
 
 cloudwatch:
-  - src/HealthChecks.Publisher.CloudWatch/**/*
+  - src/Pulse.Publisher.CloudWatch/**/*
 
 datadog:
-  - src/HealthChecks.Publisher.Datadog/**/*
+  - src/Pulse.Publisher.Datadog/**/*
 
 seq:
-  -src/HealthChecks.Publisher.Seq/**/*
+  -src/Pulse.Publisher.Seq/**/*
 
 rabbitmq:
-  - src/HealthChecks.Rabbitmq/**/*
+  - src/Pulse.Rabbitmq/**/*
 
 ravendb:
-  - src/HealthChecks.RavenDB/**/*
+  - src/Pulse.RavenDB/**/*
 
 redis:
-  - src/HealthChecks.Redis/**/*
+  - src/Pulse.Redis/**/*
 
 sendgrid:
-  - src/HealthChecks.SendGrid/**/*
+  - src/Pulse.SendGrid/**/*
 
 signalr:
-  - src/HealthChecks.SignalR/**/*
+  - src/Pulse.SignalR/**/*
 
 solr:
-  - src/HealthChecks.Solr/**/*
+  - src/Pulse.Solr/**/*
 
 sqlite:
-  - src/HealthChecks.Sqlite/**/*
+  - src/Pulse.Sqlite/**/*
 
 sqlserver:
-  - src/HealthChecks.SqlServer/**/*
+  - src/Pulse.SqlServer/**/*
 
 system:
-  - src/HealthChecks.System/**/*
+  - src/Pulse.System/**/*
 
 UI:
-  - src/HealthChecks.UI/**/*
-  - src/HealthChecks.UI.*/**/*
+  - src/Pulse.UI/**/*
+  - src/Pulse.UI.*/**/*
 
 uris:
-  - src/HealthChecks.Uris/**/*
+  - src/Pulse.Uris/**/*

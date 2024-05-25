@@ -12,5 +12,5 @@ jobs:
     secrets: inherit
     with:
       BUILD_CONFIG: Release
-      PROJECT_PATH: ./src/HealthChecks.Consul/HealthChecks.Consul.csproj
-      PACKAGE_NAME: AspNetCore.HealthChecks.Consul
+      PROJECT_PATH: ./src/Pulse.Consul/Pulse.Consul.csproj
+      PACKAGE_NAME: AspNetCore.Pulse.Consul

@@ -12,5 +12,5 @@ jobs:
     secrets: inherit
     with:
       BUILD_CONFIG: Release
-      PROJECT_PATH: ./src/HealthChecks.DocumentDb/HealthChecks.DocumentDb.csproj
-      PACKAGE_NAME: AspNetCore.HealthChecks.DocumentDb
+      PROJECT_PATH: ./src/Pulse.DocumentDb/Pulse.DocumentDb.csproj
+      PACKAGE_NAME: AspNetCore.Pulse.DocumentDb

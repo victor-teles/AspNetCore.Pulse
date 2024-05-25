@@ -12,5 +12,5 @@ jobs:
     secrets: inherit
     with:
       BUILD_CONFIG: Release
-      PROJECT_PATH: ./src/HealthChecks.Publisher.ApplicationInsights/HealthChecks.Publisher.ApplicationInsights.csproj
-      PACKAGE_NAME: AspNetCore.HealthChecks.Publisher.ApplicationInsights
+      PROJECT_PATH: ./src/Pulse.Publisher.ApplicationInsights/Pulse.Publisher.ApplicationInsights.csproj
+      PACKAGE_NAME: AspNetCore.Pulse.Publisher.ApplicationInsights
