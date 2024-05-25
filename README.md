@@ -27,7 +27,7 @@ You are able to check health of databases, messaging services, uris and much mor
 
 ## Credits
 
-This package is based on the excellent work from the X[victor-teles/AspNetCore.Pulse](https://github.com/victor-teles/AspNetCore.Pulse) project. We have forked their repository and built upon it to add more features and support for additional services.
+This package is based on the excellent work from the [Xabaril/AspNetCore.Diagnostics.HealthChecks](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks) project. We have forked their repository and built upon it to add more features and support for additional services.
 
 ## License
 
