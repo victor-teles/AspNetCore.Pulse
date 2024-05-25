@@ -3,7 +3,7 @@ name: HealthChecks Publisher.CloudWatch CI
 on:
   workflow_dispatch:
   push:
-    branches: [ master ]
+    branches: [ main ]
     paths:
       - src/Pulse.Publisher.CloudWatch/**
       - test/Pulse.Publisher.CloudWatch.Tests/**
@@ -16,7 +16,7 @@ on:
       - preview-*
 
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
     paths:
       - src/Pulse.Publisher.CloudWatch/**
       - test/Pulse.Publisher.CloudWatch.Tests/**

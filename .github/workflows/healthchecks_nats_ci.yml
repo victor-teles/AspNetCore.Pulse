@@ -3,7 +3,7 @@ name: HealthChecks Nats CI
 on:
   workflow_dispatch:
   push:
-    branches: [ master ]
+    branches: [ main ]
     paths:
       - src/Pulse.Nats/**
       - test/Pulse.Nats.Tests/**
@@ -16,7 +16,7 @@ on:
       - preview-*
 
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
     paths:
       - src/Pulse.Nats/**
       - test/Pulse.Nats.Tests/**

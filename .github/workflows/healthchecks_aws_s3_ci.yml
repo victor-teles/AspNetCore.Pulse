@@ -3,7 +3,7 @@ name: HealthChecks Aws.S3 CI
 on:
   workflow_dispatch:
   push:
-   branches: [ master ]
+   branches: [ main ]
    paths:
      - src/Pulse.Aws.S3/**
      - test/Pulse.Aws.S3.Tests/**
@@ -17,7 +17,7 @@ on:
      - preview-*
 
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
     paths:
       - src/Pulse.Aws.S3/**
       - test/Pulse.Aws.S3.Tests/**

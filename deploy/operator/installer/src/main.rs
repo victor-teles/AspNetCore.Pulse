@@ -11,7 +11,7 @@ use crossterm::{
 use std::io::{stdout, Write};
 use std::process::{exit, Command};
 
-const REPOSITORY_PATH: &str = "Xabaril/AspNetCore.Diagnostics.HealthChecks";
+const REPOSITORY_PATH: &str = "victor-teles/AspNetCore.Pulse";
 const OPERATOR_CRD_PATH: &str = "deploy/operator/crd/healthcheck-crd.yaml";
 const USER_AGENT: &str = "Operator Installer Agent";
 
@@ -183,7 +183,7 @@ fn operator_api_path() -> String {
 
 fn operator_raw_path() -> String {
     format!(
-        "https://raw.githubusercontent.com/{}/master",
+        "https://raw.githubusercontent.com/{}/main",
         REPOSITORY_PATH
     )
 }

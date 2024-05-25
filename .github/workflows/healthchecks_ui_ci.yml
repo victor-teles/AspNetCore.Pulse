@@ -3,7 +3,7 @@ name: HealthChecks UI CI
 on:
   workflow_dispatch:
   push:
-    branches: [ master ]
+    branches: [ main ]
     paths:
       - src/Pulse.UI/**
       - src/Pulse.UI.*/**
@@ -19,7 +19,7 @@ on:
       - preview-*
 
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
     paths:
       - src/Pulse.UI/**
       - src/Pulse.UI.*/**

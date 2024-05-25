@@ -4,7 +4,7 @@
 	"friendlyName": "Asp.Net Core Health Check Release Gate",
 	"description": "Azure DevOps release gate based on Asp.Net Core Health Checks.",
 	"author": "lfraile",
-	"helpMarkDown": "[More Information](https://github.com/lfraile/AspNetCore.Diagnostics.HealthChecks/blob/master/AzureDevOpsTasks/README.md)",
+	"helpMarkDown": "[More Information](https://github.com/victor-teles/AspNetCore.Pulse/blob/main/AzureDevOpsTasks/README.md)",
 	"category": "Utility",
 	"preview": "true",
 	"visibility": [

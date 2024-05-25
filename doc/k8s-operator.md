@@ -12,8 +12,8 @@ We offer a installer tool for windows and linux, that will install all necessary
 
 You can download the differente releases from this links:
 
-- [Windows Release](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks/raw/master/deploy/operator/installer/releases/operator-installer-win.exe)
-- [Linux Release](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks/raw/master/deploy/operator/installer/releases/operator-installer-linux)
+- [Windows Release](https://github.com/victor-teles/AspNetCore.Pulse/raw/main/deploy/operator/installer/releases/operator-installer-win.exe)
+- [Linux Release](https://github.com/victor-teles/AspNetCore.Pulse/raw/main/deploy/operator/installer/releases/operator-installer-linux)
 
 Note: If you execute the tool with --delete parameters, a resource cleanup will be triggered and all the operator related resources including the crd will be removed.
 
@@ -21,7 +21,7 @@ Note: If you execute the tool with --delete parameters, a resource cleanup will 
 
 You can deploy healthchecks operator in your cluster by cloning the repository and applying the yaml definition files:
 
-- Apply the custom resource definition: [healthcheck-crd](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks/blob/master/deploy/operator/crd/healthcheck-crd.yaml)
+- Apply the custom resource definition: [healthcheck-crd](https://github.com/victor-teles/AspNetCore.Pulse/blob/main/deploy/operator/crd/healthcheck-crd.yaml)
 
   `kubectl apply -f deploy/operator/crd/healthcheck-crd.yaml`
 
@@ -31,7 +31,7 @@ You can deploy healthchecks operator in your cluster by cloning the repository a
 
 ## Creating a HealthCheck Resource
 
-The [HealthCheck operator definition](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks/blob/master/deploy/operator/crd/healthcheck-crd.yaml), has the following fields to be configured:
+The [HealthCheck operator definition](https://github.com/victor-teles/AspNetCore.Pulse/blob/main/deploy/operator/crd/healthcheck-crd.yaml), has the following fields to be configured:
 
 ### Required fields
 

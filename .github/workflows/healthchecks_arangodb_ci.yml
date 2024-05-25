@@ -3,7 +3,7 @@ name: HealthChecks Arango DB CI
 on:
   workflow_dispatch:
   push:
-   branches: [ master ]
+   branches: [ main ]
    paths:
      - src/Pulse.ArangoDb/**
      - test/Pulse.ArangoDb.Tests/**
@@ -16,7 +16,7 @@ on:
      - preview-*
 
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
     paths:
       - src/Pulse.ArangoDb/**
       - test/Pulse.ArangoDb.Tests/**

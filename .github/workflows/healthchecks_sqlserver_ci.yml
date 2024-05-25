@@ -3,7 +3,7 @@ name: HealthChecks SQL Server DB CI
 on:
   workflow_dispatch:
   push:
-    branches: [ master ]
+    branches: [ main ]
     paths:
       - src/Pulse.SqlServer/**
       - test/Pulse.SqlServer.Tests/**
@@ -16,7 +16,7 @@ on:
       - preview-*
 
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
     paths:
       - src/Pulse.SqlServer/**
       - test/Pulse.SqlServer.Tests/**

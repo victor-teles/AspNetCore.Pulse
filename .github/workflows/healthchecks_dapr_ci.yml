@@ -3,7 +3,7 @@ name: HealthChecks Dapr CI
 on:
   workflow_dispatch:
   push:
-    branches: [ master ]
+    branches: [ main ]
     paths:
       - src/Pulse.Dapr/**
       - test/Pulse.Dapr.Tests/**
@@ -17,7 +17,7 @@ on:
       - preview-*
 
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
     paths:
       - src/Pulse.Dapr/**
       - test/Pulse.Dapr.Tests/**

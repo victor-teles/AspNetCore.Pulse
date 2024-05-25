@@ -5,7 +5,7 @@
 	"publisher": "luisfraile",
 	"version": "1.0.0",
 	"public": false,
-    "description": "Azure DevOps Asp.Net Core Health Check extensions.",    
+    "description": "Azure DevOps Asp.Net Core Health Check extensions.",
 	"categories": ["Azure Pipelines"],
 	"Tags": ["AspNetCoreHealthCheck",
 	"Liveness",
@@ -53,7 +53,7 @@
 	},
 	"links": {
 		"license": {
-			"uri": "https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks/blob/master/LICENSE"
+			"uri": "https://github.com/victor-teles/AspNetCore.Pulse/blob/main/LICENSE"
 		}
 	},
 	"contributions": [{

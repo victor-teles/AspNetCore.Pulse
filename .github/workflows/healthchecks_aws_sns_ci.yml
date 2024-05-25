@@ -3,7 +3,7 @@ name: HealthChecks Aws Sns CI
 on:
   workflow_dispatch:
   push:
-   branches: [ master ]
+   branches: [ main ]
    paths:
      - src/Pulse.Aws.Sns/**
      - test/Pulse.Aws.Sns.Tests/**
@@ -17,7 +17,7 @@ on:
      - preview-*
 
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
     paths:
       - src/Pulse.Aws.Sns/**
       - test/Pulse.Aws.Sns.Tests/**

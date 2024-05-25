@@ -3,7 +3,7 @@ name: HealthChecks MySql CI
 on:
   workflow_dispatch:
   push:
-    branches: [ master ]
+    branches: [ main ]
     paths:
       - src/Pulse.MySql/**
       - test/Pulse.MySql.Tests/**
@@ -16,7 +16,7 @@ on:
       - preview-*
 
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
     paths:
       - src/Pulse.MySql/**
       - test/Pulse.MySql.Tests/**

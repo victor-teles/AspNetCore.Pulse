@@ -3,7 +3,7 @@ name: HealthChecks AzureSearch CI
 on:
   workflow_dispatch:
   push:
-    branches: [ master ]
+    branches: [ main ]
     paths:
       - src/Pulse.AzureSearch/**
       - test/Pulse.AzureSearch.Tests/**
@@ -17,7 +17,7 @@ on:
       - preview-*
 
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
     paths:
       - src/Pulse.AzureSearch/**
       - test/Pulse.AzureSearch.Tests/**

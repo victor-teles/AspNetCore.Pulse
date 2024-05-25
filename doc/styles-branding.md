@@ -67,4 +67,4 @@ rgba(255, 255, 255, 0.8)
 ## Source Sample:
 
 
-[You can check here the dotnet custom branding sample](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks/tree/master/samples/Pulse.UI.Branding)
+[You can check here the dotnet custom branding sample](https://github.com/victor-teles/AspNetCore.Pulse/tree/main/samples/Pulse.UI.Branding)

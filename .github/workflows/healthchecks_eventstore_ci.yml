@@ -2,7 +2,7 @@ name: HealthChecks EventStore CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
     paths:
       - src/Pulse.EventStore/**
       - test/Pulse.EventStore.Tests/**
@@ -15,7 +15,7 @@ on:
       - preview-*
 
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
     paths:
       - src/Pulse.EventStore/**
       - test/Pulse.EventStore.Tests/**

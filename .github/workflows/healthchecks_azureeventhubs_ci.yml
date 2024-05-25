@@ -3,7 +3,7 @@ name: HealthChecks Azure EventHubs CI
 on:
   workflow_dispatch:
   push:
-   branches: [ master ]
+   branches: [ main ]
    paths:
      - src/Pulse.Azure.Messaging.EventHubs/**
      - test/Pulse.Azure.Messaging.EventHubs.Tests/**
@@ -17,7 +17,7 @@ on:
      - preview-*
 
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
     paths:
      - src/Pulse.Azure.Messaging.EventHubs/**
      - test/Pulse.Azure.Messaging.EventHubs.Tests/**

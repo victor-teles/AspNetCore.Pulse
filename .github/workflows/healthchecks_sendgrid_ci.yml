@@ -3,7 +3,7 @@ name: HealthChecks SendGrid CI
 on:
   workflow_dispatch:
   push:
-    branches: [ master ]
+    branches: [ main ]
     paths:
       - src/Pulse.SendGrid/**
       - test/Pulse.SendGrid.Tests/**
@@ -17,7 +17,7 @@ on:
       - preview-*
 
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
     paths:
       - src/Pulse.SendGrid/**
       - test/Pulse.SendGrid.Tests/**

@@ -3,7 +3,7 @@ name: HealthChecks Gremlin CI
 on:
   workflow_dispatch:
   push:
-    branches: [ master ]
+    branches: [ main ]
     paths:
       - src/Pulse.Gremlin/**
       - test/Pulse.Gremlin.Tests/**
@@ -16,7 +16,7 @@ on:
       - preview-*
 
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
     paths:
       - src/Pulse.Gremlin/**
       - test/Pulse.Gremlin.Tests/**
