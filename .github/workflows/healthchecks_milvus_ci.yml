@@ -1,0 +1,93 @@
+name: HealthChecks Milvus CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths:
+      - src/Pulse.Milvus/**
+      - test/Pulse.Milvus.Tests/**
+      - test/_SHARED/**
+      - .github/workflows/healthchecks_milvus_ci.yml
+      - Directory.Build.props
+      - Directory.Build.targets
+    tags-ignore:
+      - release-*
+      - preview-*
+
+  pull_request:
+    branches: [ main ]
+    paths:
+      - src/Pulse.Milvus/**
+      - test/Pulse.Milvus.Tests/**
+      - test/_SHARED/**
+      - .github/workflows/healthchecks_milvus_ci.yml
+      - Directory.Build.props
+      - Directory.Build.targets
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    services:
+      minio:
+        image: minio/minio:RELEASE.2023-03-20T20-16-18Z
+        env:
+          MINIO_ROOT_USER: minioadmin
+          MINIO_ROOT_PASSWORD: minioadmin
+        ports:
+          - "9001:9001"
+          - "9000:9000"
+        options: --console-address ":9001"
+
+      etcd:
+        image: quay.io/coreos/etcd:v3.5.5
+        env:
+          ETCD_AUTO_COMPACTION_MODE: revision
+          ETCD_AUTO_COMPACTION_RETENTION: 1000
+          ETCD_QUOTA_BACKEND_BYTES: 4294967296
+          ETCD_SNAPSHOT_COUNT: 50000
+        options: -advertise-client-urls=http://127.0.0.1:2379 -listen-client-urls http://0.0.0.0:2379 --data-dir /etcd
+      milvus:
+        image: milvusdb/milvus:v2.3.0
+        env:
+          ETCD_ENDPOINTS: etcd:2379
+          MINIO_ADDRESS: minio:9000
+        ports:
+          - "19530:19530"
+          - "9091:9091"
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            6.0.x
+            7.0.x
+            8.0.x
+      - name: Restore
+        run: |
+          dotnet restore ./src/Pulse.Milvus/Pulse.Milvus.csproj &&
+          dotnet restore ./test/Pulse.Milvus.Tests/Pulse.Milvus.Tests.csproj
+      - name: Check formatting
+        run: |
+          dotnet format --no-restore --verify-no-changes --severity warn ./src/Pulse.Milvus/Pulse.Milvus.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
+          dotnet format --no-restore --verify-no-changes --severity warn ./test/Pulse.Milvus.Tests/Pulse.Milvus.Tests.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1)
+      - name: Build
+        run: |
+          dotnet build --no-restore ./src/Pulse.Milvus/Pulse.Milvus.csproj &&
+          dotnet build --no-restore ./test/Pulse.Milvus.Tests/Pulse.Milvus.Tests.csproj
+      - name: Test
+        run: >
+          dotnet test
+          ./test/Pulse.Milvus.Tests/Pulse.Milvus.Tests.csproj
+          --no-restore
+          --no-build
+          --collect "XPlat Code Coverage"
+          --results-directory .coverage
+          --
+          DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
+      - name: Upload Coverage
+        uses: codecov/codecov-action@v4
+        with:
+          flags: Milvus
+          directory: .coverage

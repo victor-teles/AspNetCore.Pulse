@@ -69,6 +69,7 @@
     <HealthCheckUISqlServerStorage>8.0.3</HealthCheckUISqlServerStorage>
     <HealthCheckUri>8.0.3</HealthCheckUri>
     <HealthCheckKeyVaultSecrets>8.0.3</HealthCheckKeyVaultSecrets>
+    <HealthCheckMilvus>8.0.3-preview1</HealthCheckMilvus>
   </PropertyGroup>
 
 </Project>
