@@ -129,6 +129,9 @@ solr:
 sqlite:
   - src/Pulse.Sqlite/**/*
 
+milvus:
+  - src/Pulse.Milvus/**/*
+
 sqlserver:
   - src/Pulse.SqlServer/**/*
 
