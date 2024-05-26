@@ -1,0 +1,69 @@
+name: HealthChecks Milvus CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths:
+      - src/Pulse.Milvus/**
+      - test/Pulse.Milvus.Tests/**
+      - test/_SHARED/**
+      - .github/workflows/healthchecks_milvus_ci.yml
+      - Directory.Build.props
+      - Directory.Build.targets
+    tags-ignore:
+      - release-*
+      - preview-*
+
+  pull_request:
+    branches: [ main ]
+    paths:
+      - src/Pulse.Milvus/**
+      - test/Pulse.Milvus.Tests/**
+      - test/_SHARED/**
+      - .github/workflows/healthchecks_milvus_ci.yml
+      - Directory.Build.props
+      - Directory.Build.targets
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hoverkraft-tech/compose-action@v2.0.0
+        with:
+          compose-file: "./docker-compose-milvus.yml"
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            6.0.x
+            7.0.x
+            8.0.x
+      - name: Restore
+        run: |
+          dotnet restore ./src/Pulse.Milvus/Pulse.Milvus.csproj &&
+          dotnet restore ./test/Pulse.Milvus.Tests/Pulse.Milvus.Tests.csproj
+      - name: Check formatting
+        run: |
+          dotnet format --no-restore --verify-no-changes --severity warn ./src/Pulse.Milvus/Pulse.Milvus.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
+          dotnet format --no-restore --verify-no-changes --severity warn ./test/Pulse.Milvus.Tests/Pulse.Milvus.Tests.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1)
+      - name: Build
+        run: |
+          dotnet build --no-restore ./src/Pulse.Milvus/Pulse.Milvus.csproj &&
+          dotnet build --no-restore ./test/Pulse.Milvus.Tests/Pulse.Milvus.Tests.csproj
+      - name: Test
+        run: >
+          dotnet test
+          ./test/Pulse.Milvus.Tests/Pulse.Milvus.Tests.csproj
+          --no-restore
+          --no-build
+          --collect "XPlat Code Coverage"
+          --results-directory .coverage
+          --
+          DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
+      - name: Upload Coverage
+        uses: codecov/codecov-action@v4
+        with:
+          flags: Milvus
+          directory: .coverage
