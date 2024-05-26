@@ -1,3 +1,46 @@
+namespace Microsoft.AspNetCore.Builder
+{
+    public static class ApplicationBuilderExtensions
+    {
+        public static Microsoft.AspNetCore.Builder.IApplicationBuilder UseHealthChecksUI(this Microsoft.AspNetCore.Builder.IApplicationBuilder app) { }
+        public static Microsoft.AspNetCore.Builder.IApplicationBuilder UseHealthChecksUI(this Microsoft.AspNetCore.Builder.IApplicationBuilder app, System.Action<Pulse.UI.Configuration.Options> setup) { }
+    }
+    public static class EndpointRouteBuilderExtensions
+    {
+        public static Microsoft.AspNetCore.Builder.IEndpointConventionBuilder MapHealthChecksUI(this Microsoft.AspNetCore.Routing.IEndpointRouteBuilder builder, System.Action<Pulse.UI.Configuration.Options>? setupOptions = null) { }
+    }
+}
+namespace Microsoft.EntityFrameworkCore
+{
+    public static class DatabaseFacadeExtensions
+    {
+        public static bool IsInMemory(this Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade database) { }
+    }
+}
+namespace Microsoft.Extensions.Configuration
+{
+    public static class ConfigurationExtensions
+    {
+        public static Pulse.UI.Configuration.Settings BindUISettings(this Microsoft.Extensions.Configuration.IConfiguration configuration, Pulse.UI.Configuration.Settings settings) { }
+        public static Microsoft.Extensions.Configuration.IConfigurationSection GetSectionWithFallBack(this Microsoft.Extensions.Configuration.IConfiguration configuration, string section, string fallback) { }
+    }
+}
+namespace Microsoft.Extensions.DependencyInjection
+{
+    public static class ServiceCollectionExtensions
+    {
+        public static Microsoft.Extensions.DependencyInjection.IServiceCollection AddApiEndpointHttpClient(this Microsoft.Extensions.DependencyInjection.IServiceCollection services) { }
+        public static Microsoft.Extensions.DependencyInjection.HealthChecksUIBuilder AddHealthChecksUI(this Microsoft.Extensions.DependencyInjection.IServiceCollection services, System.Action<Pulse.UI.Configuration.Settings>? setupSettings = null) { }
+        public static Microsoft.Extensions.DependencyInjection.IServiceCollection AddWebhooksEndpointHttpClient(this Microsoft.Extensions.DependencyInjection.IServiceCollection services) { }
+    }
+}
+namespace Microsoft.Extensions.Diagnostics.HealthChecks
+{
+    public static class HealthReportExtensions
+    {
+        public static System.Collections.Generic.List<Pulse.UI.Data.HealthCheckExecutionEntry> ToExecutionEntries(this Pulse.UI.Core.UIHealthReport report) { }
+    }
+}
 namespace Pulse.UI.Configuration
 {
     public class HealthCheckSetting
@@ -90,48 +133,5 @@ namespace Pulse.UI.Core.Notifications
     {
         System.Threading.Tasks.Task NotifyDown(string name, Pulse.UI.Core.UIHealthReport report);
         System.Threading.Tasks.Task NotifyWakeUp(string name);
-    }
-}
-namespace Microsoft.AspNetCore.Builder
-{
-    public static class ApplicationBuilderExtensions
-    {
-        public static Microsoft.AspNetCore.Builder.IApplicationBuilder UseHealthChecksUI(this Microsoft.AspNetCore.Builder.IApplicationBuilder app) { }
-        public static Microsoft.AspNetCore.Builder.IApplicationBuilder UseHealthChecksUI(this Microsoft.AspNetCore.Builder.IApplicationBuilder app, System.Action<Pulse.UI.Configuration.Options> setup) { }
-    }
-    public static class EndpointRouteBuilderExtensions
-    {
-        public static Microsoft.AspNetCore.Builder.IEndpointConventionBuilder MapHealthChecksUI(this Microsoft.AspNetCore.Routing.IEndpointRouteBuilder builder, System.Action<Pulse.UI.Configuration.Options>? setupOptions = null) { }
-    }
-}
-namespace Microsoft.EntityFrameworkCore
-{
-    public static class DatabaseFacadeExtensions
-    {
-        public static bool IsInMemory(this Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade database) { }
-    }
-}
-namespace Microsoft.Extensions.Configuration
-{
-    public static class ConfigurationExtensions
-    {
-        public static Pulse.UI.Configuration.Settings BindUISettings(this Microsoft.Extensions.Configuration.IConfiguration configuration, Pulse.UI.Configuration.Settings settings) { }
-        public static Microsoft.Extensions.Configuration.IConfigurationSection GetSectionWithFallBack(this Microsoft.Extensions.Configuration.IConfiguration configuration, string section, string fallback) { }
-    }
-}
-namespace Microsoft.Extensions.DependencyInjection
-{
-    public static class ServiceCollectionExtensions
-    {
-        public static Microsoft.Extensions.DependencyInjection.IServiceCollection AddApiEndpointHttpClient(this Microsoft.Extensions.DependencyInjection.IServiceCollection services) { }
-        public static Microsoft.Extensions.DependencyInjection.HealthChecksUIBuilder AddHealthChecksUI(this Microsoft.Extensions.DependencyInjection.IServiceCollection services, System.Action<Pulse.UI.Configuration.Settings>? setupSettings = null) { }
-        public static Microsoft.Extensions.DependencyInjection.IServiceCollection AddWebhooksEndpointHttpClient(this Microsoft.Extensions.DependencyInjection.IServiceCollection services) { }
-    }
-}
-namespace Microsoft.Extensions.Diagnostics.HealthChecks
-{
-    public static class HealthReportExtensions
-    {
-        public static System.Collections.Generic.List<Pulse.UI.Data.HealthCheckExecutionEntry> ToExecutionEntries(this Pulse.UI.Core.UIHealthReport report) { }
     }
 }

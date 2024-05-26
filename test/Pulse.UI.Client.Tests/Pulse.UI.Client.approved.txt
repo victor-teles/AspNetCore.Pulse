@@ -1,4 +1,4 @@
-﻿namespace Pulse.UI.Client
+namespace Pulse.UI.Client
 {
     public static class UIResponseWriter
     {
