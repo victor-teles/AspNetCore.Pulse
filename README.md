@@ -25,9 +25,12 @@ You are able to check health of databases, messaging services, uris and much mor
 
 **ASP.NET Core** versions supported: 8.0, 7.0, 6.0, 5.0, 3.1, 3.0 and 2.2
 
+Check out our [homepage](https://pulse.mintlify.app) to learn more about installation
+
 ## Credits
 
 This package is based on the excellent work from the [Xabaril/AspNetCore.Diagnostics.HealthChecks](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks) project. We have forked their repository and built upon it to add more features and support for additional services.
+
 
 ## License
 
