@@ -1,3 +1,15 @@
+namespace Microsoft.Extensions.DependencyInjection
+{
+    public static class AzureDigitalTwinHealthCheckBuilderExtensions
+    {
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddAzureDigitalTwin(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, Microsoft.Rest.ServiceClientCredentials credentials, string? name = null, Microsoft.Extensions.Diagnostics.HealthChecks.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddAzureDigitalTwin(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, string clientId, string clientSecret, string tenantId, string? name = null, Microsoft.Extensions.Diagnostics.HealthChecks.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddAzureDigitalTwinInstance(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, Azure.Core.TokenCredential credentials, string hostName, string instanceName, string? name = null, Microsoft.Extensions.Diagnostics.HealthChecks.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddAzureDigitalTwinInstance(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, string clientId, string clientSecret, string tenantId, string hostName, string instanceName, string? name = null, Microsoft.Extensions.Diagnostics.HealthChecks.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddAzureDigitalTwinModels(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, Azure.Core.TokenCredential credentials, string hostName, string[] models, string? name = null, Microsoft.Extensions.Diagnostics.HealthChecks.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddAzureDigitalTwinModels(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, string clientId, string clientSecret, string tenantId, string hostName, string[] models, string? name = null, Microsoft.Extensions.Diagnostics.HealthChecks.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+    }
+}
 namespace Pulse.AzureDigitalTwin
 {
     public abstract class AzureDigitalTwinHealthCheck
@@ -16,34 +28,22 @@ namespace Pulse.AzureDigitalTwin
         protected Azure.DigitalTwins.Core.DigitalTwinsClient CreateDigitalTwinClient(string hostName) { }
         protected Microsoft.Azure.Management.DigitalTwins.AzureDigitalTwinsManagementClient CreateManagementClient() { }
     }
-    public class AzureDigitalTwinInstanceHealthCheck : Pulse.AzureDigitalTwin.AzureDigitalTwinHealthCheck, Microsoft.Extensions.Diagnostics.Pulse.IHealthCheck
+    public class AzureDigitalTwinInstanceHealthCheck : Pulse.AzureDigitalTwin.AzureDigitalTwinHealthCheck, Microsoft.Extensions.Diagnostics.HealthChecks.IHealthCheck
     {
         public AzureDigitalTwinInstanceHealthCheck(Azure.Core.TokenCredential tokenCredential, string hostName, string instanceName) { }
         public AzureDigitalTwinInstanceHealthCheck(string clientId, string clientSecret, string tenantId, string hostName, string instanceName) { }
-        public System.Threading.Tasks.Task<Microsoft.Extensions.Diagnostics.Pulse.HealthCheckResult> CheckHealthAsync(Microsoft.Extensions.Diagnostics.Pulse.HealthCheckContext context, System.Threading.CancellationToken cancellationToken = default) { }
+        public System.Threading.Tasks.Task<Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckResult> CheckHealthAsync(Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckContext context, System.Threading.CancellationToken cancellationToken = default) { }
     }
-    public class AzureDigitalTwinModelsHealthCheck : Pulse.AzureDigitalTwin.AzureDigitalTwinHealthCheck, Microsoft.Extensions.Diagnostics.Pulse.IHealthCheck
+    public class AzureDigitalTwinModelsHealthCheck : Pulse.AzureDigitalTwin.AzureDigitalTwinHealthCheck, Microsoft.Extensions.Diagnostics.HealthChecks.IHealthCheck
     {
         public AzureDigitalTwinModelsHealthCheck(Azure.Core.TokenCredential tokenCredential, string hostName, string[] models) { }
         public AzureDigitalTwinModelsHealthCheck(string clientId, string clientSecret, string tenantId, string hostName, string[] models) { }
-        public System.Threading.Tasks.Task<Microsoft.Extensions.Diagnostics.Pulse.HealthCheckResult> CheckHealthAsync(Microsoft.Extensions.Diagnostics.Pulse.HealthCheckContext context, System.Threading.CancellationToken cancellationToken = default) { }
+        public System.Threading.Tasks.Task<Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckResult> CheckHealthAsync(Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckContext context, System.Threading.CancellationToken cancellationToken = default) { }
     }
-    public class AzureDigitalTwinSubscriptionHealthCheck : Pulse.AzureDigitalTwin.AzureDigitalTwinHealthCheck, Microsoft.Extensions.Diagnostics.Pulse.IHealthCheck
+    public class AzureDigitalTwinSubscriptionHealthCheck : Pulse.AzureDigitalTwin.AzureDigitalTwinHealthCheck, Microsoft.Extensions.Diagnostics.HealthChecks.IHealthCheck
     {
         public AzureDigitalTwinSubscriptionHealthCheck(Microsoft.Rest.ServiceClientCredentials serviceClientCredentials) { }
         public AzureDigitalTwinSubscriptionHealthCheck(string clientId, string clientSecret, string tenantId) { }
-        public System.Threading.Tasks.Task<Microsoft.Extensions.Diagnostics.Pulse.HealthCheckResult> CheckHealthAsync(Microsoft.Extensions.Diagnostics.Pulse.HealthCheckContext context, System.Threading.CancellationToken cancellationToken = default) { }
-    }
-}
-namespace Microsoft.Extensions.DependencyInjection
-{
-    public static class AzureDigitalTwinHealthCheckBuilderExtensions
-    {
-        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddAzureDigitalTwin(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, Microsoft.Rest.ServiceClientCredentials credentials, string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
-        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddAzureDigitalTwin(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, string clientId, string clientSecret, string tenantId, string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
-        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddAzureDigitalTwinInstance(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, Azure.Core.TokenCredential credentials, string hostName, string instanceName, string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
-        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddAzureDigitalTwinInstance(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, string clientId, string clientSecret, string tenantId, string hostName, string instanceName, string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
-        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddAzureDigitalTwinModels(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, Azure.Core.TokenCredential credentials, string hostName, string[] models, string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
-        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddAzureDigitalTwinModels(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, string clientId, string clientSecret, string tenantId, string hostName, string[] models, string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+        public System.Threading.Tasks.Task<Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckResult> CheckHealthAsync(Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckContext context, System.Threading.CancellationToken cancellationToken = default) { }
     }
 }

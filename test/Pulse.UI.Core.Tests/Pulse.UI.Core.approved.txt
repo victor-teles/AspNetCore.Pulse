@@ -1,3 +1,11 @@
+namespace Microsoft.Extensions.DependencyInjection
+{
+    public class HealthChecksUIBuilder
+    {
+        public HealthChecksUIBuilder(Microsoft.Extensions.DependencyInjection.IServiceCollection services) { }
+        public Microsoft.Extensions.DependencyInjection.IServiceCollection Services { get; }
+    }
+}
 namespace Pulse.UI.Core
 {
     public class UIHealthReport
@@ -6,7 +14,7 @@ namespace Pulse.UI.Core
         public System.Collections.Generic.Dictionary<string, Pulse.UI.Core.UIHealthReportEntry> Entries { get; }
         public Pulse.UI.Core.UIHealthStatus Status { get; set; }
         public System.TimeSpan TotalDuration { get; set; }
-        public static Pulse.UI.Core.UIHealthReport CreateFrom(Microsoft.Extensions.Diagnostics.Pulse.HealthReport report, System.Func<System.Exception, string>? exceptionMessage = null) { }
+        public static Pulse.UI.Core.UIHealthReport CreateFrom(Microsoft.Extensions.Diagnostics.HealthChecks.HealthReport report, System.Func<System.Exception, string>? exceptionMessage = null) { }
         public static Pulse.UI.Core.UIHealthReport CreateFrom(System.Exception exception, string entryName = "Endpoint") { }
     }
     public class UIHealthReportEntry
@@ -24,13 +32,5 @@ namespace Pulse.UI.Core
         Unhealthy = 0,
         Degraded = 1,
         Healthy = 2,
-    }
-}
-namespace Microsoft.Extensions.DependencyInjection
-{
-    public class HealthChecksUIBuilder
-    {
-        public HealthChecksUIBuilder(Microsoft.Extensions.DependencyInjection.IServiceCollection services) { }
-        public Microsoft.Extensions.DependencyInjection.IServiceCollection Services { get; }
     }
 }

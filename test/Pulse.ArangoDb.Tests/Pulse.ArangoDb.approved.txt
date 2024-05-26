@@ -1,9 +1,16 @@
+namespace Microsoft.Extensions.DependencyInjection
+{
+    public static class ArangoDbHealthCheckBuilderExtensions
+    {
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddArangoDb(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, System.Func<System.IServiceProvider, Pulse.ArangoDb.ArangoDbOptions> connectionOptionsFactory, string? name = null, Microsoft.Extensions.Diagnostics.HealthChecks.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+    }
+}
 namespace Pulse.ArangoDb
 {
-    public class ArangoDbHealthCheck : Microsoft.Extensions.Diagnostics.Pulse.IHealthCheck
+    public class ArangoDbHealthCheck : Microsoft.Extensions.Diagnostics.HealthChecks.IHealthCheck
     {
         public ArangoDbHealthCheck(Pulse.ArangoDb.ArangoDbOptions options) { }
-        public System.Threading.Tasks.Task<Microsoft.Extensions.Diagnostics.Pulse.HealthCheckResult> CheckHealthAsync(Microsoft.Extensions.Diagnostics.Pulse.HealthCheckContext context, System.Threading.CancellationToken cancellationToken = default) { }
+        public System.Threading.Tasks.Task<Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckResult> CheckHealthAsync(Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckContext context, System.Threading.CancellationToken cancellationToken = default) { }
     }
     public class ArangoDbOptions
     {
@@ -14,12 +21,5 @@ namespace Pulse.ArangoDb
         public string JwtToken { get; set; }
         public string Password { get; set; }
         public string UserName { get; set; }
-    }
-}
-namespace Microsoft.Extensions.DependencyInjection
-{
-    public static class ArangoDbHealthCheckBuilderExtensions
-    {
-        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddArangoDb(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, System.Func<System.IServiceProvider, Pulse.ArangoDb.ArangoDbOptions> connectionOptionsFactory, string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
     }
 }

@@ -1,9 +1,19 @@
+namespace Microsoft.Extensions.DependencyInjection
+{
+    public static class NpgSqlHealthCheckBuilderExtensions
+    {
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddNpgSql(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, Pulse.NpgSql.NpgSqlHealthCheckOptions options, string? name = null, Microsoft.Extensions.Diagnostics.HealthChecks.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddNpgSql(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, System.Func<System.IServiceProvider, string> connectionStringFactory, string healthQuery = "SELECT 1;", System.Action<Npgsql.NpgsqlConnection>? configure = null, string? name = null, Microsoft.Extensions.Diagnostics.HealthChecks.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddNpgSql(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, System.Func<System.IServiceProvider, Npgsql.NpgsqlDataSource>? dbDataSourceFactory = null, string healthQuery = "SELECT 1;", System.Action<Npgsql.NpgsqlConnection>? configure = null, string? name = null, Microsoft.Extensions.Diagnostics.HealthChecks.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddNpgSql(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, string connectionString, string healthQuery = "SELECT 1;", System.Action<Npgsql.NpgsqlConnection>? configure = null, string? name = null, Microsoft.Extensions.Diagnostics.HealthChecks.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+    }
+}
 namespace Pulse.NpgSql
 {
-    public class NpgSqlHealthCheck : Microsoft.Extensions.Diagnostics.Pulse.IHealthCheck
+    public class NpgSqlHealthCheck : Microsoft.Extensions.Diagnostics.HealthChecks.IHealthCheck
     {
         public NpgSqlHealthCheck(Pulse.NpgSql.NpgSqlHealthCheckOptions options) { }
-        public System.Threading.Tasks.Task<Microsoft.Extensions.Diagnostics.Pulse.HealthCheckResult> CheckHealthAsync(Microsoft.Extensions.Diagnostics.Pulse.HealthCheckContext context, System.Threading.CancellationToken cancellationToken = default) { }
+        public System.Threading.Tasks.Task<Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckResult> CheckHealthAsync(Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckContext context, System.Threading.CancellationToken cancellationToken = default) { }
     }
     public class NpgSqlHealthCheckOptions
     {
@@ -13,16 +23,6 @@ namespace Pulse.NpgSql
         public System.Action<Npgsql.NpgsqlConnection>? Configure { get; set; }
         public string? ConnectionString { get; }
         public Npgsql.NpgsqlDataSource? DataSource { get; }
-        public System.Func<object?, Microsoft.Extensions.Diagnostics.Pulse.HealthCheckResult>? HealthCheckResultBuilder { get; set; }
-    }
-}
-namespace Microsoft.Extensions.DependencyInjection
-{
-    public static class NpgSqlHealthCheckBuilderExtensions
-    {
-        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddNpgSql(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, Pulse.NpgSql.NpgSqlHealthCheckOptions options, string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
-        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddNpgSql(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, System.Func<System.IServiceProvider, string> connectionStringFactory, string healthQuery = "SELECT 1;", System.Action<Npgsql.NpgsqlConnection>? configure = null, string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
-        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddNpgSql(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, System.Func<System.IServiceProvider, Npgsql.NpgsqlDataSource>? dbDataSourceFactory = null, string healthQuery = "SELECT 1;", System.Action<Npgsql.NpgsqlConnection>? configure = null, string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
-        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddNpgSql(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, string connectionString, string healthQuery = "SELECT 1;", System.Action<Npgsql.NpgsqlConnection>? configure = null, string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+        public System.Func<object?, Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckResult>? HealthCheckResultBuilder { get; set; }
     }
 }

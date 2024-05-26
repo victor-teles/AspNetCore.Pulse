@@ -1,9 +1,18 @@
+namespace Microsoft.Extensions.DependencyInjection
+{
+    public static class KafkaHealthCheckBuilderExtensions
+    {
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddKafka(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, Pulse.Kafka.KafkaHealthCheckOptions options, string? name = null, Microsoft.Extensions.Diagnostics.HealthChecks.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddKafka(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, Confluent.Kafka.ProducerConfig config, string topic = "healthchecks-topic", string? name = null, Microsoft.Extensions.Diagnostics.HealthChecks.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddKafka(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, System.Action<Confluent.Kafka.ProducerConfig> setup, string topic = "healthchecks-topic", string? name = null, Microsoft.Extensions.Diagnostics.HealthChecks.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+    }
+}
 namespace Pulse.Kafka
 {
-    public class KafkaHealthCheck : Microsoft.Extensions.Diagnostics.Pulse.IHealthCheck, System.IDisposable
+    public class KafkaHealthCheck : Microsoft.Extensions.Diagnostics.HealthChecks.IHealthCheck, System.IDisposable
     {
         public KafkaHealthCheck(Pulse.Kafka.KafkaHealthCheckOptions options) { }
-        public System.Threading.Tasks.Task<Microsoft.Extensions.Diagnostics.Pulse.HealthCheckResult> CheckHealthAsync(Microsoft.Extensions.Diagnostics.Pulse.HealthCheckContext context, System.Threading.CancellationToken cancellationToken = default) { }
+        public System.Threading.Tasks.Task<Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckResult> CheckHealthAsync(Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckContext context, System.Threading.CancellationToken cancellationToken = default) { }
         public virtual void Dispose() { }
     }
     public class KafkaHealthCheckOptions
@@ -13,14 +22,5 @@ namespace Pulse.Kafka
         public System.Action<Confluent.Kafka.ProducerBuilder<string, string>>? Configure { get; set; }
         public System.Func<Pulse.Kafka.KafkaHealthCheckOptions, Confluent.Kafka.Message<string, string>> MessageBuilder { get; set; }
         public string Topic { get; set; }
-    }
-}
-namespace Microsoft.Extensions.DependencyInjection
-{
-    public static class KafkaHealthCheckBuilderExtensions
-    {
-        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddKafka(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, Pulse.Kafka.KafkaHealthCheckOptions options, string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
-        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddKafka(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, Confluent.Kafka.ProducerConfig config, string topic = "healthchecks-topic", string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
-        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddKafka(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, System.Action<Confluent.Kafka.ProducerConfig> setup, string topic = "healthchecks-topic", string? name = null, Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
     }
 }

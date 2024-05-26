@@ -1,3 +1,10 @@
+namespace Microsoft.Extensions.DependencyInjection
+{
+    public static class CloudWatchHealthCheckBuilderExtensions
+    {
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddCloudWatchPublisher(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, System.Action<Pulse.Publisher.CloudWatch.CloudWatchOptions>? setup = null) { }
+    }
+}
 namespace Pulse.Publisher.CloudWatch
 {
     public class CloudWatchOptions
@@ -9,12 +16,5 @@ namespace Pulse.Publisher.CloudWatch
         public string Namespace { get; set; }
         public Amazon.RegionEndpoint? Region { get; set; }
         public string? ServiceCheckName { get; set; }
-    }
-}
-namespace Microsoft.Extensions.DependencyInjection
-{
-    public static class CloudWatchHealthCheckBuilderExtensions
-    {
-        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddCloudWatchPublisher(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, System.Action<Pulse.Publisher.CloudWatch.CloudWatchOptions>? setup = null) { }
     }
 }

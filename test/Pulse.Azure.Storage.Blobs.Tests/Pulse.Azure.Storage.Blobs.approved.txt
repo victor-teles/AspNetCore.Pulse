@@ -1,20 +1,20 @@
+namespace Microsoft.Extensions.DependencyInjection
+{
+    public static class AzureBlobStorageHealthChecksBuilderExtensions
+    {
+        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddAzureBlobStorage(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, System.Func<System.IServiceProvider, Azure.Storage.Blobs.BlobServiceClient>? clientFactory = null, System.Func<System.IServiceProvider, Pulse.Azure.Storage.Blobs.AzureBlobStorageHealthCheckOptions>? optionsFactory = null, string? name = "azure_blob_storage", Microsoft.Extensions.Diagnostics.HealthChecks.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
+    }
+}
 namespace Pulse.Azure.Storage.Blobs
 {
-    public sealed class AzureBlobStorageHealthCheck : Microsoft.Extensions.Diagnostics.Pulse.IHealthCheck
+    public sealed class AzureBlobStorageHealthCheck : Microsoft.Extensions.Diagnostics.HealthChecks.IHealthCheck
     {
         public AzureBlobStorageHealthCheck(Azure.Storage.Blobs.BlobServiceClient blobServiceClient, Pulse.Azure.Storage.Blobs.AzureBlobStorageHealthCheckOptions? options = null) { }
-        public System.Threading.Tasks.Task<Microsoft.Extensions.Diagnostics.Pulse.HealthCheckResult> CheckHealthAsync(Microsoft.Extensions.Diagnostics.Pulse.HealthCheckContext context, System.Threading.CancellationToken cancellationToken = default) { }
+        public System.Threading.Tasks.Task<Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckResult> CheckHealthAsync(Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckContext context, System.Threading.CancellationToken cancellationToken = default) { }
     }
     public sealed class AzureBlobStorageHealthCheckOptions
     {
         public AzureBlobStorageHealthCheckOptions() { }
         public string? ContainerName { get; set; }
-    }
-}
-namespace Microsoft.Extensions.DependencyInjection
-{
-    public static class AzureBlobStorageHealthChecksBuilderExtensions
-    {
-        public static Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder AddAzureBlobStorage(this Microsoft.Extensions.DependencyInjection.IHealthChecksBuilder builder, System.Func<System.IServiceProvider, Azure.Storage.Blobs.BlobServiceClient>? clientFactory = null, System.Func<System.IServiceProvider, Pulse.Azure.Storage.Blobs.AzureBlobStorageHealthCheckOptions>? optionsFactory = null, string? name = "azure_blob_storage", Microsoft.Extensions.Diagnostics.Pulse.HealthStatus? failureStatus = default, System.Collections.Generic.IEnumerable<string>? tags = null, System.TimeSpan? timeout = default) { }
     }
 }

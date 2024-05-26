@@ -1,22 +1,22 @@
+namespace Microsoft.AspNetCore.Builder
+{
+    public static class PrometheusHealthCheckMiddleware
+    {
+        public static Microsoft.AspNetCore.Builder.IApplicationBuilder UseHealthChecksPrometheusExporter(this Microsoft.AspNetCore.Builder.IApplicationBuilder applicationBuilder, Microsoft.AspNetCore.Http.PathString endpoint) { }
+        public static Microsoft.AspNetCore.Builder.IApplicationBuilder UseHealthChecksPrometheusExporter(this Microsoft.AspNetCore.Builder.IApplicationBuilder applicationBuilder, Microsoft.AspNetCore.Http.PathString endpoint, System.Action<Microsoft.AspNetCore.Diagnostics.HealthChecks.HealthCheckOptions>? configure) { }
+    }
+}
 namespace Pulse.Prometheus.Metrics
 {
     public abstract class LivenessPrometheusMetrics
     {
         protected const string CONTENT_TYPE = "text/plain; version=0.0.4; charset=utf-8";
         protected readonly Prometheus.CollectorRegistry Registry;
-        protected void WriteMetricsFromHealthReport(Microsoft.Extensions.Diagnostics.Pulse.HealthReport report) { }
+        protected void WriteMetricsFromHealthReport(Microsoft.Extensions.Diagnostics.HealthChecks.HealthReport report) { }
     }
     public sealed class PrometheusResponseWriter : Pulse.Prometheus.Metrics.LivenessPrometheusMetrics
     {
         public PrometheusResponseWriter() { }
-        public static System.Threading.Tasks.Task WritePrometheusResultText(Microsoft.AspNetCore.Http.HttpContext context, Microsoft.Extensions.Diagnostics.Pulse.HealthReport report) { }
-    }
-}
-namespace Microsoft.AspNetCore.Builder
-{
-    public static class PrometheusHealthCheckMiddleware
-    {
-        public static Microsoft.AspNetCore.Builder.IApplicationBuilder UseHealthChecksPrometheusExporter(this Microsoft.AspNetCore.Builder.IApplicationBuilder applicationBuilder, Microsoft.AspNetCore.Http.PathString endpoint) { }
-        public static Microsoft.AspNetCore.Builder.IApplicationBuilder UseHealthChecksPrometheusExporter(this Microsoft.AspNetCore.Builder.IApplicationBuilder applicationBuilder, Microsoft.AspNetCore.Http.PathString endpoint, System.Action<Microsoft.AspNetCore.Diagnostics.Pulse.HealthCheckOptions>? configure) { }
+        public static System.Threading.Tasks.Task WritePrometheusResultText(Microsoft.AspNetCore.Http.HttpContext context, Microsoft.Extensions.Diagnostics.HealthChecks.HealthReport report) { }
     }
 }
