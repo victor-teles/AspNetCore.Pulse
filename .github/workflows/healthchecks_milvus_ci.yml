@@ -28,33 +28,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    services:
-      minio:
-        image: minio/minio:RELEASE.2023-03-20T20-16-18Z
-        env:
-          MINIO_ROOT_USER: minioadmin
-          MINIO_ROOT_PASSWORD: minioadmin
-        ports:
-          - "9001:9001"
-          - "9000:9000"
-
-      etcd:
-        image: quay.io/coreos/etcd:v3.5.5
-        env:
-          ETCD_AUTO_COMPACTION_MODE: revision
-          ETCD_AUTO_COMPACTION_RETENTION: 1000
-          ETCD_QUOTA_BACKEND_BYTES: 4294967296
-          ETCD_SNAPSHOT_COUNT: 50000
-      milvus:
-        image: milvusdb/milvus:v2.3.0
-        env:
-          ETCD_ENDPOINTS: etcd:2379
-          MINIO_ADDRESS: minio:9000
-        ports:
-          - "19530:19530"
-          - "9091:9091"
     steps:
       - uses: actions/checkout@v4
+      - uses: hoverkraft-tech/compose-action@v2.0.0
+        with:
+          compose-file: "./docker-compose-milvus.yml"
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
