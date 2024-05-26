@@ -176,7 +176,7 @@ public class npgsql_healthcheck_should
         var testLoggerProvider = (TestLoggerProvider)server.Services.GetRequiredService<ILoggerProvider>();
 
         testLoggerProvider.ShouldNotBeNull();
-        var logger = testLoggerProvider.GetLogger("Microsoft.Extensions.Diagnostics.Pulse.DefaultHealthCheckService");
+        var logger = testLoggerProvider.GetLogger("Microsoft.Extensions.Diagnostics.Healthchecks.DefaultHealthCheckService");
 
         logger.ShouldNotBeNull();
         logger?.EventLog[0].Item2.ShouldNotContain("with message '(null)'");
