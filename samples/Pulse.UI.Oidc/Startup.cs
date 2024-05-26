@@ -39,7 +39,7 @@ public class Startup
             })
             .Services
             .AddHealthChecks()
-            .AddUrlGroup(new Uri("https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks"))
+            .AddUrlGroup(new Uri("https://github.com/victor-teles/AspNetCore.Pulse"))
             .Services
             .AddControllers();
     }
