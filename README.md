@@ -21,7 +21,7 @@
 
 This repository offers a wide collection of **ASP.NET Core** Health Check packages for widely used services and platforms.
 
-You are able to check health of databases, messaging services, uris and much more.
+You can check the integrity of databases, messaging services, uris and much more.
 
 **ASP.NET Core** versions supported: 8.0, 7.0, 6.0, 5.0, 3.1, 3.0 and 2.2
 
