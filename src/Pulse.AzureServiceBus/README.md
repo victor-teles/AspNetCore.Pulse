@@ -1,4 +1,4 @@
-## Azure Service Bus Health Check
+## Azure Service Bus
 
 This health check verifies the ability to communicate with [Azure Service Bus](https://azure.microsoft.com/services/service-bus/).
 

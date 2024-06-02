@@ -1,4 +1,4 @@
-# Azure IoT Hub Health Check
+# Azure IoT Hub
 
 This health check verifies the ability to communicate with Azure IoT Hub. For more information about Azure IoT Hub please check and .NET please check the [Azure IoT Hub Microsoft Site](https://azure.microsoft.com/en-us/services/iot-hub/)
 

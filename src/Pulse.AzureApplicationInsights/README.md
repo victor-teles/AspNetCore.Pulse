@@ -1,4 +1,4 @@
-# Azure Application Insights Health Check
+# Azure Application Insights
 
 This health check verifies the existence of a Azure Application Insights resource. For more information about Azure Application Insights check the [Azure AppInsights Microsoft Site](https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview)
 

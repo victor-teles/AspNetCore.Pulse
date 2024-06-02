@@ -1,4 +1,4 @@
-## Azure Cosmos DB Health Check
+## Azure Cosmos DB
 
 This health check verifies the ability to communicate with [Azure Cosmos DB](https://azure.microsoft.com/en-us/products/cosmos-db/). It uses the provided [CosmosClient](https://learn.microsoft.com/dotnet/api/microsoft.azure.cosmos.cosmosclient).
 

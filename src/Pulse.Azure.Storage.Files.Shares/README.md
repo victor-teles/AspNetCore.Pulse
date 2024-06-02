@@ -1,4 +1,4 @@
-## Azure File Storage Health Check
+## Azure File Storage
 
 This health check verifies the ability to communicate with [Azure File Storage](https://azure.microsoft.com/en-us/products/storage/files/). It uses the provided [ShareServiceClient](https://learn.microsoft.com/dotnet/api/azure.storage.files.shares.shareserviceclient) to get first share or configured share properties.
 

@@ -1,4 +1,4 @@
-## Azure Event Hubs Health Check
+## Azure Event Hubs
 
 This health check verifies the ability to communicate with [Azure Event Hubs](https://azure.microsoft.com/services/event-hubs/). It uses the provided [EventHubProducerClient](https://learn.microsoft.com/dotnet/api/azure.messaging.eventhubs.producer.eventhubproducerclient) to get event hub properties.
 

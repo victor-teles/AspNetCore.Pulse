@@ -1,4 +1,4 @@
-# ArangoDb Health Check
+# ArangoDb
 
 This health check verifies the ability to communicate with a ArangoDb server. ArangoDb is a Hight Available and Multi-Model database.
 For more information about ArangoDb please check [ArangoDb Home](https://www.arangodb.com/)

@@ -1,4 +1,4 @@
-# AWS SQS Health Check
+# AWS SQS
 
 This health check verifies the ability to communicate with Amazon SQS and the existence of some queues. For more information about AWS SQS check the [AWS SQS Site](https://aws.amazon.com/sqs/)
 

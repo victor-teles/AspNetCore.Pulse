@@ -1,0 +1,18 @@
+{
+  "name": "generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "doc-gen.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node doc-gen.mjs"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "remark-parse": "^11.0.0",
+    "mdast-util-to-markdown": "^2.1.0",
+    "unified": "^11.0.4",
+    "glob": "^10.4.1"
+  }
+}

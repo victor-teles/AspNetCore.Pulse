@@ -1,4 +1,4 @@
-# Azure KeyVault Health Check
+# Azure KeyVault
 
 This health check verifies the ability to communicate with Azure Key Vault and the existence of some secrets, keys and certificates. For more information about Azure Key Vault check the [Azure KeyVault Microsoft Site](https://azure.microsoft.com/en-us/services/key-vault/)
 

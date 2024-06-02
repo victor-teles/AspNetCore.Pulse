@@ -7,8 +7,8 @@
     <PackageIcon>icon.png</PackageIcon>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks</RepositoryUrl>
+    <PackageProjectUrl>https://pulse.mintlify.app</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/victor-teles/AspNetCore.Pulse</RepositoryUrl>
     <Authors>Xabaril Contributors</Authors>
     <Company>Xabaril</Company>
     <RepositoryType>git</RepositoryType>

@@ -1,4 +1,4 @@
-# Amazon DynamoDB Health Check
+# Amazon DynamoDB
 
 This health check verifies the ability to communicate with [Amazon DynamoDB](https://aws.amazon.com/dynamodb/).
 

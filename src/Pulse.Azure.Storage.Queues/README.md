@@ -1,4 +1,4 @@
-## Azure Queue Storage Health Check
+## Azure Queue Storage
 
 This health check verifies the ability to communicate with [Azure Queue Storage](https://azure.microsoft.com/en-us/products/storage/queues/). It uses the provided [QueueServiceClient](https://learn.microsoft.com/dotnet/api/azure.storage.queues.queueserviceclient) to get first queue or configured queues properties.
 

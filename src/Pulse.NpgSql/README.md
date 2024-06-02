@@ -1,4 +1,4 @@
-## PostgreSQL Health Check
+## PostgreSQL
 
 This health check verifies the ability to communicate with [PostgreSQL](https://www.postgresql.org/). It uses the [Npgsql](https://www.npgsql.org/) library.
 

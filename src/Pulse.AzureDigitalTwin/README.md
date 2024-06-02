@@ -1,8 +1,6 @@
-# **Digital Twin Health Check**
+# Azure Digital Twin
 
-Azure Digital Twins is an Internet of Things (IoT) platform that enables you to create a digital representation of real-world things, places, business processes, and people.
-
-For more information about Azure Digital Twin please check [Azure Digital Twin Home](https://azure.microsoft.com/en-us/services/digital-twins/)
+Azure Digital Twins is an Internet of Things (IoT) platform that enables you to create a digital representation of real-world things, places, business processes, and people. For more information about Azure Digital Twin please check [Azure Digital Twin Home](https://azure.microsoft.com/en-us/services/digital-twins/)
 
 This health check can check the Digital Twin:
 

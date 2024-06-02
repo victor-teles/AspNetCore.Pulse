@@ -1,4 +1,4 @@
-## MySQL Health Check
+## MySQL
 
 This health check verifies the ability to communicate with a MySQL Server.
 It uses the provided [MySqlDataSource](https://mysqlconnector.net/api/mysqlconnector/mysqldatasourcetype/) or a connection string to connect to the server.
