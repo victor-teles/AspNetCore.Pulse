@@ -1,0 +1,29 @@
+---
+title: 'Azure Service Bus'
+description: 'This health check verifies the ability to communicate with [Azure Service Bus](https://azure.microsoft.com/services/service-bus/).'
+icon: 'undefined'
+---
+
+## Installation
+
+<Tabs>
+  <Tab title=".NET CLI">
+    ```bash
+    dotnet add package AspNetCore.Pulse.AzureServiceBus --version 8.0.3
+    ```
+  </Tab>
+  <Tab title="Package Reference">
+    ```xml
+    <PackageReference Include="AspNetCore.Pulse.AzureServiceBus" Version="8.0.3" />
+    ```
+  </Tab>
+  <Tab title="Nuget">
+    <a href="https://www.nuget.org/packages/AspNetCore.Pulse.AzureServiceBus/" target="_blank">Go to nuget page</a>
+  </Tab>
+</Tabs>
+
+
+### Breaking changes
+
+In the prior releases, `AzureEventHubHealthCheck` was a part of `AspNetCore.Pulse.AzureServiceBus` package. It had a dependency on not just `Azure.Messaging.ServiceBus`, but also `Azure.Messaging.EventHubs`. The packages have been split to avoid bringing unnecessary dependencies. The name of the new EveHub package is [AspNetCore.Pulse.Azure.Messaging.EventHubs](https://www.nuget.org/packages/AspNetCore.Pulse.Azure.Messaging.EventHubs).
+

@@ -1,0 +1,52 @@
+---
+title: 'ArangoDb'
+description: 'This health check verifies the ability to communicate with a ArangoDb server. ArangoDb is a Hight Available and Multi-Model database.
+For more information about ArangoDb please check [ArangoDb Home](https://www.arangodb.com/)'
+icon: 'undefined'
+---
+
+## Installation
+
+<Tabs>
+  <Tab title=".NET CLI">
+    ```bash
+    dotnet add package AspNetCore.Pulse.ArangoDb --version 8.0.3
+    ```
+  </Tab>
+  <Tab title="Package Reference">
+    ```xml
+    <PackageReference Include="AspNetCore.Pulse.ArangoDb" Version="8.0.3" />
+    ```
+  </Tab>
+  <Tab title="Nuget">
+    <a href="https://www.nuget.org/packages/AspNetCore.Pulse.ArangoDb/" target="_blank">Go to nuget page</a>
+  </Tab>
+</Tabs>
+
+
+## Example Usage
+
+With all of the following examples, you can additionally add the following parameters:
+
+* `name`: The health check name. Default if not specified is `arangodb`.
+* `failureStatus`: The `HealthStatus` that should be reported when the health check fails. Default is `HealthStatus.Unhealthy`.
+* `tags`: A list of tags that can be used to filter sets of health checks.
+* `timeout`: A `System.TimeSpan` representing the timeout of the check.
+
+### Basic
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services
+        .AddHealthChecks()
+        .AddArangoDb(_ => new ArangoDbOptions
+        {
+            HostUri = "http://localhost:8529/",
+            Database = "_system",
+            UserName = "root",
+            Password = "strongArangoDbPassword"
+        });
+}
+```
+

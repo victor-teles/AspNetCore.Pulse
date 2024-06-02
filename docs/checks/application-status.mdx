@@ -1,0 +1,45 @@
+---
+title: 'Application Status'
+description: 'This health check verifies that application is up and running based on `IHostApplicationLifetime`. If application received stop signal, eg: SIGTERM in docker container - then health status will be unhealthy and application wont be able to receive new requests.'
+icon: 'undefined'
+---
+
+## Installation
+
+<Tabs>
+  <Tab title=".NET CLI">
+    ```bash
+    dotnet add package AspNetCore.Pulse.ApplicationStatus --version 8.0.3
+    ```
+  </Tab>
+  <Tab title="Package Reference">
+    ```xml
+    <PackageReference Include="AspNetCore.Pulse.ApplicationStatus" Version="8.0.3" />
+    ```
+  </Tab>
+  <Tab title="Nuget">
+    <a href="https://www.nuget.org/packages/AspNetCore.Pulse.ApplicationStatus/" target="_blank">Go to nuget page</a>
+  </Tab>
+</Tabs>
+
+
+## Example Usage
+
+With all of the following examples, you can additionally add the following parameters:
+
+* `name`: The health check name. Default if not specified is `applicationstatus`.
+* `failureStatus`: The `HealthStatus` that should be reported when the health check fails. Default is `HealthStatus.Unhealthy`.
+* `tags`: A list of tags that can be used to filter sets of health checks.
+* `timeout`: A `System.TimeSpan` representing the timeout of the check.
+
+### Basic
+
+```csharp
+public void ConfigureServices(IServiceCollection services, IHost)
+{
+    services
+        .AddHealthChecks()
+        .AddApplicationStatus();
+}
+```
+

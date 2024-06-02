@@ -1,0 +1,81 @@
+---
+title: 'Amazon S3'
+description: 'This health check verifies the ability to communicate with [Amazon S3](https://aws.amazon.com/s3/).'
+icon: 'aws'
+---
+
+## Installation
+
+<Tabs>
+  <Tab title=".NET CLI">
+    ```bash
+    dotnet add package AspNetCore.Pulse.Aws.S3 --version 8.0.3
+    ```
+  </Tab>
+  <Tab title="Package Reference">
+    ```xml
+    <PackageReference Include="AspNetCore.Pulse.Aws.S3" Version="8.0.3" />
+    ```
+  </Tab>
+  <Tab title="Nuget">
+    <a href="https://www.nuget.org/packages/AspNetCore.Pulse.Aws.S3/" target="_blank">Go to nuget page</a>
+  </Tab>
+</Tabs>
+
+
+## Example Usage
+
+With all of the following examples, you can additionally add the following parameters:
+
+* `name`: The health check name. Default if not specified is `aws s3`.
+* `failureStatus`: The `HealthStatus` that should be reported when the health check fails. Default is `HealthStatus.Unhealthy`.
+* `tags`: A list of tags that can be used to filter sets of health checks.
+* `timeout`: A `System.TimeSpan` representing the timeout of the check.
+
+### Load credentials from the application's default configuration
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services
+        .AddHealthChecks()
+        .AddS3(options =>
+        {
+            options.BucketName = "bucket-name";
+        });
+}
+```
+
+### Directly pass credentials
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services
+        .AddHealthChecks()
+        .AddS3(options =>
+        {
+            options.BucketName = "bucket-name";
+            options.Credentials = new BasicAWSCredentials("access-key", "secret-key");
+        });
+}
+```
+
+### Specify region endpoint
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services
+        .AddHealthChecks()
+        .AddS3(options =>
+        {
+            options.BucketName = "bucket-name";
+            options.S3Config = new AmazonS3Config
+            {
+                RegionEndpoint = RegionEndpoint.EUCentral1
+            };
+        });
+}
+```
+
