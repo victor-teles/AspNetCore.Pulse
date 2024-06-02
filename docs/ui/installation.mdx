@@ -1,0 +1,29 @@
+---
+title: 'Installation'
+description: 'Getting started with Pulse UI'
+---
+
+<img
+  className="rounded-md"
+  src="/images/ui.png"
+/>
+
+
+## Installation
+
+<Steps>
+  <Step title="First Step">
+    Add <a href="https://www.nuget.org/packages/AspNetCore.Pulse.UI" target="_blank">AspNetCore.Pulse.UI</a>  and <a href="https://www.nuget.org/packages/AspNetCore.Pulse.UI.Client" target="_blank">AspNetCore.Pulse.UI.Client</a> to your project
+  </Step>
+  <Step title="Second Step">
+    Add some check package and configure the UI on Startup file:
+
+    ```csharp
+        services
+            .AddHealthChecksUI()
+    ```
+  </Step>
+  <Step title="Third Step">
+    Open pulse UI https://localhost:5001/healthchecks-ui
+  </Step>
+</Steps>
