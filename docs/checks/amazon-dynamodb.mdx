@@ -1,0 +1,63 @@
+---
+title: 'Amazon DynamoDB'
+description: 'This health check verifies the ability to communicate with [Amazon DynamoDB](https://aws.amazon.com/dynamodb/).'
+icon: 'undefined'
+---
+
+## Installation
+
+<Tabs>
+  <Tab title=".NET CLI">
+    ```bash
+    dotnet add package AspNetCore.Pulse.DynamoDb --version 8.0.4
+    ```
+  </Tab>
+  <Tab title="Package Reference">
+    ```xml
+    <PackageReference Include="AspNetCore.Pulse.DynamoDb" Version="8.0.4" />
+    ```
+  </Tab>
+  <Tab title="Nuget">
+    <a href="https://www.nuget.org/packages/AspNetCore.Pulse.DynamoDb/" target="_blank">Go to nuget page</a>
+  </Tab>
+</Tabs>
+
+
+## Example Usage
+
+With all of the following examples, you can additionally add the following parameters:
+
+* `name`: The health check name. Default if not specified is `dynamodb`.
+* `failureStatus`: The `HealthStatus` that should be reported when the health check fails. Default is `HealthStatus.Unhealthy`.
+* `tags`: A list of tags that can be used to filter sets of health checks.
+* `timeout`: A `System.TimeSpan` representing the timeout of the check.
+
+### Load credentials from the application's default configuration
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services
+        .AddHealthChecks()
+        .AddDynamoDb(options =>
+        {
+            options.RegionEndpoint = RegionEndpoint.EUCentral1;
+        });
+}
+```
+
+### Directly pass credentials
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services
+        .AddHealthChecks()
+        .AddDynamoDb(options =>
+        {
+            options.Credentials = new BasicAWSCredentials("access-key", "secret-key");
+            options.RegionEndpoint = RegionEndpoint.EUCentral1;
+        });
+}
+```
+

@@ -85,11 +85,11 @@ for (const packageName of packages) {
 	const pageName = slugify(packageTitle);
 	const templateFileName = `${pageName}.mdx`;
 	await fs.writeFile(
-		path.join("..", "packages", templateFileName),
+		path.join("..", "checks", templateFileName),
 		packageContent,
 	);
 
-	healthchecks.pages.push(`packages/${pageName}`);
+	healthchecks.pages.push(`checks/${pageName}`);
 
 	await fs.writeFile(path.join("..", "mint.json"), JSON.stringify(mint, null, 2));
 }
