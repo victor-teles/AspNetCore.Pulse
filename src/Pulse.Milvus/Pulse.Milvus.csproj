@@ -12,4 +12,8 @@
     <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="8.0.0" />
   </ItemGroup>
 
+  <PropertyGroup>
+    <NoWarn>8002</NoWarn>
+  </PropertyGroup>
+
 </Project>
