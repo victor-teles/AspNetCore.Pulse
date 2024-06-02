@@ -1,8 +1,6 @@
-# NATS Health Check
+# NATS
 
-This health check verifies the ability to communicate with a [NATS server](https://nats.io/about/). \
-It relies on `NATS.Client` package. \
-Latest tag for the [official dockerhub image](https://hub.docker.com/_/nats/) is `2.6.6`.
+This health check verifies the ability to communicate with a [NATS server](https://nats.io/about/). It relies on `NATS.Client` package. Latest tag for the [official dockerhub image](https://hub.docker.com/_/nats/) is `2.6.6`.
 
 ## Builder Extension
 
@@ -51,5 +49,3 @@ Like all `IHealthChecksBuilder` extensions, all the following parameters have ty
 - `failureStatus`: The `HealthStatus` that should be reported when the health check fails. Default is `HealthStatus.Unhealthy`.
 - `tags`: A list of tags that can be used to filter sets of health checks.
 - `timeout`: A `System.TimeSpan` representing the timeout of the check.
-
-[<<](../../README.md)

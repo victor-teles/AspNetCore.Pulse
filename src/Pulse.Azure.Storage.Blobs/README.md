@@ -1,4 +1,4 @@
-## Azure Blob Storage Health Check
+## Azure Blob Storage
 
 This health check verifies the ability to communicate with [Azure Blob Storage](https://azure.microsoft.com/en-us/products/storage/blobs/). It uses the provided [BlobServiceClient](https://learn.microsoft.com/dotnet/api/azure.storage.blobs.blobserviceclient) to get first or configured blob container.
 

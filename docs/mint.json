@@ -1,71 +1,119 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "AspNetCore.Pulse",
   "logo": {
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
   },
   "favicon": "/favicon.svg",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373",
-    "anchors": {
-      "from": "#0D9373",
-      "to": "#07C983"
+    "primary": "#7E53F8",
+    "light": "#BFA8FF",
+    "dark": "#4C22C0",
+    "background": {
+      "dark": "#121212"
     }
   },
-  "topbarLinks": [
-    {
-      "name": "Support",
-      "url": "mailto:hi@mintlify.com"
-    }
-  ],
   "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "type": "github",
+    "url": "https://github.com/victor-teles/AspNetCore.Pulse"
+  },
+  "modeToggle": {
+    "default": "dark",
+    "isHidden": true
+  },
+  "feedback": {
+    "suggestEdit": true,
+    "raiseIssue": true,
+    "thumbsRating": true
   },
   "tabs": [
     {
-      "name": "API Reference",
+      "name": "Pulse UI",
       "url": "api-reference"
     }
   ],
   "anchors": [
     {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
+      "name": "Releases",
+      "icon": "megaphone",
+      "url": "https://github.com/victor-teles/AspNetCore.Pulse/releases"
     },
     {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
+      "name": "Issues",
+      "icon": "bugs",
+      "url": "https://github.com/victor-teles/AspNetCore.Pulse/issues"
     },
     {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "name": "Request a feature",
+      "icon": "question",
+      "url": "https://github.com/victor-teles/AspNetCore.Pulse/pulls"
     }
   ],
   "navigation": [
     {
-      "group": "Get Started",
+      "group": "Healthchecks",
       "pages": [
-        "introduction",
         "quickstart",
-        "development"
+        "packages/application-status",
+        "packages/arangodb",
+        "packages/amazon-s3",
+        "packages/aws-secrets-manager",
+        "packages/aws-sns",
+        "packages/aws-sqs",
+        "packages/aws-systems-manager",
+        "packages/azure-data-tables",
+        "packages/azure-iot-hub",
+        "packages/azure-keyvault-secrets",
+        "packages/azure-event-hubs",
+        "packages/azure-blob-storage",
+        "packages/azure-file-storage",
+        "packages/azure-queue-storage",
+        "packages/azure-application-insights",
+        "packages/azure-digital-twin",
+        "packages/azure-keyvault",
+        "packages/azure-search",
+        "packages/azure-service-bus",
+        "packages/consul",
+        "packages/azure-cosmos-db",
+        "packages/dapr",
+        "packages/documentdb",
+        "packages/amazon-dynamodb",
+        "packages/elasticsearch",
+        "packages/eventstore",
+        "packages/eventstore-grpc",
+        "packages/gcp-cloud-firestore",
+        "packages/gremlin",
+        "packages/hangfire",
+        "packages/ibmmq",
+        "packages/influxdb",
+        "packages/kafka",
+        "packages/kubernetes",
+        "packages/milvus",
+        "packages/mongodb",
+        "packages/mysql",
+        "packages/nats",
+        "packages/network",
+        "packages/postgresql",
+        "packages/openid-connect",
+        "packages/oracle",
+        "packages/prometheus-metrics",
+        "packages/rabbitmq",
+        "packages/ravendb",
+        "packages/redis",
+        "packages/sendgrid",
+        "packages/sinalr",
+        "packages/solr",
+        "packages/sql-server",
+        "packages/sqlite",
+        "packages/system",
+        "packages/uris"
       ]
     },
     {
-      "group": "Essentials",
+      "group": "Push results",
       "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
+        "packages/amazon-s3"
       ]
     },
     {
@@ -82,10 +130,5 @@
         "api-reference/endpoint/delete"
       ]
     }
-  ],
-  "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
-  }
+  ]
 }

@@ -1,4 +1,4 @@
-# IbmMQ Health Check
+# IbmMQ
 
 This health check verifies the ability to communicate with a IbmMQ 9.0.+ server
 

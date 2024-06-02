@@ -1,4 +1,4 @@
-# Amazon S3 Health Check
+# Amazon S3
 
 This health check verifies the ability to communicate with [Amazon S3](https://aws.amazon.com/s3/).
 

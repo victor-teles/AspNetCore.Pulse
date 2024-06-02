@@ -1,4 +1,4 @@
-# AWS Secrets Manager Health Check
+# AWS Secrets Manager
 
 This health check verifies the ability to communicate with Amazon Secrets Manager and the existence of some secrets. For more information about AWS Secrets Manager check the [AWS Secrets Manager Site](https://aws.amazon.com/secrets-manager/)
 

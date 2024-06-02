@@ -1,4 +1,4 @@
-# AWS SNS Health Check
+# AWS SNS
 
 This health check verifies the ability to communicate with Amazon SNS and the existence of some topics and its subscriptions. For more information about AWS SNS check the [AWS SNS Site](https://aws.amazon.com/sns/)
 

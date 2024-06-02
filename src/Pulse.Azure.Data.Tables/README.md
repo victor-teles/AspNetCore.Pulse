@@ -1,4 +1,4 @@
-## Azure Tables Health Check
+## Azure Data Tables
 
 This health check verifies the ability to communicate with [Azure Tables](https://azure.microsoft.com/en-us/products/storage/tables/). It uses the provided [TableServiceClient](https://learn.microsoft.com/dotnet/api/azure.data.tables.tableserviceclient).
 

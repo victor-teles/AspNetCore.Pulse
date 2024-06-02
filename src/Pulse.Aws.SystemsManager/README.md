@@ -1,4 +1,4 @@
-# AWS Systems Manager Health Check
+# AWS Systems Manager
 
 This health check verifies the ability to communicate with Amazon Systems Manager and the existence of some parameters on the Parameter Store. For more information about AWS Systems Mananger check the [AWS Systems Manager Site (Parameter Store)](https://aws.amazon.com/systems-manager/features/#Parameter_Store)
 

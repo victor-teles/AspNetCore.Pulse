@@ -1,4 +1,4 @@
-## Azure KeyVault Secrets Health Check
+## Azure KeyVault Secrets
 
 This health check verifies the ability to communicate with [Azure Key Vault Secrets](https://azure.microsoft.com/services/key-vault/). It uses the provided [SecretClient](https://learn.microsoft.com/dotnet/api/azure.security.keyvault.secrets.secretclient) to get configured secret. When the connection to the service itself can be made, but secret is not found, it returns `HealthStatus.Healthy` status.
 
