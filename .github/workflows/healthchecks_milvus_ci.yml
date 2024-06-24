@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: hoverkraft-tech/compose-action@v2.0.0
+      - uses: hoverkraft-tech/compose-action@v2.0.1
         with:
           compose-file: "./docker-compose-milvus.yml"
       - name: Setup .NET
